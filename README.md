@@ -18,4 +18,3 @@ nt!NtReadVirtualMemory
 
 那么我么就先来研究一下这个函数
 
-[参考这篇文章](https://ntopcode.wordpress.com/2018/01/16/anatomy-of-the-thread-suspension-mechanism-in-windows-windows-internals/)
