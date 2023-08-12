@@ -1,3 +1,5 @@
+# 关于八嘎司机对lsass进程内存防护的研究
+
 读取进程内存的时候，最终会产生下面的系统调用
 
 ```
@@ -102,3 +104,34 @@ fffff808`1a6651a9 cc              int     3
 
 
 
+
+找到了关键代码
+
+```asm
+nt!ObpReferenceObjectByHandleWithTag+0x1cc:
+fffff802`0cb3842c 8bc5            mov     eax,ebp
+fffff802`0cb3842e f7d0            not     eax
+; 2p DesiredAccess
+; !0x1400 & 0x10 
+; 所以有可能是卡巴更改了handle table entry里面的值 导致我们直接在这个地方跳走了
+; 在把卡巴关闭之后，这个地方就变成了0x1410，取反之后就是 0xFFFFEBEF and 0x10 == 0
+; 而开启卡巴的时候，是0x1400，取反之后是 0xFFFFEBFF and 0x10 != 0
+; EBFF的二进制形式
+; 1110101111111111
+; 从windbg中来看，ExpLookupHandleTableEntry函数的返回值是一个nt!_andle_table_entry类型
+; 而其偏移量为8的地方解释如下：
+;    +0x008 GrantedAccessBits : Pos 0, 25 Bits
+;    +0x008 NoRightsUpgrade  : Pos 25, 1 Bit
+;    +0x008 Spare1           : Pos 26, 6 Bits
+;    +0x00c Spare2           : Uint4B
+; 前25个bit代表了允许的访问权限
+; 那么0x1400就代表下面这两个权限
+; PROCESS_QUERY_INFORMATION          (0x0400)  
+; PROCESS_QUERY_LIMITED_INFORMATION  (0x1000) 
+; 可以看到，卡巴的防护就是把0x10，也就是PROCESS_VM_READ访问权限给去掉了
+fffff802`0cb38430 85842498000000  test    dword ptr [rsp+98h],eax
+```
+
+上面汇编代码中的`ebp`就是函数`ExpLookupHandleTableEntry`返回值（nt!_andle_table_entry）结构体的+0x8偏移量
+
+那么肯定是我们在打开lsass进程的时候，卡巴做了PreOperation，对我们的handle进行了处理，抹掉了read权限
