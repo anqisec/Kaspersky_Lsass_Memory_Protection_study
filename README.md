@@ -96,3 +96,9 @@ fffff808`1a6651a9 cc              int     3
 可以看到`PostOperation`并没有什么好看的，我们重点看一下`PreOperation`，即`sub_140064BD0`
 
 不过看样子他好像只是注册了OpenProcess函数的回调，没看到读取内存的回调
+
+
+在阅读`nt!ObpReferenceObjectByHandleWithTag`函数的汇编代码期间，我学到了一些其他的知识，该函数的注释我放到了这里：
+
+
+
