@@ -135,3 +135,31 @@ fffff802`0cb38430 85842498000000  test    dword ptr [rsp+98h],eax
 上面汇编代码中的`ebp`就是函数`ExpLookupHandleTableEntry`返回值（nt!_andle_table_entry）结构体的+0x8偏移量
 
 那么肯定是我们在打开lsass进程的时候，卡巴做了PreOperation，对我们的handle进行了处理，抹掉了read权限
+
+
+
+我们首先获取了lsass进程的句柄，获取句柄通过调用OpenProcess函数完成，而该函数对应的系统调用是`nt!NtOpenProcess`
+
+而该系统调用其实是函数`nt!PsOpenProcess`的wrapper
+
+该函数会调用`ObpCreateHandle`，该函数会通过dispatch_call来调用PreOperation
+
+调用栈如下：
+```
+2: kd> k
+ # Child-SP          RetAddr               Call Site
+00 ffff8989`f0ce6e80 fffff802`809452fb     klif+0x64c4f
+01 ffff8989`f0ce6ee0 fffff802`80936e65     nt!ObpCreateHandle+0xa5b
+02 ffff8989`f0ce7140 fffff802`80932c34     nt!PsOpenProcess+0x535
+03 ffff8989`f0ce7480 fffff802`80583c53     nt!NtOpenProcess+0x24
+04 ffff8989`f0ce74c0 00007ffa`5dda0304     nt!KiSystemServiceCopyEnd+0x13
+05 000000bb`ce53d508 00007ffa`5a9edbfd     ntdll!NtOpenProcess+0x14
+06 000000bb`ce53d510 00007ff7`4f5024f5     KERNELBASE!OpenProcess+0x4d
+07 (Inline Function) --------`--------     ConsoleApplication2!GrabLsassHandle+0x42 [C:\Users\LC\Downloads\ector\ConsoleApplication2\ConsoleApplication2.cpp @ 79] 
+08 000000bb`ce53d580 00007ff7`4f508870     ConsoleApplication2!main+0x205 [C:\Users\LC\Downloads\ector\ConsoleApplication2\ConsoleApplication2.cpp @ 216] 
+09 (Inline Function) --------`--------     ConsoleApplication2!invoke_main+0x22 [D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl @ 78] 
+0a 000000bb`ce53f960 00007ffa`5b311fe4     ConsoleApplication2!__scrt_common_main_seh+0x10c [D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl @ 288] 
+0b 000000bb`ce53f9a0 00007ffa`5dd6ef91     KERNEL32!BaseThreadInitThunk+0x14
+0c 000000bb`ce53f9d0 00000000`00000000     ntdll!RtlUserThreadStart+0x21
+```
+
