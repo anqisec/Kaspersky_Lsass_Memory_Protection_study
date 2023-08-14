@@ -163,3 +163,9 @@ fffff802`0cb38430 85842498000000  test    dword ptr [rsp+98h],eax
 0c 000000bb`ce53f9d0 00000000`00000000     ntdll!RtlUserThreadStart+0x21
 ```
 
+
+PreOperation函数的最终结果就是把rdx结构体中的AccessMask中的VM_READ权限给过滤掉了
+
+初步的代码审计中发现了卡巴会检查尝试打开lsass.exe进程的进程是否是lsass.exe进程自己，然后又检查了打开lsass.exe进程的进程是否是lsass.exe进程的父进程
+
+我在想能不能通过HOOK某个API函数，来让lsass进程执行我们的代码，lsass会在某个rpc的触发下去访问某个文件
