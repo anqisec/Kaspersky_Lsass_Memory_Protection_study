@@ -169,3 +169,5 @@ PreOperation函数的最终结果就是把rdx结构体中的AccessMask中的VM_R
 初步的代码审计中发现了卡巴会检查尝试打开lsass.exe进程的进程是否是lsass.exe进程自己，然后又检查了打开lsass.exe进程的进程是否是lsass.exe进程的父进程
 
 我在想能不能通过HOOK某个API函数，来让lsass进程执行我们的代码，lsass会在某个rpc的触发下去访问某个文件
+
+我他妈真是个傻逼，HOOK api需要先注入到进程里面，现在连读进程内存的权限都没有，还想着注入，这不傻逼吗
