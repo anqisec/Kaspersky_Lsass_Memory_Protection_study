@@ -171,3 +171,21 @@ PreOperation函数的最终结果就是把rdx结构体中的AccessMask中的VM_R
 我在想能不能通过HOOK某个API函数，来让lsass进程执行我们的代码，lsass会在某个rpc的触发下去访问某个文件
 
 我他妈真是个傻逼，HOOK api需要先注入到进程里面，现在连读进程内存的权限都没有，还想着注入，这不傻逼吗
+
+# 更新
+
+前面记录的preoperation的调用栈有错误，下面这个才是真正的调用栈
+
+```
+ # Child-SP          RetAddr               Call Site
+00 ffffce86`87b5f170 fffff807`385e814a     nt!ObpCallPreOperationCallbacks+0x107
+01 ffffce86`87b5f1f0 fffff807`38608223     nt!ObpPreInterceptHandleCreate+0xaa
+02 ffffce86`87b5f260 fffff807`3861fca9     nt!ObpCreateHandle+0xce3
+03 ffffce86`87b5f470 fffff807`385f0aef     nt!ObOpenObjectByPointer+0x1b9
+04 ffffce86`87b5f6f0 fffff807`38654ad3     nt!PsOpenProcess+0x3af
+05 ffffce86`87b5fa80 fffff807`384104f5     nt!NtOpenProcess+0x23
+06 ffffce86`87b5fac0 00007ffb`48bcd4d4     nt!KiSystemServiceCopyEnd+0x25
+07 0000005c`a88fd618 00007ffb`467e08ee     ntdll!NtOpenProcess+0x14
+08 0000005c`a88fd620 000001d3`91316a50     0x00007ffb`467e08ee
+09 0000005c`a88fd628 00000000`00000000     0x000001d3`91316a50
+```
