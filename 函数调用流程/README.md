@@ -35,4 +35,25 @@ QWORD sub_1400CCB80(
 )
 ```
 
+该函数中调用`sub_1400CDC28`，签名如下：
 
+```
+DWORD sub_1400CDC28(
+  DWROD 0(hard_coded),
+  QWORD &SID
+)
+```
+
+该函数会返回APP2进程的用户SID，因此我将其重命名为`Get_APP2_User_SID_sub_1400CDC28`
+
+紧接着，该函数又调用了`sub_1400CDBB4`，签名如下：
+```c
+VOID sub_1400CDBB4(
+  QWORD &AuthenticationId
+)
+```
+
+这个函数用于从app2的PrimaryToken中获取AuthenticationID，这个ID用于标识一个logonsession，因此我讲这个函数重命名为
+```
+Get_APP2_Authentication_Id_sub_1400CDBB4
+```
