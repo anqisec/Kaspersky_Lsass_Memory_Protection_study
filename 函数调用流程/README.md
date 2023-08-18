@@ -57,3 +57,5 @@ VOID sub_1400CDBB4(
 ```
 Get_APP2_Authentication_Id_sub_1400CDBB4
 ```
+
+之后，从klflt.sys中取出一个函数数组，并通过dispatch_call调用了第104号函数（从0开始）
