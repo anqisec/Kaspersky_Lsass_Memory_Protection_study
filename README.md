@@ -189,3 +189,8 @@ PreOperation函数的最终结果就是把rdx结构体中的AccessMask中的VM_R
 08 0000005c`a88fd620 000001d3`91316a50     0x00007ffb`467e08ee
 09 0000005c`a88fd628 00000000`00000000     0x000001d3`91316a50
 ```
+
+
+# 结论
+
+注入svchost.exe即可获取到vm_read权限
