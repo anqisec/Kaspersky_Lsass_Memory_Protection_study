@@ -1,3 +1,4 @@
+
 首先，函数`sub_140064BD0`通过CallPreOperation被调用
 
 之后该函数调用`sub_140064978`，该函数签名如下：
@@ -58,4 +59,4 @@ VOID sub_1400CDBB4(
 Get_APP2_Authentication_Id_sub_1400CDBB4
 ```
 
-之后，从klflt.sys中取出一个函数数组，并通过dispatch_call调用了第104号函数（从0开始）
+之后，从klflt.sys中取出一个函数数组，并通过dispatch_call调用了第104号函数（从0开始）：`sub_18003E1B0`
