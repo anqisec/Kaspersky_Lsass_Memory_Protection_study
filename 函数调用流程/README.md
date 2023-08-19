@@ -59,4 +59,51 @@ VOID sub_1400CDBB4(
 Get_APP2_Authentication_Id_sub_1400CDBB4
 ```
 
-之后，从klflt.sys中取出一个函数数组，并通过dispatch_call调用了第104号函数（从0开始）：`sub_18003E1B0`
+之后，从klflt.sys中取出一个函数数组，并通过dispatch_call调用了第104号函数（从0开始）：`sub_18003E1B0`，函数签名如下：
+```
+VOID sub_18003E1B0(
+  QWORD lsass_pid,
+  QWORD &0(hard_coded)
+)
+```
+
+该函数将第2个参数变成`sub_18004012C`的第3个参数，并增加了第4个参数中，所以该函数的签名为
+```c
+VOID sub_18004012C(
+  QWORD lsass_pid,
+  DWORD 0(hard_coded),
+  QWORD &0(hard_coded),
+  BYTE 1(hard_coded)
+)
+```
+
+在该函数中`sub_18004033C`被调用，签名如下：
+```
+QWORD sub_18004033C(
+  QWORD lsass_pid,
+  QWORD 0(hard_coded),
+  BYTE 1(hard_coded),
+)
+```
+
+该函数对lsass_pid进行了如下操作：
+```c
+lsass_pid = lsass_pid & 0xFFFFFFFF;
+lsass_pid = lsass_pid >> 2;
+edx = lsass_pid * 0x9E370001 & xFFFFFFFF;
+edx = reverse_byte(edx);
+```
+
+然后调用了函数`sub_180002200`，签名如下：
+```
+QWORD sub_180002200(
+  QWORD rcx,
+  DWORD edx,
+  QWORD r8(OUT)
+)
+```
+
+其中rcx来自`poi(klflt+0x89df8)`
+
+
+
