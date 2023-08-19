@@ -97,8 +97,8 @@ edx = reverse_byte(edx);
 然后调用了函数`sub_180002200`，签名如下：
 ```
 QWORD sub_180002200(
-  QWORD rcx,
-  DWORD edx,
+  QWORD rcx(value_from_memory),
+  DWORD edx(lsass_pid_transformer),
   QWORD r8(OUT)
 )
 ```
