@@ -97,7 +97,7 @@ edx = reverse_byte(edx);
 然后调用了函数`sub_180002200`，签名如下：
 ```
 QWORD sub_180002200(
-  QWORD rcx(value_from_memory),
+  QWORD rcx(value_from_memory_klflt),
   DWORD edx(lsass_pid_transformer),
   QWORD r8(OUT)
 )
@@ -106,4 +106,30 @@ QWORD sub_180002200(
 其中rcx来自`poi(klflt+0x89df8)`
 
 
+后面可以考虑在这个内存位置先内存访问断点
 
+在最终返回到klif驱动之后，会再次通过dispatch call进入到klflt驱动的函数当中，这次传进去的是app2的pid和bugcheckparam
+
+调用的函数为`sub_18003E1A0`，之前调用的是`sub_18003E1B0`，两者的区别如下：
+
+
+```asm
+sub_18003E1B0 proc near
+mov     r8, rdx
+mov     r9b, 1
+xor     edx, edx
+jmp     sub_18004012C 
+sub_18003E1B0 endp
+```
+
+```asm
+sub_18003E1A0 proc near
+mov     r8, rdx
+xor     r9d, r9d
+xor     edx, edx
+jmp     sub_18004012C
+sub_18003E1A0 endp
+```
+
+
+唯一的区别就是第四个参数，一个是1一个是0
