@@ -133,3 +133,27 @@ sub_18003E1A0 endp
 
 
 唯一的区别就是第四个参数，一个是1一个是0
+
+在第二次调用中，调用到了第一次不曾调用过的函数`sub_18003AD30`，在执行到该函数的`call`指令时，线程
+发生了切换，调用栈如下：
+
+```asm
+06 ffff9884`48a66ed0 fffff802`57c06cfd     klgse+0x4945e
+07 ffff9884`48a66fd0 fffff802`57c06c5a     klhk+0x6cfd
+08 ffff9884`48a67080 fffff802`57c06cfd     klhk+0x6c5a
+09 ffff9884`48a670b0 fffff802`57c21785     klhk+0x6cfd
+0a ffff9884`48a67160 fffff802`57c19840     klhk+0x21785
+0b ffff9884`48a67240 fffff802`51c10906     klhk+0x19840
+0c ffff9884`48a672a0 fffff802`51c101e6     nt!IopXxxControlFile+0x706
+0d ffff9884`48a673e0 fffff802`51a0f8f5     nt!NtDeviceIoControlFile+0x56
+0e ffff9884`48a67450 00007ffe`9432d0c4     nt!KiSystemServiceCopyEnd+0x25
+0f 00000061`fef1f298 00007ffe`94227a74     ntdll!NtDeviceIoControlFile+0x14
+10 00000061`fef1f2a0 00000000`00000020     0x00007ffe`94227a74
+11 00000061`fef1f2a8 00000214`7c00334f     0x20
+12 00000061`fef1f2b0 00000000`0000002d     0x00000214`7c00334f
+13 00000061`fef1f2b8 00000000`00000000     0x2d
+```
+
+可以看到之前没有见到过的驱动`klhk.sys`和`klgse.sys`，而且调用栈中有`ntdll!NtDeviceIoControlFile`，说明此时存在r0和r3的通信
+
+查看当前的peb信息，发现进程为`C:\WINDOWS\system32\dwm.exe`
