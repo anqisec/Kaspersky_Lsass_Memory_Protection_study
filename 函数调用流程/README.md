@@ -138,6 +138,14 @@ sub_18003E1A0 endp
 发生了切换，调用栈如下：
 
 ```asm
+kd> k
+ # Child-SP          RetAddr               Call Site
+00 ffff9884`48a66d18 fffff802`5745a8d4     klflt!ComrUnregisterProvider+0x21723
+01 ffff9884`48a66d20 fffff802`57440268     klflt!ComrUnregisterProvider+0x1de54
+02 ffff9884`48a66d50 fffff802`5744086c     klflt!ComrUnregisterProvider+0x37e8
+03 ffff9884`48a66d80 fffff802`5744074e     klflt!ComrUnregisterProvider+0x3dec
+04 ffff9884`48a66e40 fffff802`57e34f29     klflt!ComrUnregisterProvider+0x3cce
+05 ffff9884`48a66e80 fffff802`57e5945e     klgse+0x24f29
 06 ffff9884`48a66ed0 fffff802`57c06cfd     klgse+0x4945e
 07 ffff9884`48a66fd0 fffff802`57c06c5a     klhk+0x6cfd
 08 ffff9884`48a67080 fffff802`57c06cfd     klhk+0x6c5a
@@ -152,6 +160,7 @@ sub_18003E1A0 endp
 11 00000061`fef1f2a8 00000214`7c00334f     0x20
 12 00000061`fef1f2b0 00000000`0000002d     0x00000214`7c00334f
 13 00000061`fef1f2b8 00000000`00000000     0x2d
+
 ```
 
 可以看到之前没有见到过的驱动`klhk.sys`和`klgse.sys`，而且调用栈中有`ntdll!NtDeviceIoControlFile`，说明此时存在r0和r3的通信
