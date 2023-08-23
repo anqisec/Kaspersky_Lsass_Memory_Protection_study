@@ -36,7 +36,7 @@ typedef struct Unknown_CCD68 {
     DWORD   _4h;  	// 3
     DWORD   _8h;  	// 0
     BYTE    _10h; 	// 0
-    QWORD   _30h; 	// 0
+    QWORD   _30h; 	// 出来之后给_30h字段赋了个值，App——pid，这里是在返回之后赋的值
     DWORD   _38h; 	// 0
     DWORD   _3Ch; 	// 0xB
     DWORD   _40h; 	// 4
