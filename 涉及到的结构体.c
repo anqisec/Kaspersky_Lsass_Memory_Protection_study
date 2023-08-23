@@ -28,3 +28,49 @@ ffff8989`f0ce7068  00001410
 ffff8989`f0ce706c  00001410
 */
 }
+
+
+
+typedef struct Unknown_CCD68 {
+    DWORD   _0h;  	// 8
+    DWORD   _4h;  	// 3
+    DWORD   _8h;  	// 0
+    BYTE    _10h; 	// 0
+    QWORD   _30h; 	// 0
+    DWORD   _38h; 	// 0
+    DWORD   _3Ch; 	// 0xB
+    DWORD   _40h; 	// 4
+    QWORD   _44h; 	// 3
+    DWORD   _4Ch; 	// access_mask  0x1410
+    DWORD   _50h; 	// 4
+    QWORD   _54h; 	// 9
+    QWORD   _5Ch; 	// app2_pid
+    DWORD   _60h; 	// SID长度
+    DWORD   _64h; 	// 7
+    QWORD   _6Ch; 	// SID（这里存的是sid实际的值，并非地址，长度为_60h指示的值）
+    // 下一个字段的偏移量是 0x60+poi(_60h)
+    DWORD   _78h; 	// 4
+    QWORD   _7Ch; 	// 0xA
+    DWORD   _84h; 	// lsass_pid
+    DWORD   _88h; 	// 4
+    QWORD   _8Ch; 	// 0x14
+    DWORD   _94h; 	// 0
+    DWORD   _98h; 	// 8
+    QWORD   _9Ch; 	// 0x4EE
+    QWORD   _A4h; 	// rbp+var_30
+    DWORD   _ACh; 	// 8
+    QWORD   _B0h; 	// 0x4EC
+    QWORD   _B8h; 	// rbp+var_28
+    DWORD   _C0h; 	// 4
+    QWORD   _C4h; 	// 0x4F3
+    DWORD   _CCh; 	// lsass父进程PID
+    DWORD   _D0h; 	// 4
+    QWORD   _D4h; 	// 0x4F2
+    DWORD   _DCh; 	// APP2的integrity level
+    DWORD   _E0h; 	// 8
+    QWORD   _E4h; 	// 0x1D
+    QWORD   _ECh; 	// app2的authenticationID
+    DWORD   _F4h; 	// 4
+    QWORD   _F8h; 	// 0x41
+    DWORD   _100h;	// 0
+}
