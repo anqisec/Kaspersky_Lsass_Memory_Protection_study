@@ -166,3 +166,23 @@ kd> k
 可以看到之前没有见到过的驱动`klhk.sys`和`klgse.sys`，而且调用栈中有`ntdll!NtDeviceIoControlFile`，说明此时存在r0和r3的通信
 
 查看当前的peb信息，发现进程为`C:\WINDOWS\system32\dwm.exe`
+
+
+
+上面的调用栈是个误会，我下错断点了
+
+
+调用完成之后，返回Unknown_CCD68结构体，然后接着dispatch调用klflt+sub_180020730
+
+
+函数签名：
+
+```c
+BYTE sub_180020730(
+  QWORD Unknown_CCD68,
+  DWORD 0,(hardcoded)
+  DWORD 0,(hardcoded)
+  DWORD 0,(hardcoded)
+  QWORD bugCheck(&0,hardcoded)
+)
+```
