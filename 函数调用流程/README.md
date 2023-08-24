@@ -186,3 +186,66 @@ BYTE sub_180020730(
   QWORD bugCheck(&0,hardcoded)
 )
 ```
+
+该函数的函数体很短，也没做什么事情，就是加了一个栈参数，然后调用了函数`sub_1800207B0`，签名如下：
+
+```c
+BYTE sub_1800207B0(
+  QWORD Unknown_CCD68,
+  DWORD 0,(hardcoded)
+  DWORD 0,(hardcoded)
+  DWORD 0,(hardcoded)
+  QWORD 0,(hardcoded)
+  QWORD bugCheck(&0,hardcoded)
+)
+```
+
+然后在这个函数中，调用了`sub_180020488`，签名如下：
+
+```c
+VOID sub_180020488(
+  QWORD Unknown_CCD68
+)
+```
+
+dwm.exe总是会突然切进来，调用栈如下：
+```asm
+kd> k
+ # Child-SP          RetAddr               Call Site
+00 ffffbc0b`6fdd6e40 fffff801`09094f29     klflt!ComrUnregisterProvider+0x3cb9
+01 ffffbc0b`6fdd6e80 fffff801`090b945e     klgse+0x24f29
+02 ffffbc0b`6fdd6ed0 fffff801`08e66cfd     klgse+0x4945e
+03 ffffbc0b`6fdd6fd0 fffff801`08e66c5a     klhk+0x6cfd
+04 ffffbc0b`6fdd7080 fffff801`08e66cfd     klhk+0x6c5a
+05 ffffbc0b`6fdd70b0 fffff801`08e81785     klhk+0x6cfd
+06 ffffbc0b`6fdd7160 fffff801`08e79840     klhk+0x21785
+07 ffffbc0b`6fdd7240 fffff801`03c004f6     klhk+0x19840
+08 ffffbc0b`6fdd72a0 fffff801`03bffdd6     nt!IopXxxControlFile+0x706
+09 ffffbc0b`6fdd73e0 fffff801`03a104f5     nt!NtDeviceIoControlFile+0x56
+0a ffffbc0b`6fdd7450 00007ffa`b524d0f4     nt!KiSystemServiceCopyEnd+0x25
+0b 00000049`2199f488 00007ffa`b5147a74     ntdll!NtDeviceIoControlFile+0x14
+0c 00000049`2199f490 00000000`00000000     0x00007ffa`b5147a74
+```
+
+`sub_180020488`对app2的进程和线程ID进行了检查，确保他们不为0，如果为空的话，会给他补上，因此我将其更名为
+
+```
+Check_APP2_PID_TID_sub_180020488
+```
+
+调用完这个函数后，紧接着又调用了函数`sub_180020284`，签名如下：
+```
+BYTE sub_180020284(
+  QWORD Unknown_CCD68,
+  DWORD 0(hardcoded)
+)
+```
+
+这个函数里面又调用了`sub_18003A9E0`，签名：
+
+```
+DWORD sub_18003A9E0(
+  DWORD app2_tid,
+  DWORD 6(hardcoded)
+)
+```
