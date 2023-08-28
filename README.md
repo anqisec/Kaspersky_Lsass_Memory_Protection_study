@@ -191,6 +191,22 @@ PreOperation函数的最终结果就是把rdx结构体中的AccessMask中的VM_R
 ```
 
 
+# 更新
+
+关于函数
+sub_18002B3E0
+通过调用函数
+sub_18002C074 
+过滤链表节点的调用流程：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/app2_%E5%9C%A8%E8%BF%87%E6%BB%A4%E8%8A%82%E7%82%B9%E6%97%B6%E7%9A%84%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B.asm
+
+下断点的方式
+```
+ba  e1 /p ffffa9875bf3b080 klflt+2C074  "r rcx;.if(poi(rcx+2c) == 0000031000176105){.echo 1}.else{.echo 2;g}"
+```
+
+
 # 结论
 
 注入svchost.exe即可获取到vm_read权限
