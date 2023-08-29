@@ -47,7 +47,7 @@ typedef struct Unknown_CCD68 {
     QWORD   _54h; 	// 9
     DWORD   _5Ch; 	// app2_pid
     DWORD   _60h; 	// SID长度
-    DWORD   _64h; 	// 7
+    QWORD   _64h; 	// 7
     QWORD   _6Ch; 	// SID（这里存的是sid实际的值，并非地址，长度为_60h指示的值）
     // 下一个字段的偏移量是 0x60+poi(_60h)
     DWORD   _78h; 	// 4
