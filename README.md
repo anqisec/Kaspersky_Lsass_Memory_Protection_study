@@ -210,3 +210,23 @@ ba  e1 /p ffffa9875bf3b080 klflt+2C074  "r rcx;.if(poi(rcx+2c) == 00000310001761
 # 结论
 
 注入svchost.exe即可获取到vm_read权限
+
+# 检测规则
+
+	第一次检测用的数组地址
+	poi(poi(poi(ffffa98d58d5b450+c0)+58)+20)
+	
+	第二次检测用的数组地址
+	? poi(poi(poi(poi(ffffa98d58d5b450+a8))+58)+20)
+
+ ffffa98d58d5b450可以在18002B425 block中获得
+
+ ![image](https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/assets/48377190/f57aa947-a18b-4d37-a2c0-b451d07f8eac)
+
++880即可获得链表地址
+
+遍历链表
+
+!list -x "dd /c 1 @$extret-78+2c L1" fffff800`2ee75e98
+
+选择值为176105的那个节点，地址-2c，即可获得calculated_addr，将获取到的calculated_addr替换ffffa98d58d5b450即可
