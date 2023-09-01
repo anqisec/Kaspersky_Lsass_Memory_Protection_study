@@ -1,6 +1,11 @@
 #include <Windows.h>
 #include <winternl.h>
 
+#define TABLE_LENGTH 1024
+DWORD offset_table[TABLE_LENGTH][3] = {
+    {0x32BC3,0x39E5C,0x9E36E},
+    {0x1FA63,0x395DC,0x8CA6C}
+};
 #define TO_LOWERCASE(out, c1) (out = (c1 <= 'Z' && c1 >= 'A') ? c1 = (c1 - 'A') + 'a': c1)
 
 inline LPVOID get_func_by_name(LPVOID module, char* func_name)
@@ -109,6 +114,9 @@ int main(int argc, char* argv[]) {
     VOID* _GetProcAddress_addr = get_func_by_name(reinterpret_cast<LPVOID>(_kernel32_base_addr), oloeS);
 
 
+    // 从文件中读取数组索引值，获取相关符号的偏移量
+    
+    // 首先要从kernel32中获取createfile和
 
 
 
