@@ -1,8 +1,11 @@
 文件版本获取工具：
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/get_file_version.zip
 
-关于文件的版本信息，根据微软官方文档，对于有对应mui文件的文件，其版本信息以mui文件中的为准，因此我们在获取lsasrv.dll的版本信息时，
+关于文件的版本信息，根据[微软官方文档](https://learn.microsoft.com/en-us/windows/win32/api/winver/nf-winver-getfileversioninfoa)，对于有对应mui文件的文件，其版本信息以mui文件中的为准，因此我们在获取lsasrv.dll的版本信息时，
 应该指定路径为`C:\windows\system32\lsasrv.dll`
+
+![image](https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/assets/48377190/6aebf492-350d-4aa1-8c3d-f7493b59b3f2)
+
 
 如果将该文件拷贝到其他目录再进行版本获取，可能会得到不同的版本信息，因为它找不到mui文件
 
