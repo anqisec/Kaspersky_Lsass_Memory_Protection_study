@@ -26,7 +26,29 @@ real_ins_addr+7就是下一条指令的地址next_ins_addr，即CPU执行到该�
 real_ins_addr+3就是符号`LogonSessionList`相对于RIP的偏移，进行反转之后可以得到一个DWORD，与next_ins_addr相加即可得到该符号的
 实际地址real_symbol_addr
 
+### LogonSessionList
+
 |  lsasrv.dll_file_version | instruction_offset  |
 |---|---|
-| 10.0.19041.508 |  0x32BC3 | 
-|  10.0.19041.3271 | 0x1FA63  | 
+| 10.0.19041.1 |  0x32BC3 | 
+|  10.0.19041.2913 | 0x1FA63  | 
+
+### hAesKey和h3DesKey
+
+在IDA的`LsaEncryptMemory`函数中搜索上面那俩符号
+
+我们解密不需要初始向量，因为关键部分并不在头部，而初始向量只负责解密头部那几个字节
+
+#### h3DesKey
+
+|  lsasrv.dll_file_version | instruction_offset  |
+|---|---|
+| 10.0.19041.1 |  0x39E5C | 
+|  10.0.19041.2913 | 0x395DC  | 
+
+#### hAesKey
+
+|  lsasrv.dll_file_version | instruction_offset  |
+|---|---|
+| 10.0.19041.1 |  0x9E36E | 
+|  10.0.19041.2913 | 0x8CA6C  | 
