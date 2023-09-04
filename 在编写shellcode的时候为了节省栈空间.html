@@ -1,0 +1,56 @@
+<form id="form1">
+	        <table border="0">
+			            <tr>
+					                    <td>
+								                        姓名：
+											                </td>
+													                <td>
+																                    <input id="name" name="name" type="text" />
+																		         <button onclick="readtext()">Click me</button>
+
+																			                 </td>
+																					             </tr>
+																						             </table>
+																							        </form>
+																								   
+																								   <script>
+																									      function makeid(length) {
+																										          var result           = '';
+																										          var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+																										          var charactersLength = characters.length;
+																										          for ( var i = 0; i < length; i++ ) {
+																												          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+																												      }
+																										          return result;
+																									      }
+
+    function readtext() {
+	     
+	                // 方法一
+	                var name = document.getElementById("name").value;
+	       var fucklyou="char ";
+		   var varname='stack_string';
+	       fucklyou+=varname;
+	       fucklyou+="[50]={0};";
+	       
+	                document.write(fucklyou);
+					fucklyou='';
+	       for(var i=0;i<name.length;i++) {
+		   fucklyou+=varname;
+		   fucklyou+="[";
+		   fucklyou+=i.toString();
+		   fucklyou+="]";
+		   fucklyou+="='";
+		   fucklyou+=name[i];
+		   fucklyou+="';";
+		        //  <!-- fucklyou+="'"; -->
+		        //  <!-- fucklyou+=name[i]; -->
+		        //  <!-- fucklyou+="',"; -->
+		          
+		          
+		          }
+	      // fucklyou+="0};";
+	                document.write(fucklyou);
+	     
+	           }
+   </script>
