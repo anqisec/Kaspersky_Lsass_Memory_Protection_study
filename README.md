@@ -230,3 +230,21 @@ ba  e1 /p ffffa9875bf3b080 klflt+2C074  "r rcx;.if(poi(rcx+2c) == 00000310001761
 !list -x "dd /c 1 @$extret-78+2c L1" fffff800`2ee75e98
 
 选择值为176105的那个节点，地址-2c，即可获得calculated_addr，将获取到的calculated_addr替换ffffa98d58d5b450即可
+
+
+# 编写shellcode
+为了节省栈空间，编写了如下代码生成脚本
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E5%9C%A8%E7%BC%96%E5%86%99shellcode%E7%9A%84%E6%97%B6%E5%80%99%E4%B8%BA%E4%BA%86%E8%8A%82%E7%9C%81%E6%A0%88%E7%A9%BA%E9%97%B4.html
+
+用法如下：
+
+
+```
+char stack_string[50] = { 0 }; stack_string[0] = 'c'; stack_string[1] = 'a'; stack_string[2] = 'o'; stack_string[3] = 'n'; stack_string[4] = 'i'; stack_string[5] = 'n'; stack_string[6] = 'a'; stack_string[7] = 'i'; stack_string[8] = 'n'; stack_string[9] = 'a'; stack_string[10] = 'i';
+	printf("%s\n", stack_string);
+	SecureZeroMemory(stack_string, 50);
+
+	stack_string[0] = 'c'; stack_string[1] = 'a'; stack_string[2] = 'o'; stack_string[3] = 'n'; stack_string[4] = 'i'; stack_string[5] = 'm'; stack_string[6] = 'a';
+	printf("%s\n", stack_string);
+```
