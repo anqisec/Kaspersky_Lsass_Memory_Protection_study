@@ -264,9 +264,15 @@ https://github.com/wqreytuk/pe_parser
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode.c
 
 
-对生成的shellcode文件  data.bin进行异或加密：
+对生成的shellcode文件  data.bin进行异或加密的袁代码：
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellocde%E6%96%87%E4%BB%B6%E7%96%91%E6%83%91%E5%8A%A0%E5%AF%86.c
+
+疑惑加密工具
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/ConsoleApplication1.7z
+
+cd到shellcode  data.bin所在的目录执行该工具即可
 
 
 ## shellcode生成步骤
