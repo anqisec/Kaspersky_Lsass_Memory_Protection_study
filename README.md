@@ -326,3 +326,13 @@ kiaad
 
 上面这些文件中，`aiaad`是aes key，但是一般情况下不会用到，所以解密脚本中也没有实现aes解密，如果有需要再写
 
+## 成品shellcode
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/data.7z
+
+和main.exe放到一起即可
+
+## lsasrv.dll版本适配
+
+只需要修改main程序的_offset_table，往里面增加即可
+
