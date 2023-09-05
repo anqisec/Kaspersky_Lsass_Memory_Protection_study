@@ -183,7 +183,7 @@ int main(int argc, char** argv)
 	DWORD offset = 0;
 	for (int i = 0; i < TABLE_LENGTH; i++) {
 		if (strcmp(res, version_table[i]) == 0) {
-			offset = offset_table[i];
+			offset = 1;
 			// 记录下来这个索引，写入到文件中，供注入到svchost.exe进程中的shellcode去读取
 			char write_out[123] = { 0 };
 			sprintf_s(write_out,123, "%03d", i);
