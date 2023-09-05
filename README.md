@@ -293,3 +293,28 @@ masm_shc.exe 1.asm asdasd
 masm_shc.exe在仓库  https://github.com/wqreytuk/ShellCodeAsmCleaner/blob/main/out/build/x64-Release/masm_shc/masm_shc.exe
 
 上面的命令步骤是在远程服务器的windows7中进行的
+
+## 主程序
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E4%B8%BB%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81.c
+
+
+成品主程序文件
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/main.7z
+
+
+## 解密脚本
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1.py
+
+将声称在C:\users\public下面的四个文件和解密脚本放在同一个目录下即可，解密结果在res.txt中
+```
+3iaad
+aiaad
+ili6ao
+kiaad
+```
+
+
+
