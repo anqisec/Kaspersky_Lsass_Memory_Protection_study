@@ -349,7 +349,7 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/da
 helper = &lsassEnumHelpers[2];
 ```
 
-根据要测试的版本修改lsassEnumHelpers数组的索引
+根据要测试的版本修改lsassEnumHelpers数组的索引，主要看返回的版本中的数值对比，来确定索引
 
 在350行增加如下语句
 ```
