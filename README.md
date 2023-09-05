@@ -248,3 +248,18 @@ char stack_string[50] = { 0 }; stack_string[0] = 'c'; stack_string[1] = 'a'; sta
 	stack_string[0] = 'c'; stack_string[1] = 'a'; stack_string[2] = 'o'; stack_string[3] = 'n'; stack_string[4] = 'i'; stack_string[5] = 'm'; stack_string[6] = 'a';
 	printf("%s\n", stack_string);
 ```
+
+shellcode代码写完之后，我们需要将其进行编译链接
+
+参考：https://github.com/wqreytuk/ShellCodeAsmCleaner
+
+然后我们需要使用pe-parser来提取text扇区
+
+
+https://github.com/wqreytuk/pe_parser
+
+
+## shellcode代码
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode.c
+
