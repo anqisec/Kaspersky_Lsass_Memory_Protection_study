@@ -267,3 +267,23 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/sh
 对生成的shellcode文件  data.bin进行异或加密：
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellocde%E6%96%87%E4%BB%B6%E7%96%91%E6%83%91%E5%8A%A0%E5%AF%86.c
+
+
+## shellcode生成步骤
+
+1.cpp就是我们的shellcode源代码
+
+```
+cd C:\Users\Public\shellcode
+"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\amd64\vcvars64.bat"
+ cl /c /FA /GS- 1.cpp
+masm_shc.exe 1.asm asdasd
+ ml64 /c asdasd
+ link asdasd.obj /entry:main
+```
+
+上面的命令执行完成后，运行vs2010的pe-parser即可
+
+masm_shc.exe在仓库  https://github.com/wqreytuk/ShellCodeAsmCleaner/blob/main/out/build/x64-Release/masm_shc/masm_shc.exe
+
+上面的命令步骤是在远程服务器的windows7中进行的
