@@ -336,3 +336,22 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/da
 
 只需要修改main程序的_offset_table，往里面增加即可
 
+
+## 关于获取windows各个大版本的credential偏移
+
+可以使用我们的mimiaktz项目
+
+修改文件`C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurlsa\kuhl_m_sekurlsa.c`
+
+在317行增加如下语句
+
+```
+helper = &lsassEnumHelpers[2];
+```
+
+根据要测试的版本修改lsassEnumHelpers数组的索引
+
+在350行增加如下语句
+```
+kprintf(L"\n\n helper->offsetToCredentials: %zd\n", helper->offsetToCredentials);
+```
