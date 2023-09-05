@@ -308,6 +308,14 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/ma
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1.py
 
+改脚本的依赖只有一个
+```
+pycryptodome
+```
+
+
+
+
 将声称在C:\users\public下面的四个文件和解密脚本放在同一个目录下即可，解密结果在res.txt中
 ```
 3iaad
@@ -316,5 +324,5 @@ ili6ao
 kiaad
 ```
 
-
+上面这些文件中，`aiaad`是aes key，但是一般情况下不会用到，所以解密脚本中也没有实现aes解密，如果有需要再写
 
