@@ -49,7 +49,12 @@ bool FBFileExists(const char* szPath) {
 #pragma comment(lib, "Version.lib")
 char version_table[TABLE_LENGTH][50] = {
 	"10.0.19041.1",
-	"10.0.19041.2913"
+	"10.0.19041.2913",
+	"6.1.7601.17514",
+	"10.0.22621.1",
+	"10.0.14393.0",
+	"10.0.17763.1",
+	"6.1.7601.24214"
 };
 DWORD offset_table[TABLE_LENGTH] = {
 	0x32BC3,
@@ -58,7 +63,12 @@ DWORD offset_table[TABLE_LENGTH] = {
 
 DWORD _offset_table[TABLE_LENGTH][4] = {
 	  {0x32BC3,0x39E5C,0x9E36E,0x108},
-	  {0x1FA63,0x395DC,0x8CA6C,0x108}
+	  {0x1FA63,0x395DC,0x8CA6C,0x108},
+	  {0x16150,0x111DE,0x3261B,0xE8},
+	  {0x2D2B3,0x1C55C,0x4250C,0x108},
+	  {0x285FF,0x3992C,0x399EC,0x108},
+	  {0x1E162,0x1944C,0x1950C,0x108},
+	  {0x1C448,0x193EE,0x39B2A,0xE8}
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
