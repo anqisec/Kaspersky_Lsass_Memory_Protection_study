@@ -355,3 +355,7 @@ helper = &lsassEnumHelpers[2];
 ```
 kprintf(L"\n\n helper->offsetToCredentials: %zd\n", helper->offsetToCredentials);
 ```
+
+## windows7系列
+
+后续的测试发现windows7系列的各种结构体的结构和win10并不一样，因此需要单独编写一个针对win7的shellcode
