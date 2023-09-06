@@ -8,42 +8,6 @@
 
 
 
-bool EnableDebugPrivilege()
-{
-    HANDLE tokenHandle;
-    TOKEN_PRIVILEGES tokenPrivileges;
-    LUID luid;
-
-    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &tokenHandle))
-    {
-       // std::cout << "Failed to open process token. Error: " << GetLastError() << std::endl;
-        return false;
-    }
-
-    if (!LookupPrivilegeValue(nullptr, SE_DEBUG_NAME, &luid))
-    {
-       // std::cout << "Failed to lookup privilege value. Error: " << GetLastError() << std::endl;
-        CloseHandle(tokenHandle);
-        return false;
-    }
-
-    tokenPrivileges.PrivilegeCount = 1;
-    tokenPrivileges.Privileges[0].Luid = luid;
-    tokenPrivileges.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
-
-    if (!AdjustTokenPrivileges(tokenHandle, FALSE, &tokenPrivileges, sizeof(TOKEN_PRIVILEGES), nullptr, nullptr))
-    {
-      // 、、 std::cout << "Failed to adjust token privileges. Error: " << GetLastError() << std::endl;
-        CloseHandle(tokenHandle);
-        return false;
-    }
-
-    CloseHandle(tokenHandle);
-    return true;
-}
-
-
-
 
 
 
@@ -295,7 +259,6 @@ inline bool _compare_lsasrv_name(char* dll_name) {
 
 
 int main() {
-    EnableDebugPrivilege();
     DWORD _offset_table[TABLE_LENGTH][4] = {
         {0x32BC3,0x39E5C,0x9E36E,0x108},
         {0x1FA63,0x395DC,0x8CA6C,0x108}
