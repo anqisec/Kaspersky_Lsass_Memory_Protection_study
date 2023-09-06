@@ -358,4 +358,54 @@ kprintf(L"\n\n helper->offsetToCredentials: %zd\n", helper->offsetToCredentials)
 
 ## windows7系列
 
-后续的测试发现windows7系列的各种结构体的结构和win10并不一样，因此需要单独编写一个针对win7的shellcode
+后续的测试发现windows7系列的各种结构体的结构和win10并不一样，
+
+## 项目更新
+
+解密更改为了c代码
+
+为了获取各种偏移量，使用下面这个mimikatz项目
+
+```
+
+privilege::debug
+sekurlsa::logonpasswords
+```
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/upload/main/mimikatz%E9%A1%B9%E7%9B%AE_%E7%94%A8%E4%BA%8E%E8%8E%B7%E5%8F%96%E5%90%84%E7%A7%8D%E5%81%8F%E7%A7%BB%E9%87%8F
+
+
+要想获取ntlm hash在解密出来的明文中的偏移量，请使用
+
+C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurlsa\kuhl_m_sekurlsa.c
+
+第1097行，不过首先需要首先修改
+
+C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurlsa\packages\kuhl_m_sekurlsa_msv1_0.c
+
+第140行函数的返回值
+
+下面是我从mimikatz源代码中获取的偏移量，
+
+偏移量的计算方法为调试得到的值+8，因为还有个primary\0
+```
+版本号低于  10240 的偏移量为
+
+32+8=====40
+
+版本号  大于10240小于10586 的偏移量为
+38+8=====46
+
+
+版本号  大于10586小于14393 的偏移量为
+40+8=====48
+
+高于14393 的偏移量为
+74+8=====82
+
+```
+
+
+
+
+
