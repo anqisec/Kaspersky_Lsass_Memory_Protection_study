@@ -407,5 +407,20 @@ C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurl
 
 
 
+解密程序源代码：
+
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/decrypt.cccc.c
+
+
+解密程序：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/ConsoleApplication3.7z
+
+
+
+
+
+
 
 
