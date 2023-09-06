@@ -54,7 +54,8 @@ char version_table[TABLE_LENGTH][50] = {
 	"10.0.22621.1",
 	"10.0.14393.0",
 	"10.0.17763.1",
-	"6.1.7601.24214"
+	"6.1.7601.24214",
+	"6.1.7600.16385"
 };
 DWORD offset_table[TABLE_LENGTH] = {
 	0x32BC3,
@@ -69,6 +70,7 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	  {0x285FF,0x3992C,0x399EC,0x108,0x38},
 	  {0x1E162,0x1944C,0x1950C,0x108,0x38},
 	  {0x1C448,0x193EE,0x39B2A,0xE8,0x18},
+	  {0x16030,0x110FE,0x32B0B,0xE8,0x18}
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -204,7 +206,7 @@ int main(int argc, char** argv)
 			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, "%02x", _offset_table[i][4]);
 
 			// 把版本号也写进去
-			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8+2, 123, "%s", res);
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8 + 2, 123, "%s", res);
 
 
 			FILE* fptr;
