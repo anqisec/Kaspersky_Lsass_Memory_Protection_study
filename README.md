@@ -422,5 +422,13 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Co
 
 
 
+# win7系列的会话隔离问题
 
+会导致我们无法注入svchost进程
 
+通过创建计划任务来执行即可（使用psexec是不行的，即使你是system也不行）
+```
+ schtasks /create /tn MyApp /tr "C:\Users\Public\shellcode\pe_parser-main\ConsoleApplication1\Release\ConsoleApplication3\main.exe" /sc once /sd 01/01/2003 /st 00:00 /ru system
+```
+
+使用这种方式执行的时候注意要先把shellcode放到system32目录下
