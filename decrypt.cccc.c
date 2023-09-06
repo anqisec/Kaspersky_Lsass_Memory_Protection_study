@@ -371,6 +371,10 @@ BCryptGenerateSymmetricKey(
 				if (!(_enc_1[i] > 31 && _enc_1[i] < 127) && _enc_1[i] != 0) {
 					printf("_"); continue;
 				}
+				else if (_enc_1[i] == 0)
+				{
+					int a = 1; continue;
+				}
 				printf("%c", _enc_1[i]);
 			}
 
