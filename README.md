@@ -285,7 +285,7 @@ cd C:\Users\Public\shellcode
  cl /c /FA /GS- 1.cpp
 masm_shc.exe 1.asm asdasd
  ml64 /c asdasd
- link asdasd.obj /entry:main
+ link asdasd.obj /entry:AlignRSP
 ```
 
 上面的命令执行完成后，运行vs2010的pe-parser即可
