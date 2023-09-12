@@ -304,6 +304,8 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/main.7z
 
 
+对于未知版本，会自动将C:\windows\system32\lsasrv.dll拷贝到C:\users\public\9at2中
+
 ## 解密脚本
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1.py
