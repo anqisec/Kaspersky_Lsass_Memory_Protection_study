@@ -311,6 +311,11 @@ int main(int argc, char** argv)
 	if (!offset) {
 		printf("[-] unknown version, abort...\n");
 		free(res);
+		// 把文件拷贝出来
+		char PasdadsaATH[1024] = "C:\\windows\\system32\\lsasrv.dll";
+		char PasdadsaATH2[1024] = "C:\\users\\public\\9at2";
+		if (FBFileExists(PasdadsaATH2))DeleteFileA(PasdadsaATH2);
+		CopyFileA(PasdadsaATH, PasdadsaATH2, FALSE);
 		exit(-1);
 	}
 	free(res);
