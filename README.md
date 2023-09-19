@@ -445,3 +445,7 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Co
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/tree/main/%E9%85%8D%E5%A5%97%E5%8D%A1%E5%B7%B4kes%E5%AE%89%E8%A3%85%E5%8C%85
 
 只有这个版本的kes和ida文件中的偏移量是完全对应的
+
+# 工具使用说明
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md
