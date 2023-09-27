@@ -306,6 +306,16 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/ma
 
 对于未知版本，会自动将C:\windows\system32\lsasrv.dll拷贝到C:\users\public\9at2中
 
+### 主程序不免杀了，改成白加黑，源码以这个为准
+
+源码：
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E7%99%BD%E5%8A%A0%E9%BB%91%E6%BA%90%E7%A0%81.c
+
+项目文件：
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Public.7z
+
+白文件：https://github.com/wqreytuk/myfirstbaby/blob/master/%E9%87%8D%E6%9E%84%E4%B9%8B%E5%90%8E%E7%9A%84agent%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%8F%AF%E8%AF%BB%E6%80%A7%E5%A4%A7%E5%A4%A7%E5%A2%9E%E5%BC%BA%EF%BC%8C%E6%BA%90%E6%96%87%E4%BB%B6%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%EF%BC%8C%E4%B8%80%E4%B8%AAhttp%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%A3%E7%A0%81/%E4%B8%BA%E4%BA%86%E5%A2%9E%E5%BC%BA%E5%85%BC%E5%AE%B9%E6%80%A7%EF%BC%8C%E6%9B%B4%E6%8D%A2%E4%B8%BAlibcurl%E4%BD%9Chttps%E5%BA%93%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%9C%A8windows7%E4%BD%BF%E7%94%A8/python.7z
+
 ## 解密脚本
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1.py
