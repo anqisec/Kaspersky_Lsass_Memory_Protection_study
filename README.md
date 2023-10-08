@@ -316,6 +316,21 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Pu
 
 白文件：https://github.com/wqreytuk/myfirstbaby/blob/master/%E9%87%8D%E6%9E%84%E4%B9%8B%E5%90%8E%E7%9A%84agent%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%8F%AF%E8%AF%BB%E6%80%A7%E5%A4%A7%E5%A4%A7%E5%A2%9E%E5%BC%BA%EF%BC%8C%E6%BA%90%E6%96%87%E4%BB%B6%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%EF%BC%8C%E4%B8%80%E4%B8%AAhttp%E5%BA%93%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%A3%E7%A0%81/%E4%B8%BA%E4%BA%86%E5%A2%9E%E5%BC%BA%E5%85%BC%E5%AE%B9%E6%80%A7%EF%BC%8C%E6%9B%B4%E6%8D%A2%E4%B8%BAlibcurl%E4%BD%9Chttps%E5%BA%93%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%9C%A8windows7%E4%BD%BF%E7%94%A8/python.7z
 
+### 另一套白加黑
+
+实际使用时有时候上面那个不好使，因此提供另外一个选择，也是默认选择，两个源代码稍微有点区别，在函数入口和lsasrv.dll的加载上不一样
+
+源代码：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E5%8F%A6%E4%B8%80%E5%A5%97%E7%99%BD%E5%8A%A0%E9%BB%91%E6%BA%90%E4%BB%A3%E7%A0%81.c
+
+白文件：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Debug.7z
+
+把编出来的dll替换掉里面的sspicli.dll
+
+
 ## 解密脚本
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1.py
