@@ -330,6 +330,9 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/De
 
 把编出来的dll替换掉里面的sspicli.dll
 
+## 这两套白加黑依赖的三张表统一从这里更新
+
+[ta](https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/alwaysnew.table.c)
 
 ## 解密脚本
 
