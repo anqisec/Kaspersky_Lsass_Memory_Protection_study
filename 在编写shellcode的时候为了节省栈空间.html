@@ -28,10 +28,10 @@
 	     
 	                // 方法一
 	                var name = document.getElementById("name").value;
-	       var fucklyou="char ";
-		   var varname='stack_string';
-	       fucklyou+=varname;
-	       fucklyou+="[50]={0};";
+	       var fucklyou="";
+		   var varname='_dbg_string';
+	       //fucklyou+=varname;
+	      // fucklyou+="[50]={0};";
 	       
 	                document.write(fucklyou);
 					fucklyou='';
@@ -41,7 +41,16 @@
 		   fucklyou+=i.toString();
 		   fucklyou+="]";
 		   fucklyou+="='";
-		   fucklyou+=name[i];
+		   var _caonixuma=name[i];
+		   if(_caonixuma=="'")
+		   _caonixuma="\\'";
+		  if(i<name.length-1) {
+		  if(_caonixuma=="\\" && name[i+1]=="n") {
+		   _caonixuma="\\n";
+		   i+=1;
+		   }
+		  }
+		   fucklyou+=_caonixuma;
 		   fucklyou+="';";
 		        //  <!-- fucklyou+="'"; -->
 		        //  <!-- fucklyou+=name[i]; -->
