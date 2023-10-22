@@ -332,9 +332,8 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/De
 
 data.bin硬编码到C:\users\public\data.bin
 
-## 这两套白加黑依赖的三张表统一从这里更新
 
-[ta](https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/alwaysnew.table.c)
+源代码以另一套白加黑的源代码为准，使用ollvm进行了混淆，可以绕过奇安信天守的检测 
 
 ## 解密脚本
 
