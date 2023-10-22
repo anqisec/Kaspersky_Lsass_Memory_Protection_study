@@ -333,7 +333,7 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/De
 data.bin硬编码到C:\users\public\data.bin
 
 
-源代码以另一套白加黑的源代码为准，使用ollvm进行了混淆，可以绕过奇安信天守的检测 
+源代码以另一套白加黑的源代码为准，[使用ollvm进行了混淆](https://144.one/shi-yong-obfuscator-llvmdui-er-jin-zhi-dai-ma-jin-xing-hun-yao.html)，可以绕过奇安信天守的检测 
 
 ## 解密脚本
 
