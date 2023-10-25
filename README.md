@@ -483,6 +483,12 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E
 
 # 混淆相关工作
 
+这个是当时构思这个的初步思路
+```
+基本思路，把loader写在注入程序中，在注入程序中加载好之后，再放到目标进程中，important dll和delta根据目标进程进行计算，这样就可以同时混淆loader和shellcode了
+```
+
+
 
 使用这个项目模板
 
