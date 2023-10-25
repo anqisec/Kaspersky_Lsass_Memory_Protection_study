@@ -478,3 +478,24 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/tree/main/%E
 # 工具使用说明
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md
+
+
+
+# 混淆相关工作
+
+
+使用这个项目模板
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E7%94%A8%E4%BA%8Eshellcode%E6%B7%B7%E6%B7%86%E7%9A%84%E6%A8%A1%E6%9D%BFvs%20%20%20sln%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6main.7z
+
+
+配套源码：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode%E6%B7%B7%E6%B7%86%E6%94%B9%E8%BF%9B%E4%B8%AD
+
+要按照无依赖的方式编写代码，除了一开始获取重要的两个函数的地方可以直接使用API，这样可以保证我们混淆后的PE中只有kernel32.dll这一个依赖DLL
+
+
+配套的混淆loader，该loader只针对只有kernel32依赖的PE文件
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E7%94%A8%E4%BA%8E%E6%B7%B7%E6%B7%86shellcode%E7%9A%84%E4%B8%BB%E7%A8%8B%E5%BA%8F.c
