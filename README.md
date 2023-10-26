@@ -501,6 +501,9 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/sh
 
 要按照无依赖的方式编写代码，除了一开始获取重要的两个函数的地方可以直接使用API，这样可以保证我们混淆后的PE中只有kernel32.dll这一个依赖DLL
 
+在进行链接的时候，我使用了/entry:main 选项，以最大限度降低导入函数数量，而且在此之前，注入之后，程序总是动不动就崩溃，具体原因未知，把入口点改为main之后就好了
+
+
 
 配套的混淆loader，该loader只针对只有kernel32依赖的PE文件
 
