@@ -512,3 +512,45 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E
 
 
 这里需要说明的是，源代码依然以另一套白加黑的代码为准，他和这个混淆loader的区别只在于第一行include了一个pch，然后入口函数是dllmain，没有其他的区别
+
+
+用于生成疑惑字符串的python脚本
+
+
+```python
+
+import uuid
+import sys
+string_to_be_obfuscated = sys.argv[1]
+
+
+
+def XORcryptInt(str2xor):
+    int2xor = []
+    for i in str2xor:
+        int2xor.append(ord(i) ^ 1)
+    return int2xor
+
+
+intArray = XORcryptInt(string_to_be_obfuscated)
+
+fuckyoui=""
+for i in intArray:
+    fuckyoui += str(i)
+    fuckyoui += ","
+
+fuckyoui = fuckyoui[:-1]
+# print(fuckyoui)
+intvaname=str(uuid.uuid4())
+intvaname=intvaname.replace("-","_")
+fuckiiii = 'MYS_ecureZeroMemory(_fuckingstring,100);'
+
+indexxxxxxx=0
+for i in    intArray:
+    fuckiiii+="_fuckingstring"+'['+str(indexxxxxxx)+']'+'='+str(i)+';'
+    indexxxxxxx=indexxxxxxx+1;
+
+
+fuckiiii+="_fuckingstring"+'['+str(indexxxxxxx)+']'+'='+str(0)+';'
+print(fuckiiii)
+```
