@@ -263,6 +263,11 @@ https://github.com/wqreytuk/pe_parser
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode.c
 
+**更新**
+现在shellcode以为混淆该进中为准，没必要再使用vs2012来生成shellcode了，因为我们使用了peloader
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode%E6%B7%B7%E6%B7%86%E6%94%B9%E8%BF%9B%E4%B8%AD
+
 
 对生成的shellcode文件  data.bin进行异或加密的袁代码：
 
@@ -272,7 +277,7 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/sh
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/ConsoleApplication1.7z
 
-cd到shellcode  data.bin所在的目录执行该工具即可
+接受一个参数，就是data.bin的路径
 
 
 ## shellcode生成步骤
