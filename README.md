@@ -519,6 +519,7 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E
 
 ```python
 
+
 import uuid
 import sys
 string_to_be_obfuscated = sys.argv[1]
@@ -543,7 +544,7 @@ fuckyoui = fuckyoui[:-1]
 # print(fuckyoui)
 intvaname=str(uuid.uuid4())
 intvaname=intvaname.replace("-","_")
-fuckiiii = 'MYS_ecureZeroMemory(_fuckingstring,100);'
+fuckiiii = 'MYS_ecureZeroMemory((char*)_fuckingstring,100);'
 
 indexxxxxxx=0
 for i in    intArray:
