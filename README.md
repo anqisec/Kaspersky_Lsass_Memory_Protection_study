@@ -519,7 +519,6 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E
 
 ```python
 
-
 import uuid
 import sys
 string_to_be_obfuscated = sys.argv[1]
@@ -553,5 +552,7 @@ for i in    intArray:
 
 
 fuckiiii+="_fuckingstring"+'['+str(indexxxxxxx)+']'+'='+str(0)+';'
-print(fuckiiii)
+print(fuckiiii+'FBXorCrypt(_fuckingstring, '+str(indexxxxxxx+1)+');')
+
+
 ```
