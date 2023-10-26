@@ -776,7 +776,7 @@ caonimade:
 	// 使用疑惑解密byteArray
 // 解密方式上进行一些改进，单一的key不太安全，改成长度为10的key
 	char _fuckingstring[100];
-	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 104; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 111; _fuckingstring[4] = 108; _fuckingstring[5] = 96; _fuckingstring[6] = 111; _fuckingstring[7] = 0; FBXorCrypt(_fuckingstring, 8);
+	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 104; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 111; _fuckingstring[4] = 108; _fuckingstring[5] = 96; _fuckingstring[6] = 111; _fuckingstring[7] = 1; FBXorCrypt(_fuckingstring, 8);
 	for (int i = 0; i < fileSize; i++) {
 		byteArray[i] = byteArray[i] ^ (_fuckingstring[i % 7]);
 	}
