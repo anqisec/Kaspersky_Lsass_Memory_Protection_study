@@ -508,3 +508,7 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/sh
 配套的混淆loader，该loader只针对只有kernel32依赖的PE文件
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E7%94%A8%E4%BA%8E%E6%B7%B7%E6%B7%86shellcode%E7%9A%84%E4%B8%BB%E7%A8%8B%E5%BA%8F.c
+
+
+
+这里需要说明的是，源代码依然以另一套白加黑的代码为准，他和这个混淆loader的区别只在于第一行include了一个pch，然后入口函数是dllmain，没有其他的区别
