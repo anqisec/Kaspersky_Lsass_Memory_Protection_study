@@ -269,6 +269,18 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/sh
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode%E6%B7%B7%E6%B7%86%E6%94%B9%E8%BF%9B%E4%B8%AD
 
 
+对字符串进行隐藏处理
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellcode%E6%B7%B7%E6%B7%86%E6%94%B9%E8%BF%9B%E4%B8%AD%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%96%91%E6%83%91%E5%A4%84%E7%90%86%E5%90%8E.c
+
+
+加密好的data.bin
+
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/dataniubi.7z
+
+
+
 对生成的shellcode文件  data.bin进行异或加密的袁代码：
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/shellocde%E6%96%87%E4%BB%B6%E7%96%91%E6%83%91%E5%8A%A0%E5%AF%86.c
