@@ -598,7 +598,7 @@ int main()
 		printf("file copied to public folder '9at2',please retrieve it\n");
 		// 仅用于调试
 #ifdef jinyongyutiaoshi
-		goto caonimade;
+		//goto caonimade;
 #endif // jinyongyutiaoshi
 
 		exit(-1);
