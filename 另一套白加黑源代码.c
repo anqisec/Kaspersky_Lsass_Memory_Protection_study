@@ -327,7 +327,7 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	{0x37DEC,0x320FC,0x321C8,0xe8,0x38} , // 6548b134a3cf304b91490fe916d934b5
 	{0x374DC,0x31E3C,0x31F08,0xe8,0x38},  // 951a238e964be37f74c32564d2a92319
 	{0x39323,0x3016C,0x86FD4,0xe8,0x38} ,// dd8cacce0209e5f7c4c31720e24178f0
-	{0x690c,0x3d018,0x3d03d,0xe8,0x38} // eb9aabe72baa8821b10a99cf4c086973
+		{0x790c,0x3e018,0x3e03d,0xe8,0x38} // eb9aabe72baa8821b10a99cf4c086973
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
