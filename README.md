@@ -324,6 +324,17 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Pu
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E5%8F%A6%E4%B8%80%E5%A5%97%E7%99%BD%E5%8A%A0%E9%BB%91%E6%BA%90%E4%BB%A3%E7%A0%81.c
 
+经过疑惑处理之后的代码，在ida中看不到任何字符串
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%8F%E8%BF%87%E7%96%91%E6%83%91%E5%A4%84%E7%90%86%E4%B9%8B%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81.c
+
+处理程序：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1%20-%20Copy.py
+
+使用之前先用正则去除unicode字符，该程序接受一个参数就是源文件路径，处理之后输出到控制台，用的时候手动重定向到文件中
+
+
 白文件：
 
 https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Debug.7z
