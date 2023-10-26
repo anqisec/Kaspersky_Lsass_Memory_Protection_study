@@ -326,7 +326,8 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	{0x1FA63,0x395DC,0x8CA6C,0xe8,0x38}, // 10.0.19041.3324
 	{0x37DEC,0x320FC,0x321C8,0xe8,0x38} , // 6548b134a3cf304b91490fe916d934b5
 	{0x374DC,0x31E3C,0x31F08,0xe8,0x38},  // 951a238e964be37f74c32564d2a92319
-	{0x39323,0x3016C,0x86FD4,0xe8,0x38} // dd8cacce0209e5f7c4c31720e24178f0
+	{0x39323,0x3016C,0x86FD4,0xe8,0x38} ,// dd8cacce0209e5f7c4c31720e24178f0
+	{0x690c,0x3d018,0x3d03d,0xe8,0x38} // eb9aabe72baa8821b10a99cf4c086973
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -421,7 +422,8 @@ int main()
 	"10.0.19041.3324",
 	"10.0.17763.4377",
 	"10.0.17763.4377",
-	"10.0.19041.3570"
+	"10.0.19041.3570",
+	"10.0.16299.15"
 	};/*endarray*/
 /*stringarray*/	char _md5_table[TABLE_LENGTH][33] = {
 		"e862003aea8c3463f72d7225d1dfbcf0", // 10.0.19041.1
@@ -438,7 +440,8 @@ int main()
 		"f17409ddc9a794eb39cfcd21d2c84c6f", // 10.0.19041.3324
 		"6548b134a3cf304b91490fe916d934b5", // 10.0.17763.4377
 		"951a238e964be37f74c32564d2a92319", // 10.0.17763.4377
-		"dd8cacce0209e5f7c4c31720e24178f0" // 10.0.19041.3570
+		"dd8cacce0209e5f7c4c31720e24178f0", // 10.0.19041.3570
+		"eb9aabe72baa8821b10a99cf4c086973" // 10.0.16299.15
 
 	};/*endarray*/
 	if (FBFileExists("C:\\users\\public\\3iaad")) {
