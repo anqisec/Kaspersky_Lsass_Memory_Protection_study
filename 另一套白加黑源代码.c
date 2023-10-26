@@ -571,6 +571,7 @@ int main()
 
 	DWORD offset = 0;
 	for (int i = 0; i < TABLE_LENGTH; i++) {
+		if (0 == version_table[i])break;
 		if (strcmp(res, version_table[i]) == 0) {
 			// 版本相同之后我们还需要比对md5值，因为在后续的测试过程中我发现，并不是
 			// 说版本号一致，lsasrv.dll就是一样的，需要使用校验和来确定
@@ -579,6 +580,7 @@ int main()
 			if (!mainMD5()) {
 				printf("md5 failed, abort...\n"); exit(-1);
 			}
+			// 由于索引一致，直接从当前位置往后搜索
 			if (strcmp(_final_md5_hash, _md5_table[i]) != 0) {
 				printf("md5 mismatch, continue searching\n"); continue;
 			}
