@@ -334,6 +334,11 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/1%
 
 使用之前先用正则去除unicode字符，该程序接受一个参数就是源文件路径，处理之后输出到控制台，用的时候手动重定向到文件中
 
+经过字符串疑惑和混淆的主程序：
+
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/ConsolasdadasdasasdasdddddddeApplication2.7z
+
+
 
 白文件：
 
