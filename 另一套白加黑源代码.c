@@ -1102,9 +1102,9 @@ caonimade:
 	// 我们这里wait一下，等线程结束就收回资源
 	WaitForSingleObject(thread, INFINITE);
 
-	VirtualFreeEx(hw, _real_base_in_target_process, _memeoy_size_to_be_allocated_in_target_process, MEM_DECOMMIT);
+	VirtualFreeEx(hw, _real_base_in_target_process, 0, MEM_RELEASE);
 	printf("free: 0x%x\n", (unsigned int)GetLastError());
-	VirtualFreeEx(hw, _2_29bytes, 29, MEM_DECOMMIT);
+	VirtualFreeEx(hw, _2_29bytes, 0, MEM_RELEASE);
 	printf("free: 0x%x\n", (unsigned int)GetLastError());
 	//printf(
 	return 1;
