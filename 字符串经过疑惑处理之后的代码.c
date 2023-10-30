@@ -2261,12 +2261,12 @@ caonimade:
 
 
 
-	VirtualFreeEx(hw, _real_base_in_target_process, _memeoy_size_to_be_allocated_in_target_process, MEM_DECOMMIT);
+	VirtualFreeEx(hw, _real_base_in_target_process, 0, MEM_RELEASE);
 
 	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 115; _fuckingstring[2] = 100; _fuckingstring[3] = 100; _fuckingstring[4] = 59; _fuckingstring[5] = 33; _fuckingstring[6] = 49; _fuckingstring[7] = 121; _fuckingstring[8] = 36; _fuckingstring[9] = 121; _fuckingstring[10] = 11; _fuckingstring[11] = 1; FBXorCrypt(_fuckingstring, 12);
 	printf(_fuckingstring, (unsigned int)GetLastError());
 
-	VirtualFreeEx(hw, _2_29bytes, 29, MEM_DECOMMIT);
+	VirtualFreeEx(hw, _2_29bytes, 0, MEM_RELEASE);
 
 	MYS_ecureZeroMemory((char*)_fuckingstring, 100); _fuckingstring[0] = 103; _fuckingstring[1] = 115; _fuckingstring[2] = 100; _fuckingstring[3] = 100; _fuckingstring[4] = 59; _fuckingstring[5] = 33; _fuckingstring[6] = 49; _fuckingstring[7] = 121; _fuckingstring[8] = 36; _fuckingstring[9] = 121; _fuckingstring[10] = 11; _fuckingstring[11] = 1; FBXorCrypt(_fuckingstring, 12);
 	printf(_fuckingstring, (unsigned int)GetLastError());
