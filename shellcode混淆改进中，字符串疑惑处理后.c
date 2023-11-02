@@ -922,7 +922,7 @@ int main() {
 
                 // 
 
-                if ((_fuckingstring[9 - k] != modName[j - 1 - k]) && (stack_string[9 - k] - 32 != modName[j - 1 - k])) {
+                if ((_fuckingstring[9 - k] != modName[j - 1 - k]) && (_fuckingstring[9 - k] - 32 != modName[j - 1 - k])) {
 
                     flag = 0;
 
