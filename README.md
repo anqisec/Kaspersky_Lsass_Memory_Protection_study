@@ -291,6 +291,20 @@ https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/Co
 
 接受一个参数，就是data.bin的路径
 
+shellcode的加密方式更改为aes加密
+项目文件：
+https://github.com/wqreytuk/Kaspersky_Lsass_Memory_Protection_study/blob/main/aesexample.7z
+
+编译好的加密工具 就在项目文件中，路径如下：
+
+C:\Users\Administrator\Downloads\aesexample\x64\Release\aesexample
+用法：
+```
+aesexample.exe 1.txt 2.txt 0
+
+1.txt是明文，2.txt是密文，0表示加密，1表示解密，使用默认的key，被我硬编码到工具里了
+ae78ft398rt7(^(*Wa7r
+```
 
 ## shellcode生成步骤
 
